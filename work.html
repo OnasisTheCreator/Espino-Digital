@@ -16,7 +16,15 @@
 <a href="/about" class="nav-link">About</a>
 <a href="/contact" class="nav-link">Contact</a></div>
   <a href="/contact" class="nav-cta">Start a Project →</a>
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/">Home</a>
+  <a href="/systems">Systems</a>
+  <a href="/work">Work</a>
+  <a href="/about">About</a>
+  <a href="/contact" class="mobile-cta">Start a Project →</a>
+</div>
 <header class="page-hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-orb hero-orb-1"></div>
@@ -237,17 +245,22 @@
 (function(){
   var nav=document.querySelector('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+  var hamburger=document.querySelector('.nav-hamburger');
+  var mobileNav=document.getElementById('mobileNav');
+  hamburger.addEventListener('click',function(){var open=mobileNav.classList.toggle('open');hamburger.classList.toggle('open',open);hamburger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';});
+  mobileNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mobileNav.classList.remove('open');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(!entry.isIntersecting)return;
       var el=entry.target;
-      var idx=Array.from(el.parentElement.children).indexOf(el);
-      el.style.animationDelay=(idx*0.1)+'s';
+      var siblings=Array.from(el.parentElement.children).filter(function(c){return c.classList.contains('scroll-hidden')||c.classList.contains('scroll-visible')});
+      var idx=siblings.indexOf(el);
+      el.style.animationDelay=(idx*0.08)+'s';
       el.classList.remove('scroll-hidden');el.classList.add('scroll-visible');
       io.unobserve(el);
     });
-  },{threshold:0.12});
-  document.querySelectorAll('.card,.metric,.demo-metric,.problem-item,.flow-item,.stat-item,.section-title').forEach(function(el){el.classList.add('scroll-hidden');io.observe(el);});
+  },{threshold:0.1});
+  document.querySelectorAll('.card,.metric,.demo-metric,.problem-item,.flow-item,.stat-item,.section-title').forEach(function(el){var r=el.getBoundingClientRect();if(r.top>window.innerHeight){el.classList.add('scroll-hidden');io.observe(el);}});
   var tagIO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;entry.target.classList.add('tag-visible');tagIO.unobserve(entry.target);});},{threshold:0.5});
   document.querySelectorAll('.section-tag').forEach(function(el){tagIO.observe(el);});
 })();
