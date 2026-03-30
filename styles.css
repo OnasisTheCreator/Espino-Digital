@@ -213,11 +213,18 @@ label{
   display:block;font-family:'Space Mono', monospace;font-size:10px;letter-spacing:.18em;
   color:var(--muted);text-transform:uppercase;margin-bottom:8px
 }
-input,select,textarea{
+input,textarea{
   width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);
   border-radius:10px;padding:14px 16px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:15px
 }
-select option{background:#0f0f18;color:var(--white)}
+select{
+  width:100%;background:#0d0d14;border:1px solid var(--border);
+  border-radius:10px;padding:14px 16px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:15px;
+  -webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;cursor:pointer
+}
+select option{background:#0d0d14;color:var(--white)}
 textarea{min-height:120px;resize:vertical}
 input:focus,select:focus,textarea:focus{outline:none;border-color:rgba(0,245,196,.5)}
 footer{
