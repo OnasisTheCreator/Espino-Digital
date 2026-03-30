@@ -217,6 +217,7 @@ input,select,textarea{
   width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);
   border-radius:10px;padding:14px 16px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:15px
 }
+select option{background:#0f0f18;color:var(--white)}
 textarea{min-height:120px;resize:vertical}
 input:focus,select:focus,textarea:focus{outline:none;border-color:rgba(0,245,196,.5)}
 footer{
@@ -377,8 +378,8 @@ nav.scrolled{
 .section-tag.tag-visible::before{animation:tag-line .4s .1s ease forwards}
 
 /* --- Scroll fade-up base --- */
-.scroll-hidden{opacity:0;transform:translateY(20px)}
-.scroll-visible{animation:fade-up .7s cubic-bezier(.22,.61,.36,1) forwards}
+.scroll-hidden{opacity:0;transform:translateY(18px)}
+.scroll-visible{animation:fade-up 1s cubic-bezier(.22,.61,.36,1) forwards}
 
 /* --- Terminal typewriter --- */
 .terminal > div{
