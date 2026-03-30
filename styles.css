@@ -143,7 +143,7 @@ nav{
 .metric strong{
   display:block;font-family:'Syne',sans-serif;font-size:38px;letter-spacing:-.03em;margin-bottom:6px
 }
-.metric span{color:var(--muted);font-size:13px;line-height:1.5}
+.metric span{display:block;color:var(--muted);font-size:13px;line-height:1.5}
 .problem-list,.flow-list{display:flex;flex-direction:column;gap:14px}
 .problem-item,.flow-item,.stat-item{
   background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px
