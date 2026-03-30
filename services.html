@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Espino Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #060810;
+    --dark: #0a0e1a;
+    --card: #0f1523;
+    --border: rgba(255,255,255,0.09);
+    --cyan: #00ffcc;
+    --cyan-dim: rgba(0,255,204,0.13);
+    --cyan-glow: rgba(0,255,204,0.3);
+    --white: #f2f2f8;
+    --muted: rgba(242,242,248,0.45);
+    --accent2: #9b6bff;
+    --accent3: #ff6b6b;
+    --gold: #ffd166;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 500;
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(5,5,8,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span {
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-link:hover { color: var(--white); }
+  .nav-link.active { color: var(--cyan); }
+
+  .nav-cta {
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--cyan); color: var(--black); }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding: 160px 60px 100px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,204,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,204,0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 100% 100% at 50% 100%, black 30%, transparent 100%);
+  }
+
+  .page-hero-glow {
+    position: absolute;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,255,204,0.08) 0%, rgba(155,107,255,0.05) 50%, transparent 70%);
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .page-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(0,255,204,0.3);
+    background: rgba(0,255,204,0.05);
+    padding: 7px 16px;
+    border-radius: 100px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.1s forwards;
+  }
+
+  .page-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(48px, 6.5vw, 88px);
+    line-height: 0.97;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.2s forwards;
+  }
+
+  .page-headline span {
+    background: linear-gradient(135deg, var(--cyan) 0%, #00d4ff 50%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-sub {
+    font-size: clamp(16px, 1.8vw, 20px);
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.3s forwards;
+  }
+
+  /* SECTION SHARED */
+  .section-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 28px; height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--accent2));
+    border-radius: 2px;
+  }
+
+  /* SERVICE BLOCKS */
+  .services-wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 60px 160px;
+  }
+
+  .service-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+
+  .service-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .service-block:last-child { border-bottom: none; }
+
+  .service-block.reverse { direction: rtl; }
+  .service-block.reverse > * { direction: ltr; }
+
+  .service-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(0,255,204,0.4);
+    margin-bottom: 12px;
+  }
+
+  .service-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 4vw, 52px);
+    letter-spacing: -0.03em;
+    line-height: 1.0;
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+
+  .service-desc {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+
+  .service-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .service-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 15px;
+    color: rgba(242,242,248,0.7);
+    line-height: 1.5;
+  }
+
+  .feat-check {
+    width: 22px; height: 22px; min-width: 22px;
+    background: var(--cyan-dim);
+    border: 1px solid rgba(0,255,204,0.3);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--cyan);
+    margin-top: 1px;
+  }
+
+  .service-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: transparent;
+    border: 1px solid rgba(0,255,204,0.35);
+    color: var(--cyan);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.25s;
+  }
+  .service-cta:hover {
+    background: var(--cyan-dim);
+    border-color: var(--cyan);
+    transform: translateX(4px);
+  }
+
+  /* SERVICE VISUAL CARDS */
+  .service-visual {
+    position: relative;
+  }
+
+  .service-card-main {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 60px rgba(0,255,204,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card-main::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .card-web::before { background: linear-gradient(90deg, var(--cyan), #00d4ff); }
+  .card-ai::before  { background: linear-gradient(90deg, var(--accent2), var(--cyan)); }
+  .card-seo::before { background: linear-gradient(90deg, var(--gold), var(--accent3)); }
+
+  .svc-card-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  /* Website mockup */
+  .mini-browser {
+    background: #080b14;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .mini-bar {
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mini-dots { display: flex; gap: 5px; }
+  .mini-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.12); }
+  .mini-url {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+  }
+  .mini-content { padding: 20px; }
+  .mini-h { height: 7px; background: var(--cyan); opacity: 0.75; border-radius: 3px; width: 55%; margin-bottom: 10px; }
+  .mini-line { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; margin-bottom: 7px; }
+  .mini-line.w80 { width: 80%; }
+  .mini-line.w60 { width: 60%; }
+  .mini-line.w40 { width: 40%; }
+  .mini-btns { display: flex; gap: 8px; margin: 16px 0; }
+  .mini-btn { height: 24px; border-radius: 4px; width: 80px; }
+  .mini-btn.p { background: linear-gradient(135deg, var(--cyan), #00d4ff); }
+  .mini-btn.g { background: transparent; border: 1px solid rgba(255,255,255,0.12); }
+  .mini-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .mini-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 10px; }
+  .mini-card-icon { width: 22px; height: 22px; background: var(--cyan-dim); border-radius: 5px; margin-bottom: 8px; }
+  .mini-card-line { height: 3px; background: rgba(255,255,255,0.08); border-radius: 2px; margin-bottom: 5px; }
+  .mini-card-line.s { width: 60%; }
+
+  .web-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .web-stat {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .web-stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .web-stat-val {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--cyan);
+    letter-spacing: -0.02em;
+  }
+
+  /* AI chat mockup */
+  .chat-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .chat-msg {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+  .chat-msg.right { flex-direction: row-reverse; }
+  .chat-avatar {
+    width: 30px; height: 30px; min-width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .chat-avatar.bot { background: var(--cyan-dim); border: 1px solid rgba(0,255,204,0.3); }
+  .chat-avatar.user { background: rgba(155,107,255,0.15); border: 1px solid rgba(155,107,255,0.3); }
+  .chat-bubble {
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 76%;
+  }
+  .chat-bubble.bot {
+    background: rgba(0,255,204,0.08);
+    border: 1px solid rgba(0,255,204,0.15);
+    color: rgba(242,242,248,0.8);
+    border-bottom-left-radius: 4px;
+  }
+  .chat-bubble.user {
+    background: rgba(155,107,255,0.1);
+    border: 1px solid rgba(155,107,255,0.2);
+    color: rgba(242,242,248,0.8);
+    border-bottom-right-radius: 4px;
+  }
+  .chat-lang-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--cyan);
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    margin-top: 4px;
+  }
+  .chat-time {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    text-align: center;
+    margin: 4px 0;
+  }
+  .missed-call-alert {
+    background: rgba(255,107,107,0.08);
+    border: 1px solid rgba(255,107,107,0.2);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .mca-icon { font-size: 16px; }
+  .mca-text { font-size: 11px; color: rgba(242,242,248,0.7); }
+  .mca-text strong { color: var(--white); font-weight: 600; display: block; font-size: 12px; }
+  .mca-badge {
+    margin-left: auto;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    padding: 3px 8px;
+    background: rgba(255,107,107,0.12);
+    border: 1px solid rgba(255,107,107,0.3);
+    color: #ff6b6b;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  /* SEO visual */
+  .seo-rankings {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .rank-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.3s;
+  }
+  .rank-item:first-child {
+    background: rgba(0,255,204,0.05);
+    border-color: rgba(0,255,204,0.2);
+  }
+  .rank-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--muted);
+    min-width: 28px;
+  }
+  .rank-item:first-child .rank-num { color: var(--cyan); }
+  .rank-biz {
+    flex: 1;
+    font-size: 13px;
+    color: rgba(242,242,248,0.7);
+  }
+  .rank-item:first-child .rank-biz { color: var(--white); font-weight: 400; }
+  .rank-stars { font-size: 11px; color: var(--gold); }
+
+  .review-bar {
+    margin-top: 18px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .review-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .review-score {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .review-big {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: var(--white);
+    letter-spacing: -0.03em;
+  }
+  .review-stars-col { display: flex; flex-direction: column; gap: 2px; }
+  .review-stars { font-size: 14px; color: var(--gold); }
+  .review-count { font-size: 11px; color: var(--muted); }
+  .review-bar-track {
+    height: 4px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .review-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--cyan));
+    border-radius: 2px;
+    width: 96%;
+  }
+
+  /* HOW IT WORKS STRIP */
+  .how-strip {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 100px 60px;
+  }
+
+  .how-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 60px;
+  }
+
+  .how-step {
+    background: var(--card);
+    padding: 40px 32px;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .how-step:hover { background: #111a28; }
+
+  .how-step-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(0,255,204,0.1);
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: -0.04em;
+  }
+
+  .how-step-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+
+  .how-step-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .how-step-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    padding: 140px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-glow {
+    position: absolute;
+    width: 800px; height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,255,204,0.08) 0%, rgba(155,107,255,0.04) 40%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    animation: pulsate 7s ease-in-out infinite;
+  }
+
+  .cta-content { position: relative; z-index: 2; }
+
+  .cta-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(44px, 6vw, 80px);
+    letter-spacing: -0.04em;
+    line-height: 0.97;
+    margin-bottom: 20px;
+  }
+
+  .cta-headline span {
+    background: linear-gradient(135deg, var(--cyan) 0%, #00d4ff 50%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 48px;
+    line-height: 1.65;
+  }
+
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    padding: 18px 44px;
+    background: linear-gradient(135deg, var(--cyan) 0%, #00d4ff 100%);
+    color: var(--black);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 0 40px rgba(0,255,204,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 60px rgba(0,255,204,0.6); }
+
+  .btn-ghost {
+    padding: 18px 44px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: var(--dark);
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--white);
+  }
+  .footer-logo span {
+    background: linear-gradient(135deg, var(--cyan), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .footer-links { display: flex; gap: 28px; }
+  .footer-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--cyan); }
+  .footer-meta { font-family: 'Space Mono', monospace; font-size: 11px; color: rgba(242,242,248,0.2); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulsate {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
+  }
+
+  /* ── VISUAL UPGRADE 2026 ── */
+  @keyframes orb-drift-1{0%{transform:translate(0,0) scale(1)}100%{transform:translate(32px,-22px) scale(1.06)}}
+  @keyframes orb-drift-2{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-26px,20px) scale(1.09)}}
+  @keyframes orb-drift-3{0%{transform:translate(0,0) scale(1)}100%{transform:translate(18px,26px) scale(1.05)}}
+  @keyframes svc-grid-pulse{0%,100%{opacity:1}50%{opacity:.42}}
+  @keyframes svc-scan{0%{top:-4%;opacity:0}3%{opacity:.9}97%{opacity:.9}100%{top:104%;opacity:0}}
+  @keyframes svc-btn-shimmer{0%{transform:translateX(-180%) skewX(-20deg)}100%{transform:translateX(320%) skewX(-20deg)}}
+  @keyframes svc-btn-pulse{0%,100%{box-shadow:0 0 40px rgba(0,255,204,.4),0 0 0 0 rgba(0,255,204,0)}50%{box-shadow:0 0 40px rgba(0,255,204,.4),0 0 0 9px rgba(0,255,204,.08)}}
+  @keyframes svc-tag-line{from{width:0}to{width:28px}}
+  .hero-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:1}
+  .hero-orb-1{width:520px;height:520px;top:-120px;left:-60px;background:radial-gradient(circle,rgba(0,255,204,.15) 0%,transparent 65%);filter:blur(60px);animation:orb-drift-1 10s ease-in-out infinite alternate}
+  .hero-orb-2{width:420px;height:420px;top:-80px;right:-40px;background:radial-gradient(circle,rgba(155,107,255,.17) 0%,transparent 65%);filter:blur(70px);animation:orb-drift-2 12s ease-in-out infinite alternate}
+  .hero-orb-3{width:280px;height:280px;bottom:-40px;left:45%;background:radial-gradient(circle,rgba(0,212,255,.13) 0%,transparent 65%);filter:blur(50px);animation:orb-drift-3 8s 1s ease-in-out infinite alternate}
+  .page-hero-bg{animation:svc-grid-pulse 4s ease-in-out infinite}
+  .hero-scan{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,255,204,.2),transparent);top:-4%;pointer-events:none;z-index:2;animation:svc-scan 6s linear infinite}
+  .service-card-main{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+  .service-card-main:hover{transform:translateY(-4px);border-color:rgba(0,255,204,.35);box-shadow:0 28px 70px rgba(0,0,0,.3),0 0 30px rgba(0,255,204,.1)}
+  .btn-primary{position:relative;overflow:hidden;animation:svc-btn-pulse 3s ease-in-out infinite}
+  .btn-primary::after{content:'';position:absolute;top:0;bottom:0;left:0;width:45%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transform:translateX(-200%) skewX(-20deg);pointer-events:none}
+  .btn-primary:hover::after{animation:svc-btn-shimmer .55s ease forwards}
+  .nav-link{position:relative}
+  .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--cyan);border-radius:2px;transition:width .25s ease}
+  .nav-link:hover::after,.nav-link.active::after{width:100%}
+  nav.scrolled{backdrop-filter:blur(32px) saturate(180%);border-bottom-color:rgba(0,255,204,.14);box-shadow:0 1px 24px rgba(0,255,204,.06)}
+  .section-tag::before{width:0}
+  .section-tag.tag-visible::before{animation:svc-tag-line .4s .1s ease forwards}
+  footer{box-shadow:inset 0 1px 0 rgba(0,255,204,.08),0 -1px 30px rgba(0,255,204,.04)}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .page-hero { padding: 120px 24px 80px; }
+    .services-wrap { padding: 0 24px 100px; }
+    .service-block { grid-template-columns: 1fr; gap: 48px; }
+    .service-block.reverse { direction: ltr; }
+    .how-strip { padding: 80px 24px; }
+    .how-grid { grid-template-columns: 1fr 1fr; }
+    .cta-band { padding: 100px 24px; }
+    footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="espino-digital.html" class="nav-logo">Espino <span>Digital</span></a>
+  <div class="nav-links">
+    <a href="espino-digital.html#solutions" class="nav-link">Solutions</a>
+    <a href="services.html" class="nav-link active">Services</a>
+    <a href="espino-digital.html#proof" class="nav-link">Work</a>
+    <a href="espino-digital.html#about" class="nav-link">About</a>
+  </div>
+  <a href="espino-digital.html#contact" class="nav-cta">Book Call →</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-glow"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-scan"></div>
+  <div class="page-hero-content">
+    <div class="page-tag">What We Offer</div>
+    <h1 class="page-headline">Everything Your Business<br><span>Needs to Grow.</span></h1>
+    <p class="page-sub">Three core services, built specifically for local businesses in Charlotte. No fluff, no huge retainers. Just the stuff that actually brings in more jobs.</p>
+  </div>
+</div>
+
+<!-- SERVICE BLOCKS -->
+<div class="services-wrap">
+
+  <!-- SERVICE 1: Website -->
+  <div class="service-block">
+    <div class="service-text">
+      <div class="service-num">01 / 03</div>
+      <h2 class="service-title">A Website That<br>Brings in Jobs</h2>
+      <p class="service-desc">Most local business websites just sit there. Yours should be your hardest-working employee. We build fast, mobile-first sites that are designed to convert visitors into booked appointments.</p>
+      <ul class="service-features">
+        <li><span class="feat-check">✓</span>Conversion-focused layout built around your services</li>
+        <li><span class="feat-check">✓</span>Mobile-first and lightning fast on every device</li>
+        <li><span class="feat-check">✓</span>Bilingual support (English and Spanish) built in from day one</li>
+        <li><span class="feat-check">✓</span>Lead capture forms connected to your CRM or inbox</li>
+        <li><span class="feat-check">✓</span>Google Analytics and call tracking set up and ready</li>
+        <li><span class="feat-check">✓</span>Hosting and ongoing maintenance included</li>
+      </ul>
+      <a href="espino-digital.html#contact" class="service-cta">Get a Free Website Audit →</a>
+    </div>
+    <div class="service-visual">
+      <div class="service-card-main card-web">
+        <div class="svc-card-label">Website Preview</div>
+        <div class="mini-browser">
+          <div class="mini-bar">
+            <div class="mini-dots">
+              <div class="mini-dot"></div><div class="mini-dot"></div><div class="mini-dot"></div>
+            </div>
+            <div class="mini-url">yourbusiness.com</div>
+          </div>
+          <div class="mini-content">
+            <div class="mini-h"></div>
+            <div class="mini-line w80"></div>
+            <div class="mini-line w60"></div>
+            <div class="mini-btns">
+              <div class="mini-btn p"></div>
+              <div class="mini-btn g"></div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini-card"><div class="mini-card-icon"></div><div class="mini-card-line"></div><div class="mini-card-line s"></div></div>
+              <div class="mini-card"><div class="mini-card-icon"></div><div class="mini-card-line"></div><div class="mini-card-line s"></div></div>
+              <div class="mini-card"><div class="mini-card-icon"></div><div class="mini-card-line"></div><div class="mini-card-line s"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="web-stats">
+          <div class="web-stat">
+            <div class="web-stat-label">Page Speed</div>
+            <div class="web-stat-val">98</div>
+          </div>
+          <div class="web-stat">
+            <div class="web-stat-label">Mobile Score</div>
+            <div class="web-stat-val">100</div>
+          </div>
+          <div class="web-stat">
+            <div class="web-stat-label">Languages</div>
+            <div class="web-stat-val">EN / ES</div>
+          </div>
+          <div class="web-stat">
+            <div class="web-stat-label">Leads Captured</div>
+            <div class="web-stat-val">Auto</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 2: AI Automation -->
+  <div class="service-block reverse">
+    <div class="service-text">
+      <div class="service-num">02 / 03</div>
+      <h2 class="service-title">Never Miss<br>Another Customer</h2>
+      <p class="service-desc">When you're on a job, you can't always pick up. We make sure every person who reaches out gets a real response right away, in their language, and gets guided toward booking with you.</p>
+      <ul class="service-features">
+        <li><span class="feat-check">✓</span>Missed call text-back within seconds, automatically</li>
+        <li><span class="feat-check">✓</span>Bilingual AI chat assistant handles questions 24/7</li>
+        <li><span class="feat-check">✓</span>Automated appointment booking without back-and-forth</li>
+        <li><span class="feat-check">✓</span>Follow-up sequences that close jobs you quoted</li>
+        <li><span class="feat-check">✓</span>Reactivation campaigns to bring past customers back</li>
+        <li><span class="feat-check">✓</span>All conversations in one simple dashboard</li>
+      </ul>
+      <a href="espino-digital.html#contact" class="service-cta">See How Automation Works →</a>
+    </div>
+    <div class="service-visual">
+      <div class="service-card-main card-ai">
+        <div class="svc-card-label">AI Response System</div>
+        <div class="missed-call-alert">
+          <span class="mca-icon">📞</span>
+          <div class="mca-text">
+            <strong>Missed Call Detected</strong>
+            From (704) 555-0198 · Just now
+          </div>
+          <span class="mca-badge">AUTO-REPLY SENT</span>
+        </div>
+        <div class="chat-time">Today, 2:34 PM</div>
+        <div class="chat-wrap">
+          <div class="chat-msg">
+            <div class="chat-avatar bot">🤖</div>
+            <div>
+              <div class="chat-bubble bot">Hey! Sorry we missed your call. This is García Auto — how can we help you today?</div>
+              <div class="chat-lang-tag">EN</div>
+            </div>
+          </div>
+          <div class="chat-msg right">
+            <div class="chat-avatar user">👤</div>
+            <div>
+              <div class="chat-bubble user">Necesito un cambio de aceite, ¿tienen espacio esta semana?</div>
+            </div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar bot">🤖</div>
+            <div>
+              <div class="chat-bubble bot">¡Claro que sí! Tenemos disponibilidad el martes a las 10am o el jueves a las 2pm. ¿Cuál le queda mejor?</div>
+              <div class="chat-lang-tag">ES — Auto-detected</div>
+            </div>
+          </div>
+          <div class="chat-msg right">
+            <div class="chat-avatar user">👤</div>
+            <div>
+              <div class="chat-bubble user">El martes a las 10 está perfecto 👍</div>
+            </div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar bot">🤖</div>
+            <div>
+              <div class="chat-bubble bot">Listo, cita confirmada para el martes a las 10am. Le enviamos un recordatorio el día antes. ¡Hasta entonces!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 3: SEO & Reviews -->
+  <div class="service-block">
+    <div class="service-text">
+      <div class="service-num">03 / 03</div>
+      <h2 class="service-title">Get Found First.<br>Get Chosen More.</h2>
+      <p class="service-desc">When someone nearby searches for what you do, you should be at the top. We optimize your Google presence, build your reviews consistently, and make sure you show up before your competitors.</p>
+      <ul class="service-features">
+        <li><span class="feat-check">✓</span>Full Google Business Profile setup and optimization</li>
+        <li><span class="feat-check">✓</span>Local SEO so you rank for searches in your area</li>
+        <li><span class="feat-check">✓</span>Automated review requests after every completed job</li>
+        <li><span class="feat-check">✓</span>Competitor gap analysis showing exactly what to fix</li>
+        <li><span class="feat-check">✓</span>Citation building across key local directories</li>
+        <li><span class="feat-check">✓</span>Monthly reporting with clear, plain-English results</li>
+      </ul>
+      <a href="espino-digital.html#contact" class="service-cta">Get a Free SEO Check →</a>
+    </div>
+    <div class="service-visual">
+      <div class="service-card-main card-seo">
+        <div class="svc-card-label">Local Search Rankings</div>
+        <div class="seo-rankings">
+          <div class="rank-item">
+            <div class="rank-num">#1</div>
+            <div class="rank-biz">Your Business Name</div>
+            <div class="rank-stars">★★★★★</div>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">#2</div>
+            <div class="rank-biz">Competitor A</div>
+            <div class="rank-stars" style="color:rgba(255,255,255,0.25)">★★★☆☆</div>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">#3</div>
+            <div class="rank-biz">Competitor B</div>
+            <div class="rank-stars" style="color:rgba(255,255,255,0.25)">★★★☆☆</div>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">#4</div>
+            <div class="rank-biz">Competitor C</div>
+            <div class="rank-stars" style="color:rgba(255,255,255,0.25)">★★☆☆☆</div>
+          </div>
+        </div>
+        <div class="review-bar">
+          <div class="review-label">Review Score</div>
+          <div class="review-score">
+            <div class="review-big">4.9</div>
+            <div class="review-stars-col">
+              <div class="review-stars">★★★★★</div>
+              <div class="review-count">127 reviews</div>
+            </div>
+          </div>
+          <div class="review-bar-track">
+            <div class="review-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how-strip">
+  <div class="how-inner">
+    <div class="section-tag">The Process</div>
+    <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(36px,5vw,64px);letter-spacing:-0.03em;line-height:0.97;margin-bottom:16px;color:var(--white)">Simple Start.<br>Fast Results.</h2>
+    <p style="font-size:17px;color:var(--muted);max-width:480px;line-height:1.7">We don't drag things out. Most clients are set up and running within two weeks.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-step-num">01</div>
+        <span class="how-step-icon">📞</span>
+        <div class="how-step-title">Free Strategy Call</div>
+        <p class="how-step-desc">We spend 15 minutes learning about your business, where you're losing leads, and what matters most to you.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">02</div>
+        <span class="how-step-icon">🔍</span>
+        <div class="how-step-title">Free Audit</div>
+        <p class="how-step-desc">We look at your calls, your Google profile, your website, and your competitors. Then we show you exactly what we found.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">03</div>
+        <span class="how-step-icon">⚙️</span>
+        <div class="how-step-title">We Build It</div>
+        <p class="how-step-desc">We set everything up for you. You don't need to touch a thing. Most setups are live within 10 to 14 days.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">04</div>
+        <span class="how-step-icon">📈</span>
+        <div class="how-step-title">You Grow</div>
+        <p class="how-step-desc">More calls answered, more jobs booked, more reviews coming in. We send you a simple report every month.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-glow"></div>
+  <div class="cta-content">
+    <h2 class="cta-headline">Ready to Get<br><span>Started?</span></h2>
+    <p class="cta-sub">Book a free 15-minute call. No pressure, no pitch. Just a real conversation about your business.</p>
+    <div class="cta-buttons">
+      <a href="tel:9804756920" class="btn-primary">Book Free 15-Min Call</a>
+      <a href="mailto:hello@espinodigital.com" class="btn-ghost">hello@espinodigital.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Espino <span>Digital</span></div>
+  <div class="footer-links">
+    <a href="espino-digital.html#solutions" class="footer-link">Solutions</a>
+    <a href="services.html" class="footer-link">Services</a>
+    <a href="espino-digital.html#contact" class="footer-link">Contact</a>
+  </div>
+  <div class="footer-meta">© 2026 Espino Digital · Charlotte, NC</div>
+</footer>
+
+<script>
+(function(){
+  // Existing: scroll reveal for service blocks
+  var blocks=document.querySelectorAll('.service-block');
+  var bIO=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.15});
+  blocks.forEach(function(b){bIO.observe(b);});
+
+  // Nav scroll
+  var nav=document.querySelector('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+
+  // Section tag line
+  var tagIO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;entry.target.classList.add('tag-visible');tagIO.unobserve(entry.target);});},{threshold:0.5});
+  document.querySelectorAll('.section-tag').forEach(function(el){tagIO.observe(el);});
+})();
+</script>
+
+</body>
+</html>
