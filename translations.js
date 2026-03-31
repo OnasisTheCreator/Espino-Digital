@@ -1,62 +1,64 @@
 window.ED_TRANS = {
   shared: {
     eyebrow: {
-      en: 'Websites · Apps · Automation · Bilingual',
-      es: 'Sitios Web · Apps · Automatización · Bilingüe'
+      en: 'Custom Web Studio · Charlotte, NC · Remote-Friendly',
+      es: 'Estudio Web Personalizado · Charlotte, NC · Clientes en Todo el Mundo'
     }
   },
   home: {
     'hero-title': {
-      en: 'Websites that bring calls in.<br><span class="accent">Tools to help you close them.</span>',
-      es: 'Sitios web que traen llamadas.<br><span class="accent">Herramientas para cerrarlas.</span>'
+      en: 'Custom websites and apps.<br><span class="accent">Built right. Priced like a person, not an agency.</span>',
+      es: 'Sitios web y apps personalizados.<br><span class="accent">Bien construidos. Con precios de persona, no de agencia.</span>'
     },
     'hero-sub': {
-      en: 'We build sites that rank, load fast, and get people to call. And for businesses that need more, we build the custom software around how the operation actually runs. Some clients need one. Some need both.',
-      es: 'Construimos sitios que posicionan bien, cargan rápido y hacen que la gente llame. Para negocios que necesitan más, construimos el software alrededor de cómo opera el negocio. Algunos clientes necesitan uno. Otros necesitan ambos.'
+      en: 'We design and build from scratch. For businesses that need to stand out, creators building a personal brand, and founders who want it done right, without paying agency prices.',
+      es: 'Diseñamos y construimos desde cero. Para negocios que necesitan destacar, creadores que construyen una marca personal y fundadores que quieren hacerlo bien, sin pagar precios de agencia.'
     },
-    'hero-btn-primary': { en: 'Book a Call', es: 'Reservar Llamada' },
-    'hero-btn-secondary': { en: 'See the System', es: 'Ver el Sistema' },
-    'opp-tag': { en: 'The Opportunity', es: 'La Oportunidad' },
+    'hero-btn-primary': { en: 'Start a Project', es: 'Iniciar un Proyecto' },
+    'hero-btn-secondary': { en: 'See the Work', es: 'Ver el Trabajo' },
+    'opp-tag': { en: 'The Studio', es: 'El Estudio' },
     'opp-title': {
-      en: 'A site that works.<br><span class="accent">Software that fits.</span>',
-      es: 'Un sitio que funciona.<br><span class="accent">Software que encaja.</span>'
+      en: 'Built from scratch.<br><span class="accent">For the way you actually work.</span>',
+      es: 'Construido desde cero.<br><span class="accent">Para la forma en que realmente operas.</span>'
     },
     'opp-sub': {
-      en: "Most local businesses have a site that doesn't get calls and tools that don't talk to each other. We fix both. A site that actually brings people in, and the systems that keep those leads from going cold.",
-      es: 'La mayoría de los negocios locales tienen un sitio que no genera llamadas y herramientas que no se conectan. Nosotros lo arreglamos. Un sitio que atrae personas de verdad, y los sistemas que evitan que esos prospectos se enfríen.'
+      en: 'No templates. No page builders. No "I found this theme and customized it." Every project starts from a blank canvas and gets designed around who you are and what you do. Whether you\'re a business, a creator, or something in between.',
+      es: 'Sin plantillas. Sin constructores de páginas. Sin "encontré este tema y lo personalicé." Cada proyecto comienza desde un lienzo en blanco y se diseña alrededor de quién eres y lo que haces. Ya seas un negocio, un creador, o algo intermedio.'
     },
-    'metric-1-span': { en: 'of calls to local service businesses can go unanswered.', es: 'de llamadas a negocios locales pueden quedar sin respuesta.' },
-    'metric-2-span': { en: 'target response speed with automated text back and follow up.', es: 'tiempo de respuesta con texto automático y seguimiento.' },
-    'metric-3-span': { en: 'Bilingual experiences that build trust with more of Charlotte.', es: 'Experiencias bilingües que generan confianza con más clientes.' },
-    'bf-tag': { en: 'Built For', es: 'Para Quién' },
-    'bf-c1-title': { en: 'Any business that runs on inbound calls', es: 'Negocios que dependen de llamadas entrantes' },
-    'bf-c1-text': { en: 'If your customers call before they book, the speed and quality of your response determines whether you get the job.', es: 'Si tus clientes llaman antes de reservar, la velocidad y calidad de tu respuesta determina si consigues el trabajo.' },
-    'bf-c2-title': { en: 'Any business that depends on local trust', es: 'Negocios que dependen de la confianza local' },
-    'bf-c2-text': { en: 'Reviews, online presence, and how you look when someone Googles you. That shapes who gets called and who gets hired.', es: 'Reseñas, presencia en línea y cómo te ven cuando alguien te busca en Google. Eso determina quién recibe la llamada y quién consigue el trabajo.' },
-    'bf-c3-title': { en: 'Any business where follow up decides the job', es: 'Negocios donde el seguimiento decide el trabajo' },
-    'bf-c3-text': { en: "Most leads don't disappear. They go cold because nobody reached back out fast enough. Tighter systems fix that.", es: 'La mayoría de los prospectos no desaparecen. Se enfrían porque nadie respondió lo suficientemente rápido. Sistemas más ajustados lo arreglan.' },
-    'wyg-tag': { en: 'What You Get', es: 'Lo Que Recibes' },
-    'wyg-web-kicker': { en: 'Website', es: 'Sitio Web' },
-    'wyg-web-title': { en: 'A site that gets people to call', es: 'Un sitio que hace que la gente llame' },
-    'wyg-web-sub': { en: 'Not a digital brochure. A focused site built to rank locally, load fast, and move visitors toward a call or form submission. Bilingual ready where it matters.', es: 'No un folleto digital. Un sitio enfocado en posicionarse localmente, cargar rápido y mover a los visitantes hacia una llamada o formulario. Bilingüe donde importa.' },
-    'wyg-web-li1': { en: 'Built for speed and local search', es: 'Optimizado para velocidad y búsqueda local' },
-    'wyg-web-li2': { en: 'Bilingual ready structure', es: 'Estructura bilingüe lista' },
-    'wyg-web-li3': { en: 'Lead forms and CRM ready flow', es: 'Formularios y flujo listo para CRM' },
-    'wyg-web-li4': { en: 'Clear experience on any device', es: 'Experiencia clara en cualquier dispositivo' },
-    'wyg-app-kicker': { en: 'Custom App', es: 'App Personalizada' },
-    'wyg-app-title': { en: 'Software built around your workflow', es: 'Software construido para tu negocio' },
-    'wyg-app-sub': { en: "If your team runs on texts, spreadsheets, and tools that weren't designed for your trade, a custom app fixes that. Built around your jobs, your crew, and how work actually moves.", es: 'Si tu equipo depende de mensajes de texto, hojas de cálculo y herramientas que no son para tu industria, una app personalizada lo arregla. Construida alrededor de tus trabajos, tu equipo y cómo opera el negocio de verdad.' },
-    'wyg-app-li1': { en: 'Job tracking and dispatch boards', es: 'Seguimiento de trabajos y tableros de despacho' },
-    'wyg-app-li2': { en: 'Customer portals and estimate tools', es: 'Portales de clientes y herramientas de cotización' },
-    'wyg-app-li3': { en: 'Internal ops tools built for your process', es: 'Herramientas internas para tu proceso' },
-    'wyg-ai-title': { en: 'AI Follow Up', es: 'Seguimiento Automático' },
-    'wyg-ai-text': { en: 'Missed call text back, appointment handling, follow up sequences, and customer reactivation. The system handles it while you work.', es: 'Texto automático por llamadas perdidas, manejo de citas, secuencias de seguimiento y reactivación de clientes. El sistema lo maneja mientras tú trabajas.' },
-    'wyg-vis-title': { en: 'Local Visibility', es: 'Visibilidad Local' },
-    'wyg-vis-text': { en: 'Google Business cleanup, review requests, and the local search basics that help more people find you and pick you over whoever is next in the results.', es: 'Optimización de Google Business, solicitudes de reseñas y los fundamentos de búsqueda local que ayudan a que más personas te encuentren y te elijan.' },
-    'cta-tag': { en: 'Next Step', es: 'Siguiente Paso' },
-    'cta-title': { en: 'Better site. Better system.<br><span class="accent">More work closed.</span>', es: 'Mejor sitio. Mejor sistema.<br><span class="accent">Más trabajo cerrado.</span>' },
-    'cta-sub': { en: "Tell us what's happening. We'll look at both sides and figure out what actually needs to change.", es: 'Cuéntanos qué está pasando. Revisamos los dos lados y encontramos qué es lo que realmente necesita cambiar.' },
-    'cta-btn-primary': { en: 'Book Free Strategy Call', es: 'Reservar Llamada Estratégica' },
+    'metric-1-span': { en: 'Custom builds. No templates, no themes, no shortcuts.', es: 'Construcciones personalizadas. Sin plantillas, sin temas, sin atajos.' },
+    'metric-2-span': { en: 'Bilingual builds for brands that want to reach more people.', es: 'Construcciones bilingües para marcas que quieren llegar a más personas.' },
+    'metric-3-span': { en: 'Based in Charlotte. Working with clients remote or local.', es: 'Con sede en Charlotte. Trabajando con clientes remotos y locales.' },
+    'terminal-kicker': { en: 'Project brief', es: 'Resumen de proyecto' },
+    'bf-tag': { en: 'Who We Work With', es: 'Con Quién Trabajamos' },
+    'bf-c1-title': { en: 'Businesses that need a real web presence', es: 'Negocios que necesitan una presencia real en línea' },
+    'bf-c1-text': { en: 'Local or remote, product or service, you need a site that positions you right and works without babysitting. Something that looks like you invested in it, because you did.', es: 'Local o remoto, producto o servicio, necesitas un sitio que te posicione bien y funcione sin supervisión. Algo que parezca que invertiste en él, porque lo hiciste.' },
+    'bf-c2-title': { en: 'Creators and personal brands', es: 'Creadores y marcas personales' },
+    'bf-c2-text': { en: 'Consultants, coaches, photographers, freelancers, anyone building a career around their name deserves a site that feels as sharp as the work.', es: 'Consultores, coaches, fotógrafos, freelancers, cualquier persona que construye una carrera alrededor de su nombre merece un sitio tan bueno como su trabajo.' },
+    'bf-c3-title': { en: 'Founders and builders', es: 'Fundadores y creadores de productos' },
+    'bf-c3-text': { en: "Launching a product, testing an idea, or needing internal tools that don't exist yet. We write real code for real problems and build software around how you actually operate.", es: 'Lanzando un producto, probando una idea o necesitando herramientas internas que aún no existen. Escribimos código real para problemas reales y construimos software alrededor de cómo realmente operas.' },
+    'wyg-tag': { en: 'The Work', es: 'El Trabajo' },
+    'wyg-web-kicker': { en: 'Business Site', es: 'Sitio de Negocio' },
+    'wyg-web-title': { en: 'A site that positions you before you say a word', es: 'Un sitio que te posiciona antes de que digas una palabra' },
+    'wyg-web-sub': { en: 'Custom design, fast load, optimized for search. Built to make the right first impression, whether someone finds you through Google, a referral, or a cold scroll.', es: 'Diseño personalizado, carga rápida, optimizado para búsquedas. Construido para causar la primera impresión correcta, ya sea que alguien te encuentre en Google, por referido o navegando.' },
+    'wyg-web-li1': { en: 'Custom design, no templates', es: 'Diseño personalizado, sin plantillas' },
+    'wyg-web-li2': { en: 'Mobile-first build', es: 'Construcción mobile-first' },
+    'wyg-web-li3': { en: 'SEO foundations included', es: 'Fundamentos de SEO incluidos' },
+    'wyg-web-li4': { en: 'Bilingual ready', es: 'Listo para ser bilingüe' },
+    'wyg-app-kicker': { en: 'Personal Brand', es: 'Marca Personal' },
+    'wyg-app-title': { en: 'Built to make you look like the real thing', es: 'Construido para que te veas como lo que eres' },
+    'wyg-app-sub': { en: "Portfolio sites, personal landing pages, and professional presence for creatives, consultants, and anyone building a career around their name. Designed around your work, not a generic layout.", es: 'Sitios de portafolio, páginas de aterrizaje personales y presencia profesional para creativos, consultores y cualquier persona que construye una carrera alrededor de su nombre. Diseñado alrededor de tu trabajo, no de un layout genérico.' },
+    'wyg-app-li1': { en: 'Custom layouts for your content', es: 'Layouts personalizados para tu contenido' },
+    'wyg-app-li2': { en: 'Designed around your work', es: 'Diseñado alrededor de tu trabajo' },
+    'wyg-app-li3': { en: 'Fast and clean on any device', es: 'Rápido y limpio en cualquier dispositivo' },
+    'wyg-app-li4': { en: 'Launch-ready setup included', es: 'Configuración lista para lanzar' },
+    'wyg-ai-title': { en: 'Custom App Development', es: 'Desarrollo de App Personalizada' },
+    'wyg-ai-text': { en: "When a site isn't enough. Internal tools, customer portals, booking systems, dispatch boards. Built around what you actually need, not what a SaaS platform assumes you need.", es: 'Cuando un sitio no es suficiente. Herramientas internas, portales de clientes, sistemas de reservas, tableros de despacho. Construido alrededor de lo que realmente necesitas, no de lo que una plataforma SaaS asume que necesitas.' },
+    'wyg-vis-title': { en: 'Local Business Solutions', es: 'Soluciones para Negocios Locales' },
+    'wyg-vis-text': { en: 'For service businesses in Charlotte and beyond: text back, bilingual follow up, review automation, and the local search basics that actually move the needle.', es: 'Para negocios de servicios en Charlotte y más allá: texto automático, seguimiento bilingüe, automatización de reseñas y los fundamentos de búsqueda local que realmente marcan la diferencia.' },
+    'cta-tag': { en: "Let's Build", es: 'Construyamos' },
+    'cta-title': { en: 'Have something in mind?<br><span class="accent">Let\'s figure out what it should look like.</span>', es: '¿Tienes algo en mente?<br><span class="accent">Descubramos cómo debería verse.</span>' },
+    'cta-sub': { en: "You don't need to have it all figured out. Tell me what you're building, what's not working, or what you wish existed. We'll go from there.", es: 'No necesitas tenerlo todo claro. Dime qué estás construyendo, qué no está funcionando o qué desearías que existiera. De ahí partimos.' },
+    'cta-btn-primary': { en: 'Start a Project', es: 'Iniciar un Proyecto' },
     'cta-btn-secondary': { en: 'See Example Work', es: 'Ver Trabajo de Ejemplo' }
   },
   systems: {
@@ -69,7 +71,7 @@ window.ED_TRANS = {
       es: 'El software genérico no fue diseñado para cómo funciona tu empresa. Construimos apps personalizadas, automatización y sistemas de seguimiento alrededor de tu flujo de trabajo específico, para que dejes de adaptarte a tus herramientas y empieces a operar con más eficiencia.'
     },
     'hero-btn-primary': { en: 'Talk About Your Business', es: 'Hablar de Tu Negocio' },
-    'hero-btn-secondary': { en: 'See the System', es: 'Ver el Sistema' },
+    'hero-btn-secondary': { en: 'Explore Services', es: 'Explorar Servicios' },
     'prob-tag': { en: 'The Problem', es: 'El Problema' },
     'chaos-header': { en: 'Without a system in place', es: 'Sin un sistema en funcionamiento' },
     'chaos-r1-title': { en: 'Calls with no answer', es: 'Llamadas sin respuesta' },
@@ -141,7 +143,7 @@ window.ED_TRANS = {
     },
     'hero-sub': { en: "We keep the client list focused on purpose. Here's what the work actually looks like.", es: 'Mantenemos la lista de clientes enfocada a propósito. Así es como se ve el trabajo en realidad.' },
     'hero-btn-primary': { en: 'Start a Project', es: 'Iniciar un Proyecto' },
-    'hero-btn-secondary': { en: 'See the System', es: 'Ver el Sistema' },
+    'hero-btn-secondary': { en: 'Explore Services', es: 'Explorar Servicios' },
     'work-tag': { en: 'Our Work', es: 'Nuestro Trabajo' },
     'work-kicker': { en: 'Example System', es: 'Sistema de Ejemplo' },
     'work-title': { en: 'Charlotte auto repair setup', es: 'Sistema para taller de autos en Charlotte' },
@@ -175,7 +177,7 @@ window.ED_TRANS = {
     },
     'hero-sub': { en: 'I spent 15 years inside corporate operations. Not in marketing, but actually running systems, managing pipelines, and watching businesses lose money at the handoffs. I built Espino Digital to bring that same thinking to local service businesses.', es: 'Pasé 15 años dentro de operaciones corporativas. No en marketing, sino ejecutando sistemas, gestionando procesos y viendo cómo los negocios perdían dinero en los puntos de transición. Construí Espino Digital para llevar ese mismo enfoque a los negocios locales de servicios.' },
     'hero-btn-primary': { en: 'Book a Free Call', es: 'Reservar Llamada Gratis' },
-    'hero-btn-secondary': { en: 'See the System', es: 'Ver el Sistema' },
+    'hero-btn-secondary': { en: 'Explore Services', es: 'Explorar Servicios' },
     'about-tag': { en: 'About', es: 'Acerca de' },
     'about-title': {
       en: "We're from here.<br><span class=\"accent\">We get it.</span>",
@@ -213,7 +215,7 @@ window.ED_TRANS = {
       es: 'Cuéntame qué está<br><span class="accent">pasando.</span>'
     },
     'hero-sub': { en: "No pitch deck. Just a direct conversation about your site, your calls, and your follow up. If there's something we can do about it, I'll tell you what that looks like.", es: 'Sin presentaciones de ventas. Solo una conversación directa sobre tu sitio, tus llamadas y tu seguimiento. Si hay algo que podemos hacer al respecto, te digo cómo se vería.' },
-    'hero-btn-secondary': { en: 'See the System', es: 'Ver el Sistema' },
+    'hero-btn-secondary': { en: 'Explore Services', es: 'Explorar Servicios' },
     'contact-tag': { en: 'Contact', es: 'Contacto' },
     'contact-title': {
       en: "Let's talk about<br><span class=\"accent\">your business.</span>",
