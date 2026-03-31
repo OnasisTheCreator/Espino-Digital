@@ -36,22 +36,26 @@ nav{
   padding:20px 60px;
   padding-top:calc(20px + env(safe-area-inset-top, 0px));
   display:flex; align-items:center; justify-content:space-between;
+  gap:24px;
   background:rgba(5,5,8,.82);
   backdrop-filter: blur(20px);
   border-bottom:1px solid var(--border);
 }
 .nav-logo{
   font-family:'Syne',sans-serif;font-weight:800;font-size:20px;
-  letter-spacing:-.03em;text-decoration:none;
+  letter-spacing:-.03em;text-decoration:none;flex-shrink:0;
 }
 .nav-logo span{
   background: linear-gradient(135deg,var(--cyan) 0%,var(--accent2) 100%);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
-.nav-links{display:flex;gap:30px;align-items:center;flex-wrap:wrap}
+.nav-links{
+  display:flex;gap:22px;align-items:center;
+  flex-wrap:nowrap;flex:1;justify-content:center;
+}
 .nav-link{
   font-size:13px;font-weight:400;letter-spacing:.04em;color:var(--muted);
-  text-decoration:none;transition:color .2s;
+  text-decoration:none;transition:color .2s;white-space:nowrap;
 }
 .nav-link:hover,.nav-link.active{color:var(--white)}
 .nav-cta{
@@ -254,6 +258,11 @@ footer{
 }
 .footer-link:hover{color:var(--cyan)}
 .footer-meta{font-family:'Space Mono',monospace;font-size:11px;color:rgba(242,242,248,.28)}
+@media (max-width:1200px) and (min-width:981px){
+  nav{padding-left:32px;padding-right:32px;gap:16px}
+  .nav-links{gap:16px}
+  .nav-cta{padding:9px 16px;font-size:11px}
+}
 @media (max-width: 980px){
   nav,.page-hero,.section,.cta-band,footer{padding-left:26px;padding-right:26px}
   nav{padding-top:calc(14px + env(safe-area-inset-top, 0px));padding-bottom:14px}
@@ -1017,8 +1026,8 @@ a.cdi-value:hover{color:var(--cyan)}
 /* ═══════════════════════════════════════════
    NAV DROPDOWN
    ═══════════════════════════════════════════ */
-.nav-dropdown-wrap{position:relative}
-.nav-dropdown-trigger{display:flex;align-items:center;gap:5px}
+.nav-dropdown-wrap{position:relative;display:flex;align-items:center}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;white-space:nowrap}
 .nav-chevron{
   font-size:9px;opacity:.55;line-height:1;margin-top:1px;
   transition:transform .2s ease;display:inline-block;
