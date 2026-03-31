@@ -1,18 +1,18 @@
 window.ED_TRANS = {
   shared: {
     eyebrow: {
-      en: 'Custom Web Studio · Charlotte, NC · Remote-Friendly',
-      es: 'Estudio Web Personalizado · Charlotte, NC · Clientes en Todo el Mundo'
+      en: 'Espino Digital · Premium Web &amp; App Dev',
+      es: 'Espino Digital · Desarrollo Web &amp; Apps Premium'
     }
   },
   home: {
     'hero-title': {
-      en: 'We write every line of code<br><span class="accent">from scratch. No templates.</span>',
-      es: 'Escribimos cada línea de código<br><span class="accent">desde cero. Sin plantillas.</span>'
+      en: 'Break out of<br><span class="accent">the template box.</span>',
+      es: 'Rompe con<br><span class="accent">las plantillas.</span>'
     },
     'hero-sub': {
-      en: 'If your business has outgrown Wix or Squarespace, this is where you land next. Custom websites and apps built around what you actually need, not what a page builder allows.',
-      es: 'Si tu negocio ya superó Wix o Squarespace, aquí es donde sigues. Sitios web y apps personalizados construidos alrededor de lo que realmente necesitas.'
+      en: 'Stop fighting with Wix and start owning your stack. We build custom digital experiences from the first line of code to the final deployment. No &ldquo;themes,&rdquo; no bloat, just high-performance builds for brands that need more.',
+      es: 'Deja de pelear con Wix y empieza a ser dueño de tu stack. Construimos experiencias digitales personalizadas desde la primera línea de código hasta el despliegue final. Sin plantillas, sin bloat, solo builds de alto rendimiento para marcas que necesitan más.'
     },
     'hero-btn-primary': { en: 'Start a Project', es: 'Iniciar un Proyecto' },
     'hero-btn-secondary': { en: 'See the Work', es: 'Ver el Trabajo' },
