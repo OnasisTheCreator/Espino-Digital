@@ -454,6 +454,70 @@ nav.scrolled{
   animation-delay:4.1s;
 }
 
+/* --- Terminal retro scene --- */
+.term-scene{
+  display:flex;align-items:center;gap:10px;
+  margin-top:20px;padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.07);
+  height:28px;
+}
+.term-runway{
+  flex:1;position:relative;height:100%;display:flex;align-items:center;
+}
+.term-runway::before{
+  content:'';position:absolute;left:0;right:0;top:50%;height:1px;
+  transform:translateY(-50%);
+  background:repeating-linear-gradient(
+    90deg,
+    rgba(0,255,204,.15) 0,rgba(0,255,204,.15) 5px,
+    transparent 5px,transparent 9px
+  );
+}
+.term-pulse{
+  position:absolute;left:0;top:50%;
+  width:6px;height:6px;margin-top:-3px;
+  background:var(--cyan);border-radius:0;
+  box-shadow:0 0 8px rgba(0,255,204,.9),0 0 14px rgba(0,255,204,.5);
+  animation:term-pulse-run 5s linear infinite;
+}
+@keyframes term-pulse-run{
+  0%         {left:0;opacity:1}
+  63%        {left:calc(100% - 6px);opacity:1}
+  64%        {left:calc(100% - 6px);opacity:0}
+  65%,88%    {left:0;opacity:0}
+  89%        {left:0;opacity:1}
+  100%       {left:0;opacity:1}
+}
+.term-sign{
+  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;
+  color:rgba(0,255,204,.22);border:1px solid rgba(0,255,204,.1);
+  border-radius:4px;padding:5px 10px;
+  white-space:nowrap;display:flex;align-items:center;flex-shrink:0;
+  animation:term-sign-glow 5s linear infinite;
+}
+.ts-led{
+  display:inline-block;width:5px;height:5px;
+  border-radius:0;margin-left:7px;
+  background:rgba(255,90,90,.38);
+  animation:ts-led-on 5s linear infinite;
+}
+@keyframes ts-led-on{
+  0%,61%    {background:rgba(255,90,90,.38);box-shadow:none}
+  66%,83%   {background:rgba(0,255,204,.95);box-shadow:0 0 6px rgba(0,255,204,.8)}
+  90%,100%  {background:rgba(255,90,90,.38);box-shadow:none}
+}
+@keyframes term-sign-glow{
+  0%,61%    {color:rgba(0,255,204,.22);border-color:rgba(0,255,204,.1);text-shadow:none;box-shadow:none}
+  66%,83%   {color:rgba(0,255,204,.95);border-color:rgba(0,255,204,.45);
+             text-shadow:0 0 8px rgba(0,255,204,.6),0 0 18px rgba(155,107,255,.35);
+             box-shadow:0 0 14px rgba(0,255,204,.18),inset 0 0 8px rgba(0,255,204,.05)}
+  90%,100%  {color:rgba(0,255,204,.22);border-color:rgba(0,255,204,.1);text-shadow:none;box-shadow:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .term-pulse{animation:none;opacity:0}
+  .term-sign,.ts-led{animation:none}
+}
+
 /* --- Footer top glow --- */
 footer{box-shadow:inset 0 1px 0 rgba(0,255,204,.08),0 -1px 30px rgba(0,255,204,.04)}
 
