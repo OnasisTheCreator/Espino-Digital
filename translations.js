@@ -11,7 +11,7 @@ window.ED_TRANS = {
       es: 'Rompe con<br><span class="accent">las plantillas.</span>'
     },
     'hero-sub': {
-      en: 'Stop fighting with Wix and start owning your stack. We build custom digital experiences from the first line of code to the final deployment. No &ldquo;themes,&rdquo; no bloat, just high-performance builds for brands that need more.',
+      en: 'Stop fighting with Wix and start owning your stack. We build custom digital experiences from the first line of code to the final deployment. No &ldquo;themes,&rdquo; no bloat, just high performance builds for brands that need more.',
       es: 'Deja de pelear con Wix y empieza a ser dueño de tu stack. Construimos experiencias digitales personalizadas desde la primera línea de código hasta el despliegue final. Sin plantillas, sin bloat, solo builds de alto rendimiento para marcas que necesitan más.'
     },
     'hero-btn-primary': { en: 'Start a Project', es: 'Iniciar un Proyecto' },

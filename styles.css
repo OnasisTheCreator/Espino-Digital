@@ -1041,7 +1041,7 @@ a.cdi-value:hover{color:var(--cyan)}
   border:1px solid var(--border);
   border-radius:12px;padding:8px;min-width:170px;
   opacity:0;pointer-events:none;
-  transition:opacity .18s ease,transform .18s ease;
+  transition:opacity .18s ease .35s,transform .18s ease .35s;
   z-index:600;
 }
 .nav-dropdown-menu::before{
@@ -1052,6 +1052,7 @@ a.cdi-value:hover{color:var(--cyan)}
 .nav-dropdown-wrap:hover .nav-dropdown-menu{
   opacity:1;pointer-events:all;
   transform:translateX(-50%) translateY(0);
+  transition:opacity .18s ease,transform .18s ease;
 }
 .nav-dropdown-item{
   display:block;padding:10px 14px;
