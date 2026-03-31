@@ -6,6 +6,7 @@
 <title>About Espino Digital | Charlotte Web and App Development</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="translations.js"></script>
 </head>
 <body class="page-about">
 <nav>
@@ -16,6 +17,7 @@
 <a href="/about" class="nav-link active">About</a>
 <a href="/contact" class="nav-link">Contact</a></div>
   <a href="/contact" class="nav-cta">Book a Free Call →</a>
+  <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
   <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -32,36 +34,36 @@
   <div class="hero-orb hero-orb-3"></div>
   <div class="hero-scan"></div>
   <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span> Charlotte, NC · Bilingual Growth Systems</div>
-    <h1 class="hero-title">Local, bilingual,<br><span class="accent">and built to solve real leaks.</span></h1>
-    <p class="hero-sub">I spent 15 years inside corporate operations. Not in marketing, but actually running systems, managing pipelines, and watching businesses lose money at the handoffs. I built Espino Digital to bring that same thinking to local service businesses.</p>
+    <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Websites · Apps · Automation · Bilingual</span></div>
+    <h1 class="hero-title" data-i18n="hero-title">Local, bilingual,<br><span class="accent">and built to solve real leaks.</span></h1>
+    <p class="hero-sub" data-i18n="hero-sub">I spent 15 years inside corporate operations. Not in marketing, but actually running systems, managing pipelines, and watching businesses lose money at the handoffs. I built Espino Digital to bring that same thinking to local service businesses.</p>
     <div class="hero-actions">
-      <a href="/contact" class="btn-primary">Book a Free Call</a>
-      <a href="/systems" class="btn-secondary">See the System</a>
+      <a href="/contact" class="btn-primary" data-i18n="hero-btn-primary">Book a Free Call</a>
+      <a href="/systems" class="btn-secondary" data-i18n="hero-btn-secondary">See the System</a>
     </div>
   </div>
 </header>
 
 <section class="section">
-  <div class="section-tag">About</div>
+  <div class="section-tag" data-i18n="about-tag">About</div>
   <div class="grid-2">
     <div>
-      <h2 class="section-title">We’re from here.<br><span class="accent">We get it.</span></h2>
-      <p class="section-sub">Espino Digital is a Charlotte based company built for local service businesses. The focus is simple: better follow up, a cleaner online presence, bilingual trust, and fewer jobs slipping through the cracks.</p>
-      <p class="section-sub">I keep the client list small on purpose. Fewer clients means more attention on each one and systems that actually get used, not set up and forgotten.</p>
+      <h2 class="section-title" data-i18n="about-title">We’re from here.<br><span class="accent">We get it.</span></h2>
+      <p class="section-sub" data-i18n="about-sub1">Espino Digital is a Charlotte based company built for local service businesses. The focus is simple: better follow up, a cleaner online presence, bilingual trust, and fewer jobs slipping through the cracks.</p>
+      <p class="section-sub" data-i18n="about-sub2">I keep the client list small on purpose. Fewer clients means more attention on each one and systems that actually get used, not set up and forgotten.</p>
       <div class="about-marker">
         <span class="about-marker-dot"></span>
-        <p>If we talk and it's not the right fit, I'll say so. I'd rather be honest upfront than take on work I can't do well.</p>
+        <p data-i18n="about-marker">If we talk and it’s not the right fit, I’ll say so. I’d rather be honest upfront than take on work I can’t do well.</p>
       </div>
     </div>
     <div class="card">
-      <div class="kicker">What matters here</div>
+      <div class="kicker" data-i18n="about-card-kicker">What matters here</div>
       <ul class="list">
-        <li>Charlotte and surrounding areas</li>
-        <li>Bilingual English / Spanish support</li>
-        <li>Local business focus</li>
-        <li>AI automation with real-world use</li>
-        <li>No fluff, no pressure</li>
+        <li data-i18n="about-li1">Charlotte and surrounding areas</li>
+        <li data-i18n="about-li2">Bilingual English / Spanish support</li>
+        <li data-i18n="about-li3">Local business focus</li>
+        <li data-i18n="about-li4">AI automation with real-world use</li>
+        <li data-i18n="about-li5">No fluff, no pressure</li>
       </ul>
     </div>
   </div>
@@ -70,31 +72,31 @@
 <section class="section band" style="max-width:none;">
   <div style="max-width:1280px;margin:0 auto;">
     <div class="grid-3">
-      <div class="stat-item"><h4>What we solve</h4><p>Missed calls, lost leads, weak follow up, and websites that do not help close work.</p></div>
-      <div class="stat-item"><h4>Languages</h4><p>English and Spanish, so more customers feel understood from the first interaction.</p></div>
-      <div class="stat-item"><h4>Approach</h4><p>Real conversations, clear systems, and smaller client volume so the work can stay sharp.</p></div>
+      <div class="stat-item"><h4 data-i18n="stats-h1">What we solve</h4><p data-i18n="stats-p1">Missed calls, lost leads, weak follow up, and websites that do not help close work.</p></div>
+      <div class="stat-item"><h4 data-i18n="stats-h2">Languages</h4><p data-i18n="stats-p2">English and Spanish, so more customers feel understood from the first interaction.</p></div>
+      <div class="stat-item"><h4 data-i18n="stats-h3">Approach</h4><p data-i18n="stats-p3">Real conversations, clear systems, and smaller client volume so the work can stay sharp.</p></div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-tag">Why Espino Digital</div>
+  <div class="section-tag" data-i18n="why-tag">Why Espino Digital</div>
   <div class="grid-2">
     <div class="card">
-      <h3>Not a big agency.</h3>
-      <p>I'm not a team of 40. I'm someone who knows how businesses run from the inside: operations, systems, and where deals actually die. That experience is what you're getting, not a junior account manager and a template.</p>
+      <h3 data-i18n="why-c1-title">Not a big agency.</h3>
+      <p data-i18n="why-c1-text">I’m not a team of 40. I’m someone who knows how businesses run from the inside: operations, systems, and where deals actually die. That experience is what you’re getting, not a junior account manager and a template.</p>
     </div>
     <div class="card">
-      <h3>Bilingual advantage.</h3>
-      <p>Charlotte’s Latino community is large and growing. Clear bilingual communication is not just convenient. It is a trust lever and a conversion lever.</p>
+      <h3 data-i18n="why-c2-title">Bilingual advantage.</h3>
+      <p data-i18n="why-c2-text">Charlotte’s Latino community is large and growing. Clear bilingual communication is not just convenient. It is a trust lever and a conversion lever.</p>
     </div>
   </div>
 </section>
 
 <section class="cta-band">
-  <h2 class="section-title">Real conversations.<br><span class="accent">No pressure. No fluff.</span></h2>
+  <h2 class="section-title" data-i18n="cta-title">Real conversations.<br><span class="accent">No pressure. No fluff.</span></h2>
   <div class="hero-actions" style="justify-content:center">
-    <a href="/contact" class="btn-primary">Book a Free Call</a>
+    <a href="/contact" class="btn-primary" data-i18n="cta-btn">Book a Free Call</a>
   </div>
 </section>
 
@@ -112,6 +114,7 @@
 </footer>
 <script>
 (function(){
+  ED_LANG.init();
   var nav=document.querySelector('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
   var hamburger=document.querySelector('.nav-hamburger');

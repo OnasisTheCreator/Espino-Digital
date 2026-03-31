@@ -6,6 +6,7 @@
 <title>Our Work: Websites, Apps, and Systems | Espino Digital</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="translations.js"></script>
 </head>
 <body class="page-work">
 <nav>
@@ -16,6 +17,7 @@
 <a href="/about" class="nav-link">About</a>
 <a href="/contact" class="nav-link">Contact</a></div>
   <a href="/contact" class="nav-cta">Start a Project →</a>
+  <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
   <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -32,28 +34,28 @@
   <div class="hero-orb hero-orb-3"></div>
   <div class="hero-scan"></div>
   <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span> Charlotte, NC · Bilingual Growth Systems</div>
-    <h1 class="hero-title">See what we<br><span class="accent">build.</span></h1>
-    <p class="hero-sub">We keep the client list focused on purpose. Here's what the work actually looks like.</p>
+    <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Websites · Apps · Automation · Bilingual</span></div>
+    <h1 class="hero-title" data-i18n="hero-title">See what we<br><span class="accent">build.</span></h1>
+    <p class="hero-sub" data-i18n="hero-sub">We keep the client list focused on purpose. Here's what the work actually looks like.</p>
     <div class="hero-actions">
-      <a href="/contact" class="btn-primary">Start a Project</a>
-      <a href="/systems" class="btn-secondary">See the System</a>
+      <a href="/contact" class="btn-primary" data-i18n="hero-btn-primary">Start a Project</a>
+      <a href="/systems" class="btn-secondary" data-i18n="hero-btn-secondary">See the System</a>
     </div>
   </div>
 </header>
 
 <section class="section">
-  <div class="section-tag">Our Work</div>
+  <div class="section-tag" data-i18n="work-tag">Our Work</div>
   <div class="grid-2">
     <div class="card">
-      <div class="kicker">Example System</div>
-      <h3>Charlotte auto repair setup</h3>
-      <p>An auto repair shop in Charlotte was missing over a dozen calls a week with no follow up in place. We built a text back system, a bilingual response flow, and automated review requests after every job. This is what the full setup looks like.</p>
+      <div class="kicker" data-i18n="work-kicker">Example System</div>
+      <h3 data-i18n="work-title">Charlotte auto repair setup</h3>
+      <p data-i18n="work-text">An auto repair shop in Charlotte was missing over a dozen calls a week with no follow up in place. We built a text back system, a bilingual response flow, and automated review requests after every job. This is what the full setup looks like.</p>
       <ul class="list">
-        <li>Homepage built to get calls</li>
-        <li>Immediate text back for missed calls</li>
-        <li>Review request flow after service</li>
-        <li>Return-customer reminders later on</li>
+        <li data-i18n="work-li1">Homepage built to get calls</li>
+        <li data-i18n="work-li2">Immediate text back for missed calls</li>
+        <li data-i18n="work-li3">Review request flow after service</li>
+        <li data-i18n="work-li4">Return-customer reminders later on</li>
       </ul>
     </div>
     <div class="card mock">
@@ -74,21 +76,21 @@
 
 <section class="section band" style="max-width:none;">
   <div style="max-width:1280px;margin:0 auto;">
-    <div class="section-tag">Flow</div>
+    <div class="section-tag" data-i18n="flow-tag">Flow</div>
     <div class="grid-3">
-      <div class="flow-item"><h4>Customer calls, shop is busy</h4><p>The call is missed, but the system takes over instead of letting the lead disappear.</p></div>
-      <div class="flow-item"><h4>Text-back starts the conversation</h4><p>The customer gets a fast reply, in English or Spanish, with the next step.</p></div>
-      <div class="flow-item"><h4>Booking and review loop</h4><p>Appointment gets set, service happens, review request goes out, and reactivation comes later.</p></div>
+      <div class="flow-item"><h4 data-i18n="flow-1-title">Customer calls, shop is busy</h4><p data-i18n="flow-1-text">The call is missed, but the system takes over instead of letting the lead disappear.</p></div>
+      <div class="flow-item"><h4 data-i18n="flow-2-title">Text back starts the conversation</h4><p data-i18n="flow-2-text">The customer gets a fast reply, in English or Spanish, with the next step.</p></div>
+      <div class="flow-item"><h4 data-i18n="flow-3-title">Booking and review loop</h4><p data-i18n="flow-3-text">Appointment gets set, service happens, review request goes out, and reactivation comes later.</p></div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-tag">Custom App Demo</div>
+  <div class="section-tag" data-i18n="demo-tag">Custom App Demo</div>
   <div class="grid-2" style="align-items:end;margin-bottom:10px">
     <div>
       <h2 class="section-title">This is what custom<br><span class="accent">operations software looks like.</span></h2>
-      <p class="section-sub">Most businesses run operations on a patchwork of emails, texts, and spreadsheets that were never designed to work together. This is a real custom internal tool built for a trucking operation. It shows what we can do when a business needs software that fits the actual workflow, not a SaaS platform built for someone else.</p>
+      <p class="section-sub" data-i18n="demo-intro">Most businesses run operations on a patchwork of emails, texts, and spreadsheets that were never designed to work together. This is a real custom internal tool built for a trucking operation. It shows what we can do when the software is organized around how a business actually moves, pulling data from multiple sources into one place.</p>
     </div>
     <div class="card" style="align-self:start">
       <div class="kicker">What this proves</div>
@@ -190,9 +192,9 @@
 
   <div class="grid-2" style="margin-top:60px;align-items:start">
     <div>
-      <h3 style="font-family:'Syne',sans-serif;font-size:28px;letter-spacing:-.02em;margin-bottom:16px">Built around how the business actually runs</h3>
-      <p style="color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:16px">This tool doesn't try to be everything. It handles exactly what a trucking operation needs: pulling load offers from Gmail, filtering opportunities by lane and rate, tracking which brokers are worth chasing, and keeping the pipeline visible without a spreadsheet.</p>
-      <p style="color:var(--muted);font-size:15px;line-height:1.75">That's what custom software should do: organize fragmented workflow into one place, surface what matters, and get out of the way.</p>
+      <h3 style="font-family:'Syne',sans-serif;font-size:28px;letter-spacing:-.02em;margin-bottom:16px" data-i18n="demo-desc-title">Built around how the business actually runs</h3>
+      <p style="color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:16px" data-i18n="demo-desc-p1">This tool doesn't try to be everything. It handles exactly what a trucking operation needs: pulling load offers from Gmail, filtering opportunities by lane and rate, tracking which brokers are worth chasing, and keeping the pipeline visible without a spreadsheet.</p>
+      <p style="color:var(--muted);font-size:15px;line-height:1.75" data-i18n="demo-desc-p2">That's what custom software should do: organize fragmented workflow into one place, surface what matters, and get out of the way.</p>
     </div>
     <div>
       <div class="card" style="margin-bottom:14px">
@@ -223,9 +225,9 @@
 </section>
 
 <section class="cta-band">
-  <h2 class="section-title">Built to help people<br><span class="accent">find you and choose you faster.</span></h2>
+  <h2 class="section-title" data-i18n="cta-title">Built to help people<br><span class="accent">find you and choose you faster.</span></h2>
   <div class="hero-actions" style="justify-content:center">
-    <a href="/contact" class="btn-primary">Start a Project</a>
+    <a href="/contact" class="btn-primary" data-i18n="cta-btn">Start a Project</a>
   </div>
 </section>
 
@@ -243,6 +245,7 @@
 </footer>
 <script>
 (function(){
+  ED_LANG.init();
   var nav=document.querySelector('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
   var hamburger=document.querySelector('.nav-hamburger');

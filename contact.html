@@ -6,6 +6,7 @@
 <title>Get in Touch | Espino Digital</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="translations.js"></script>
 </head>
 <body class="page-contact">
 <nav>
@@ -16,6 +17,7 @@
 <a href="/about" class="nav-link">About</a>
 <a href="/contact" class="nav-link active">Contact</a></div>
   <a href="tel:9804756920" class="nav-cta">Call Now →</a>
+  <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
   <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -32,53 +34,53 @@
   <div class="hero-orb hero-orb-3"></div>
   <div class="hero-scan"></div>
   <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span> Charlotte, NC · Bilingual Growth Systems</div>
-    <h1 class="hero-title">Tell me what's<br><span class="accent">going on.</span></h1>
-    <p class="hero-sub">No pitch deck. Just a direct conversation about your site, your calls, and your follow up. If there's something we can do about it, I'll tell you what that looks like.</p>
+    <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Websites · Apps · Automation · Bilingual</span></div>
+    <h1 class="hero-title" data-i18n="hero-title">Tell me what's<br><span class="accent">going on.</span></h1>
+    <p class="hero-sub" data-i18n="hero-sub">No pitch deck. Just a direct conversation about your site, your calls, and your follow up. If there's something we can do about it, I'll tell you what that looks like.</p>
     <div class="hero-actions">
       <a href="tel:9804756920" class="btn-primary">Call Now</a>
-      <a href="/systems" class="btn-secondary">See the System</a>
+      <a href="/systems" class="btn-secondary" data-i18n="hero-btn-secondary">See the System</a>
     </div>
   </div>
 </header>
 
 <section class="section">
-  <div class="section-tag">Contact</div>
+  <div class="section-tag" data-i18n="contact-tag">Contact</div>
   <div class="grid-2">
     <div>
-      <h2 class="section-title">Let’s talk about<br><span class="accent">your business.</span></h2>
-      <p class="section-sub">Fill out the form or reach out directly. Either way, the first conversation is just a conversation. No pressure, no package pitch.</p>
+      <h2 class="section-title" data-i18n="contact-title">Let’s talk about<br><span class="accent">your business.</span></h2>
+      <p class="section-sub" data-i18n="contact-sub">Fill out the form or reach out directly. Either way, the first conversation is just a conversation. No pressure, no package pitch.</p>
       <div class="contact-direct">
         <div class="contact-direct-item">
-          <span class="cdi-label">Phone</span>
+          <span class="cdi-label" data-i18n="cdi-phone-label">Phone</span>
           <a href="tel:9804756920" class="cdi-value">(980) 475-6920</a>
         </div>
         <div class="contact-direct-item">
-          <span class="cdi-label">Email</span>
+          <span class="cdi-label" data-i18n="cdi-email-label">Email</span>
           <a href="mailto:hello@espinodigital.com" class="cdi-value">hello@espinodigital.com</a>
         </div>
         <div class="contact-direct-item">
-          <span class="cdi-label">Location</span>
+          <span class="cdi-label" data-i18n="cdi-loc-label">Location</span>
           <span class="cdi-value" style="font-size:16px;cursor:default">Charlotte, NC</span>
         </div>
         <div class="contact-direct-item">
-          <span class="cdi-label">What to expect</span>
-          <p style="font-size:14px;color:var(--muted);line-height:1.65;margin-top:4px">I look at your site, your call volume, your reviews, and how your follow up works right now. Then I tell you what I see. If it makes sense to move forward, you’ll know exactly what that looks like.</p>
+          <span class="cdi-label" data-i18n="cdi-expect-label">What to expect</span>
+          <p style="font-size:14px;color:var(--muted);line-height:1.65;margin-top:4px" data-i18n="cdi-expect-text">I look at your site, your call volume, your reviews, and how your follow up works right now. Then I tell you what I see. If it makes sense to move forward, you’ll know exactly what that looks like.</p>
         </div>
       </div>
     </div>
     <div class="form-wrap">
-      <div class="kicker">Get In Touch</div>
+      <div class="kicker" data-i18n="form-kicker">Get In Touch</div>
       <form action="https://formspree.io/f/mnjodwzd" method="POST">
         <div class="form-row">
-          <div><label>Your Name</label><input type="text" name="name" placeholder="Juan García" required></div>
-          <div><label>Business Name</label><input type="text" name="business" placeholder="García Auto Repair" required></div>
+          <div><label data-i18n="form-name-label">Your Name</label><input type="text" name="name" placeholder="Juan García" required></div>
+          <div><label data-i18n="form-biz-label">Business Name</label><input type="text" name="business" placeholder="García Auto Repair" required></div>
         </div>
-        <div><label>Phone Number</label><input type="tel" name="phone" placeholder="(704) 555-0123" required></div>
-        <div><label>Email Address</label><input type="email" name="email" placeholder="you@yourbusiness.com" required></div>
-        <div><label>Type of Business</label>
+        <div><label data-i18n="form-phone-label">Phone Number</label><input type="tel" name="phone" placeholder="(704) 555-0123" required></div>
+        <div><label data-i18n="form-email-label">Email Address</label><input type="email" name="email" placeholder="you@yourbusiness.com" required></div>
+        <div><label data-i18n="form-type-label">Type of Business</label>
           <select name="industry" required>
-            <option value="" disabled selected>Select your type of business</option>
+            <option value="" disabled selected data-i18n="form-select-ph">Select your type of business</option>
             <option>Auto Repair</option>
             <option>Cleaning Service</option>
             <option>Electrician</option>
@@ -98,16 +100,16 @@
             <option>Other Local Business</option>
           </select>
         </div>
-        <div><label>What’s the biggest bottleneck right now?</label><textarea name="details" placeholder="Missed calls, site that doesn't convert, no follow up, low reviews, not showing up on Google..."></textarea></div>
-        <button type="submit" class="btn-primary" style="border:none;cursor:pointer">Send My Info</button>
+        <div><label data-i18n="form-msg-label">What’s the biggest bottleneck right now?</label><textarea name="details" placeholder="Missed calls, site that doesn’t convert, no follow up, low reviews, not showing up on Google..."></textarea></div>
+        <button type="submit" class="btn-primary" style="border:none;cursor:pointer" data-i18n="form-submit">Send My Info</button>
       </form>
     </div>
   </div>
 </section>
 
 <section class="cta-band">
-  <h2 class="section-title">Prefer to just<br><span class="accent">call or email?</span></h2>
-  <p class="section-sub" style="margin-left:auto;margin-right:auto">Either works. We’ll talk through what’s happening and figure out what makes sense from there.</p>
+  <h2 class="section-title" data-i18n="cta-title">Prefer to just<br><span class="accent">call or email?</span></h2>
+  <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="cta-sub">Either works. We’ll talk through what’s happening and figure out what makes sense from there.</p>
   <div class="hero-actions" style="justify-content:center">
     <a href="tel:9804756920" class="btn-primary">Call (980) 475-6920</a>
     <a href="mailto:hello@espinodigital.com" class="btn-secondary">hello@espinodigital.com</a>
@@ -128,6 +130,7 @@
 </footer>
 <script>
 (function(){
+  ED_LANG.init();
   var nav=document.querySelector('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
   var hamburger=document.querySelector('.nav-hamburger');

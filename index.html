@@ -17,6 +17,7 @@
 <meta name="twitter:description" content="Espino Digital builds custom websites and apps for local service businesses. Sites that rank and convert. Software built around how your operation runs. Charlotte, NC." />
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="translations.js"></script>
 </head>
 <body class="page-home">
 <nav>
@@ -27,6 +28,7 @@
 <a href="/about" class="nav-link">About</a>
 <a href="/contact" class="nav-link">Contact</a></div>
   <a href="/contact" class="nav-cta">Book a Call →</a>
+  <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
   <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -43,26 +45,26 @@
   <div class="hero-orb hero-orb-3"></div>
   <div class="hero-scan"></div>
   <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span> Charlotte, NC · Bilingual Growth Systems</div>
-    <h1 class="hero-title">Websites that bring calls in.<br><span class="accent">Tools to help you close them.</span></h1>
-    <p class="hero-sub">We build sites that rank, load fast, and get people to call. And for businesses that need more, we build the custom software around how the operation actually runs. Some clients need one. Some need both.</p>
+    <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Websites · Apps · Automation · Bilingual</span></div>
+    <h1 class="hero-title" data-i18n="hero-title">Websites that bring calls in.<br><span class="accent">Tools to help you close them.</span></h1>
+    <p class="hero-sub" data-i18n="hero-sub">We build sites that rank, load fast, and get people to call. And for businesses that need more, we build the custom software around how the operation actually runs. Some clients need one. Some need both.</p>
     <div class="hero-actions">
-      <a href="/contact" class="btn-primary">Book a Call</a>
-      <a href="/systems" class="btn-secondary">See the System</a>
+      <a href="/contact" class="btn-primary" data-i18n="hero-btn-primary">Book a Call</a>
+      <a href="/systems" class="btn-secondary" data-i18n="hero-btn-secondary">See the System</a>
     </div>
   </div>
 </header>
 
 <section class="section">
-  <div class="section-tag">The Opportunity</div>
+  <div class="section-tag" data-i18n="opp-tag">The Opportunity</div>
   <div class="grid-2">
     <div>
-      <h2 class="section-title">A site that works.<br><span class="accent">Software that fits.</span></h2>
-      <p class="section-sub">Most local businesses have a site that doesn't get calls and tools that don't talk to each other. We fix both. A site that actually brings people in, and the systems that keep those leads from going cold.</p>
+      <h2 class="section-title" data-i18n="opp-title">A site that works.<br><span class="accent">Software that fits.</span></h2>
+      <p class="section-sub" data-i18n="opp-sub">Most local businesses have a site that doesn't get calls and tools that don't talk to each other. We fix both. A site that actually brings people in, and the systems that keep those leads from going cold.</p>
       <div class="metric-grid">
-        <div class="metric"><strong>~40%</strong><span>of calls to local service businesses can go unanswered.</span></div>
-        <div class="metric"><strong>5 min</strong><span>target response speed with automated text back and follow up.</span></div>
-        <div class="metric"><strong>EN + ES</strong><span>Bilingual experiences that build trust with more of Charlotte.</span></div>
+        <div class="metric"><strong>~40%</strong><span data-i18n="metric-1-span">of calls to local service businesses can go unanswered.</span></div>
+        <div class="metric"><strong>5 min</strong><span data-i18n="metric-2-span">target response speed with automated text back and follow up.</span></div>
+        <div class="metric"><strong>EN + ES</strong><span data-i18n="metric-3-span">Bilingual experiences that build trust with more of Charlotte.</span></div>
       </div>
     </div>
     <div class="card mock">
@@ -82,63 +84,63 @@
 
 <section class="section band" style="max-width:none;">
   <div style="max-width:1280px;margin:0 auto;">
-    <div class="section-tag">Built For</div>
+    <div class="section-tag" data-i18n="bf-tag">Built For</div>
     <div class="grid-3">
-      <div class="card"><div class="kicker">01</div><h3>Any business that runs on inbound calls</h3><p>If your customers call before they book, the speed and quality of your response determines whether you get the job.</p></div>
-      <div class="card"><div class="kicker">02</div><h3>Any business that depends on local trust</h3><p>Reviews, online presence, and how you look when someone Googles you. That shapes who gets called and who gets hired.</p></div>
-      <div class="card"><div class="kicker">03</div><h3>Any business where follow up decides the job</h3><p>Most leads don't disappear. They go cold because nobody reached back out fast enough. Tighter systems fix that.</p></div>
+      <div class="card"><div class="kicker">01</div><h3 data-i18n="bf-c1-title">Any business that runs on inbound calls</h3><p data-i18n="bf-c1-text">If your customers call before they book, the speed and quality of your response determines whether you get the job.</p></div>
+      <div class="card"><div class="kicker">02</div><h3 data-i18n="bf-c2-title">Any business that depends on local trust</h3><p data-i18n="bf-c2-text">Reviews, online presence, and how you look when someone Googles you. That shapes who gets called and who gets hired.</p></div>
+      <div class="card"><div class="kicker">03</div><h3 data-i18n="bf-c3-title">Any business where follow up decides the job</h3><p data-i18n="bf-c3-text">Most leads don't disappear. They go cold because nobody reached back out fast enough. Tighter systems fix that.</p></div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-tag">What You Get</div>
+  <div class="section-tag" data-i18n="wyg-tag">What You Get</div>
   <div class="what-grid">
     <div class="card what-featured">
-      <div class="kicker">Website</div>
-      <h3>A site that gets people to call</h3>
-      <p>Not a digital brochure. A focused site built to rank locally, load fast, and move visitors toward a call or form submission. Bilingual ready where it matters.</p>
+      <div class="kicker" data-i18n="wyg-web-kicker">Website</div>
+      <h3 data-i18n="wyg-web-title">A site that gets people to call</h3>
+      <p data-i18n="wyg-web-sub">Not a digital brochure. A focused site built to rank locally, load fast, and move visitors toward a call or form submission. Bilingual ready where it matters.</p>
       <ul class="list">
-        <li>Built for speed and local search</li>
-        <li>Bilingual ready structure</li>
-        <li>Lead forms and CRM ready flow</li>
-        <li>Clear experience on any device</li>
+        <li data-i18n="wyg-web-li1">Built for speed and local search</li>
+        <li data-i18n="wyg-web-li2">Bilingual ready structure</li>
+        <li data-i18n="wyg-web-li3">Lead forms and CRM ready flow</li>
+        <li data-i18n="wyg-web-li4">Clear experience on any device</li>
       </ul>
     </div>
     <div class="card what-featured">
-      <div class="kicker">Custom App</div>
-      <h3>Software built around your workflow</h3>
-      <p>If your team runs on texts, spreadsheets, and tools that weren't designed for your trade, a custom app fixes that. Built around your jobs, your crew, and how work actually moves.</p>
+      <div class="kicker" data-i18n="wyg-app-kicker">Custom App</div>
+      <h3 data-i18n="wyg-app-title">Software built around your workflow</h3>
+      <p data-i18n="wyg-app-sub">If your team runs on texts, spreadsheets, and tools that weren't designed for your trade, a custom app fixes that. Built around your jobs, your crew, and how work actually moves.</p>
       <ul class="list">
-        <li>Job tracking and dispatch boards</li>
-        <li>Customer portals and estimate tools</li>
-        <li>Internal ops tools built for your process</li>
+        <li data-i18n="wyg-app-li1">Job tracking and dispatch boards</li>
+        <li data-i18n="wyg-app-li2">Customer portals and estimate tools</li>
+        <li data-i18n="wyg-app-li3">Internal ops tools built for your process</li>
       </ul>
     </div>
     <div class="what-panel">
       <div class="what-num">03</div>
       <div>
-        <h4>AI Follow-Up</h4>
-        <p>Missed call text back, appointment handling, follow up sequences, and customer reactivation. The system handles it while you work.</p>
+        <h4 data-i18n="wyg-ai-title">AI Follow Up</h4>
+        <p data-i18n="wyg-ai-text">Missed call text back, appointment handling, follow up sequences, and customer reactivation. The system handles it while you work.</p>
       </div>
     </div>
     <div class="what-panel">
       <div class="what-num">04</div>
       <div>
-        <h4>Local Visibility</h4>
-        <p>Google Business cleanup, review requests, and the local search basics that help more people find you and pick you over whoever is next in the results.</p>
+        <h4 data-i18n="wyg-vis-title">Local Visibility</h4>
+        <p data-i18n="wyg-vis-text">Google Business cleanup, review requests, and the local search basics that help more people find you and pick you over whoever is next in the results.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="cta-band">
-  <div class="section-tag" style="justify-content:center">Next Step</div>
-  <h2 class="section-title">Better site. Better system.<br><span class="accent">More work closed.</span></h2>
-  <p class="section-sub" style="margin-left:auto;margin-right:auto">Tell us what's happening. We'll look at both sides and figure out what actually needs to change.</p>
+  <div class="section-tag" style="justify-content:center" data-i18n="cta-tag">Next Step</div>
+  <h2 class="section-title" data-i18n="cta-title">Better site. Better system.<br><span class="accent">More work closed.</span></h2>
+  <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="cta-sub">Tell us what's happening. We'll look at both sides and figure out what actually needs to change.</p>
   <div class="hero-actions" style="justify-content:center">
-    <a href="/contact" class="btn-primary">Book Free Strategy Call</a>
-    <a href="/work" class="btn-secondary">See Example Work</a>
+    <a href="/contact" class="btn-primary" data-i18n="cta-btn-primary">Book Free Strategy Call</a>
+    <a href="/work" class="btn-secondary" data-i18n="cta-btn-secondary">See Example Work</a>
   </div>
 </section>
 
@@ -156,6 +158,7 @@
 </footer>
 <script>
 (function(){
+  ED_LANG.init();
   // Nav scroll class
   var nav=document.querySelector('nav');
   window.addEventListener('scroll',function(){

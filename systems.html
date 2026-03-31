@@ -6,6 +6,7 @@
 <title>Custom Apps and Automation Systems | Espino Digital</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="translations.js"></script>
 </head>
 <body class="page-systems">
 <nav>
@@ -16,6 +17,7 @@
 <a href="/about" class="nav-link">About</a>
 <a href="/contact" class="nav-link">Contact</a></div>
   <a href="/contact" class="nav-cta">Talk About Your Business →</a>
+  <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
   <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -32,75 +34,75 @@
   <div class="hero-orb hero-orb-3"></div>
   <div class="hero-scan"></div>
   <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span> Charlotte, NC · Bilingual Growth Systems</div>
-    <h1 class="hero-title">Built for your business.<br><span class="accent">Not someone else's.</span></h1>
-    <p class="hero-sub">Generic software wasn't designed for how your company runs. We build custom apps, automation, and follow up systems around your specific workflow, so you stop managing around your tools and start running a tighter operation.</p>
+    <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Websites · Apps · Automation · Bilingual</span></div>
+    <h1 class="hero-title" data-i18n="hero-title">Built for your business.<br><span class="accent">Not someone else's.</span></h1>
+    <p class="hero-sub" data-i18n="hero-sub">Generic software wasn't designed for how your company runs. We build custom apps, automation, and follow up systems around your specific workflow, so you stop managing around your tools and start running a tighter operation.</p>
     <div class="hero-actions">
-      <a href="/contact" class="btn-primary">Talk About Your Business</a>
-      <a href="/systems" class="btn-secondary">See the System</a>
+      <a href="/contact" class="btn-primary" data-i18n="hero-btn-primary">Talk About Your Business</a>
+      <a href="/systems" class="btn-secondary" data-i18n="hero-btn-secondary">See the System</a>
     </div>
   </div>
 </header>
 
 <section class="section">
-  <div class="section-tag">The Problem</div>
+  <div class="section-tag" data-i18n="prob-tag">The Problem</div>
   <div class="grid-2 prob-grid">
     <div class="chaos-panel">
       <div class="chaos-header">
         <span class="chaos-pulse"></span>
-        Without a system in place
+        <span data-i18n="chaos-header">Without a system in place</span>
       </div>
       <div class="chaos-row">
         <span class="ctag ctag-red">MISSED</span>
         <div class="crow-body">
-          <strong>Calls with no answer</strong>
-          <span>No text back, no follow up sent</span>
+          <strong data-i18n="chaos-r1-title">Calls with no answer</strong>
+          <span data-i18n="chaos-r1-sub">No text back, no follow up sent</span>
         </div>
-        <span class="crow-count">14 this week</span>
+        <span class="crow-count" data-i18n="chaos-r1-count">14 this week</span>
       </div>
       <div class="chaos-row">
         <span class="ctag ctag-yellow">WAITING</span>
         <div class="crow-body">
-          <strong>"Still available?"</strong>
-          <span>Customer texted 3 days ago, no reply</span>
+          <strong data-i18n="chaos-r2-title">"Still available?"</strong>
+          <span data-i18n="chaos-r2-sub">Customer texted 3 days ago, no reply</span>
         </div>
       </div>
       <div class="chaos-row">
         <span class="ctag ctag-yellow">QUOTE</span>
         <div class="crow-body">
-          <strong>Estimate sent last week</strong>
-          <span>Went quiet. Probably moved on.</span>
+          <strong data-i18n="chaos-r3-title">Estimate sent last week</strong>
+          <span data-i18n="chaos-r3-sub">Went quiet. Probably moved on.</span>
         </div>
       </div>
       <div class="chaos-row">
         <span class="ctag ctag-red">REVIEWS</span>
         <div class="crow-body">
-          <strong>3.2 stars on Google</strong>
-          <span>Top competitor has 4.8 and 200 reviews</span>
+          <strong data-i18n="chaos-r4-title">3.2 stars on Google</strong>
+          <span data-i18n="chaos-r4-sub">Top competitor has 4.8 and 200 reviews</span>
         </div>
       </div>
       <div class="chaos-row">
         <span class="ctag ctag-yellow">SEARCH</span>
         <div class="crow-body">
-          <strong>Not showing up locally</strong>
-          <span>They searched, clicked the next result</span>
+          <strong data-i18n="chaos-r5-title">Not showing up locally</strong>
+          <span data-i18n="chaos-r5-sub">They searched, clicked the next result</span>
         </div>
       </div>
       <div class="chaos-footer">
         <span class="chaos-dot-pulse"></span>
-        Work leaving. Quietly. Every week.
+        <span data-i18n="chaos-footer">Work leaving. Quietly. Every week.</span>
       </div>
     </div>
     <div class="card prob-fix-card">
-      <div class="kicker">Why this matters</div>
-      <h3>Good work doesn't matter if the lead dies first.</h3>
-      <p>Most local businesses don't lose work because they're bad at the job. They lose it because the gap between first contact and follow up is too slow, too quiet, or completely absent.</p>
-      <p>Espino Digital covers those gaps: missed call recovery, bilingual follow up, review building, and a site that actually moves people toward a call.</p>
+      <div class="kicker" data-i18n="fix-kicker">Why this matters</div>
+      <h3 data-i18n="fix-title">Good work doesn't matter if the lead dies first.</h3>
+      <p data-i18n="fix-p1">Most local businesses don't lose work because they're bad at the job. They lose it because the gap between first contact and follow up is too slow, too quiet, or completely absent.</p>
+      <p data-i18n="fix-p2">Espino Digital covers those gaps: missed call recovery, bilingual follow up, review building, and a site that actually moves people toward a call.</p>
       <div class="prob-fix-items">
-        <div class="prob-fix-item"><span class="pfi-dot"></span>Missed call text back in seconds</div>
-        <div class="prob-fix-item"><span class="pfi-dot"></span>Bilingual follow up that keeps leads warm</div>
-        <div class="prob-fix-item"><span class="pfi-dot"></span>Review requests after every job</div>
-        <div class="prob-fix-item"><span class="pfi-dot"></span>A website that helps people say yes</div>
+        <div class="prob-fix-item"><span class="pfi-dot"></span><span data-i18n="fix-item1">Missed call text back in seconds</span></div>
+        <div class="prob-fix-item"><span class="pfi-dot"></span><span data-i18n="fix-item2">Bilingual follow up that keeps leads warm</span></div>
+        <div class="prob-fix-item"><span class="pfi-dot"></span><span data-i18n="fix-item3">Review requests after every job</span></div>
+        <div class="prob-fix-item"><span class="pfi-dot"></span><span data-i18n="fix-item4">A website that helps people say yes</span></div>
       </div>
     </div>
   </div>
@@ -108,25 +110,25 @@
 
 <section class="section band" style="max-width:none;">
   <div style="max-width:1280px;margin:0 auto;">
-    <div class="section-tag">What We Do</div>
+    <div class="section-tag" data-i18n="wd-tag">What We Do</div>
     <div class="grid-3">
-      <div class="card"><div class="kicker">01 / Custom App</div><h3>Software built around your business</h3><p>A purpose-built app for your specific operation, not a generic platform with features you'll never use.</p><ul class="list"><li>Job tracking &amp; dispatch dashboards</li><li>Customer portals &amp; estimate tools</li><li>Team scheduling &amp; workflow apps</li><li>Offline-capable field tools</li></ul></div>
-      <div class="card"><div class="kicker">02 / Automation</div><h3>Never miss another customer</h3><p>When you are busy, the system responds, follows up, and keeps the conversation moving.</p><ul class="list"><li>Missed call text back</li><li>Bilingual AI chat</li><li>Appointment handling</li><li>Customer reactivation</li></ul></div>
-      <div class="card"><div class="kicker">03 / Website</div><h3>A website that actually works</h3><p>Not a brochure. A conversion tool built to get calls and qualified leads.</p><ul class="list"><li>Fast performance</li><li>Premium positioning</li><li>Lead forms + CRM-ready flow</li><li>Clear mobile experience</li></ul></div>
-      <div class="card"><div class="kicker">04 / Local Growth</div><h3>Get found. Get chosen.</h3><p>Improve how the business appears online so more searches turn into booked work.</p><ul class="list"><li>Google Business optimization</li><li>Review generation</li><li>Local SEO foundations</li><li>Monthly clarity</li></ul></div>
+      <div class="card"><div class="kicker" data-i18n="wd-c1-kicker">01 / Custom App</div><h3 data-i18n="wd-c1-title">Software built around your business</h3><p data-i18n="wd-c1-text">A purpose-built app for your specific operation, not a generic platform with features you'll never use.</p><ul class="list"><li>Job tracking &amp; dispatch dashboards</li><li>Customer portals &amp; estimate tools</li><li>Team scheduling &amp; workflow apps</li><li>Offline-capable field tools</li></ul></div>
+      <div class="card"><div class="kicker" data-i18n="wd-c2-kicker">02 / Automation</div><h3 data-i18n="wd-c2-title">Never miss another customer</h3><p data-i18n="wd-c2-text">When you are busy, the system responds, follows up, and keeps the conversation moving.</p><ul class="list"><li>Missed call text back</li><li>Bilingual AI chat</li><li>Appointment handling</li><li>Customer reactivation</li></ul></div>
+      <div class="card"><div class="kicker" data-i18n="wd-c3-kicker">03 / Website</div><h3 data-i18n="wd-c3-title">A website that actually works</h3><p data-i18n="wd-c3-text">Not a brochure. A conversion tool built to get calls and qualified leads.</p><ul class="list"><li>Fast performance</li><li>Premium positioning</li><li>Lead forms + CRM-ready flow</li><li>Clear mobile experience</li></ul></div>
+      <div class="card"><div class="kicker" data-i18n="wd-c4-kicker">04 / Local Growth</div><h3 data-i18n="wd-c4-title">Get found. Get chosen.</h3><p data-i18n="wd-c4-text">Improve how the business appears online so more searches turn into booked work.</p><ul class="list"><li>Google Business optimization</li><li>Review generation</li><li>Local SEO foundations</li><li>Monthly clarity</li></ul></div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-tag">Custom Apps</div>
+  <div class="section-tag" data-i18n="apps-tag">Custom Apps</div>
   <div class="grid-2">
     <div>
-      <h2 class="section-title">Built for the way<br><span class="accent">your business actually runs.</span></h2>
-      <p class="section-sub">Most companies are running on a mix of texts, spreadsheets, and tools that weren't designed for their trade. We replace that with something purpose-built. An app that fits your exact workflow, whether that's tracking jobs, managing crews, handling estimates, or communicating with customers.</p>
-      <p class="section-sub">No bloated platform. No features you don't need. Just the right tool for your operation, bilingual where it matters, and built to grow with you.</p>
+      <h2 class="section-title" data-i18n="apps-title">Built for the way<br><span class="accent">your business actually runs.</span></h2>
+      <p class="section-sub" data-i18n="apps-sub1">Most companies are running on a mix of texts, spreadsheets, and tools that weren't designed for their trade. We replace that with something purpose-built. An app that fits your exact workflow, whether that's tracking jobs, managing crews, handling estimates, or communicating with customers.</p>
+      <p class="section-sub" data-i18n="apps-sub2">No bloated platform. No features you don't need. Just the right tool for your operation, bilingual where it matters, and built to grow with you.</p>
       <div class="hero-actions" style="margin-top:2rem">
-        <a href="/contact" class="btn-primary">Talk About Your App</a>
+        <a href="/contact" class="btn-primary" data-i18n="apps-btn">Talk About Your App</a>
       </div>
     </div>
     <div>
@@ -138,24 +140,24 @@
 </section>
 
 <section class="section">
-  <div class="section-tag">How It Works</div>
+  <div class="section-tag" data-i18n="how-tag">How It Works</div>
   <div class="grid-3">
-    <div class="flow-item"><h4>1. Customer calls or visits site</h4><p>The lead enters through your website, Google profile, or direct call.</p></div>
-    <div class="flow-item"><h4>2. System responds fast</h4><p>If nobody picks up, text back and chat automation keep the lead warm.</p></div>
-    <div class="flow-item"><h4>3. Follow-up closes more work</h4><p>Appointments, reminders, review requests, and reactivation help create more value from every lead.</p></div>
+    <div class="flow-item"><h4 data-i18n="how-1-title">1. Customer calls or visits site</h4><p data-i18n="how-1-text">The lead enters through your website, Google profile, or direct call.</p></div>
+    <div class="flow-item"><h4 data-i18n="how-2-title">2. System responds fast</h4><p data-i18n="how-2-text">If nobody picks up, text back and chat automation keep the lead warm.</p></div>
+    <div class="flow-item"><h4 data-i18n="how-3-title">3. Follow up closes more work</h4><p data-i18n="how-3-text">Appointments, reminders, review requests, and reactivation help create more value from every lead.</p></div>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-tag">In Practice</div>
+  <div class="section-tag" data-i18n="ip-tag">In Practice</div>
   <div class="photo-grid">
     <figure class="photo-card">
       <div class="photo-wrap">
         <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=534&fit=crop&auto=format&q=80" alt="Missed call recovered via instant text-back on mobile" loading="lazy">
       </div>
       <figcaption>
-        <strong>Recover the missed call</strong>
-        <span>When the shop is busy and nobody answers, an automatic text goes out in seconds, in English or Spanish, before the customer moves to your competitor.</span>
+        <strong data-i18n="ip-fig1-title">Recover the missed call</strong>
+        <span data-i18n="ip-fig1-text">When the shop is busy and nobody answers, an automatic text goes out in seconds, in English or Spanish, before the customer moves to your competitor.</span>
       </figcaption>
     </figure>
     <figure class="photo-card">
@@ -163,8 +165,8 @@
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=534&fit=crop&auto=format&q=80" alt="Automation dashboard running follow up sequences in the background" loading="lazy">
       </div>
       <figcaption>
-        <strong>Follow up runs without you</strong>
-        <span>While you're on the job, the system is sending appointment reminders, chasing estimates, and re-engaging customers who went quiet. No manual work required.</span>
+        <strong data-i18n="ip-fig2-title">Follow up runs without you</strong>
+        <span data-i18n="ip-fig2-text">While you're on the job, the system is sending appointment reminders, chasing estimates, and re-engaging customers who went quiet. No manual work required.</span>
       </figcaption>
     </figure>
     <figure class="photo-card">
@@ -172,18 +174,18 @@
         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=534&fit=crop&auto=format&q=80" alt="Business analytics and Google reputation growth dashboard" loading="lazy">
       </div>
       <figcaption>
-        <strong>Reviews build the reputation</strong>
-        <span>After every job, a review request goes out automatically. Over time, more reviews mean a stronger Google presence and more inbound calls that don't require paid ads.</span>
+        <strong data-i18n="ip-fig3-title">Reviews build the reputation</strong>
+        <span data-i18n="ip-fig3-text">After every job, a review request goes out automatically. Over time, more reviews mean a stronger Google presence and more inbound calls that don't require paid ads.</span>
       </figcaption>
     </figure>
   </div>
 </section>
 
 <section class="cta-band">
-  <h2 class="section-title">Your business deserves<br><span class="accent">software built for it.</span></h2>
-  <p class="section-sub" style="margin-left:auto;margin-right:auto">We don't sell templates. We talk about how your operation works, identify where the friction is, and build something that actually fits, from a custom app to the systems around it.</p>
+  <h2 class="section-title" data-i18n="cta-title">Your business deserves<br><span class="accent">software built for it.</span></h2>
+  <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="cta-sub">We don't sell templates. We talk about how your operation works, identify where the friction is, and build something that actually fits, from a custom app to the systems around it.</p>
   <div class="hero-actions" style="justify-content:center">
-    <a href="/contact" class="btn-primary">Talk About Your Business</a>
+    <a href="/contact" class="btn-primary" data-i18n="cta-btn">Talk About Your Business</a>
   </div>
 </section>
 
@@ -201,6 +203,7 @@
 </footer>
 <script>
 (function(){
+  ED_LANG.init();
   var nav=document.querySelector('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
   var hamburger=document.querySelector('.nav-hamburger');
