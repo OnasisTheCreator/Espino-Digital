@@ -11,11 +11,20 @@
 <body class="page-systems">
 <nav>
   <a href="/" class="nav-logo">Espino <span>Digital</span></a>
-  <div class="nav-links"><a href="/" class="nav-link">Home</a>
-<a href="/systems" class="nav-link active">Services</a>
-<a href="/work" class="nav-link">Work</a>
-<a href="/about" class="nav-link">About</a>
-<a href="/contact" class="nav-link">Contact</a></div>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <div class="nav-dropdown-wrap">
+      <a href="/systems" class="nav-link active nav-dropdown-trigger">Services <span class="nav-chevron">▾</span></a>
+      <div class="nav-dropdown-menu">
+        <a href="/systems" class="nav-dropdown-item active">Overview</a>
+        <a href="/websites" class="nav-dropdown-item">Websites</a>
+        <a href="/apps" class="nav-dropdown-item">Custom Apps</a>
+      </div>
+    </div>
+    <a href="/work" class="nav-link">Work</a>
+    <a href="/about" class="nav-link">About</a>
+    <a href="/contact" class="nav-link">Contact</a>
+  </div>
   <a href="/contact" class="nav-cta">Talk About Your Business →</a>
   <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
   <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -23,9 +32,11 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="/">Home</a>
   <a href="/systems">Services</a>
+  <a href="/websites" class="mobile-nav-sub">Websites</a>
+  <a href="/apps" class="mobile-nav-sub">Custom Apps</a>
   <a href="/work">Work</a>
   <a href="/about">About</a>
-  <a href="/contact" class="mobile-cta">Talk About Your Business →</a>
+  <a href="/contact" class="mobile-cta">Book a Call →</a>
 </div>
 <header class="page-hero">
   <div class="hero-grid-bg"></div>
@@ -43,6 +54,24 @@
     </div>
   </div>
 </header>
+
+<section class="section">
+  <div class="section-tag">Our Services</div>
+  <div class="grid-2">
+    <a href="/websites" class="card service-hub-card">
+      <div class="kicker">01 / Web Design &amp; Development</div>
+      <h3>Websites</h3>
+      <p>Custom-built sites for businesses and creators. Business sites that bring in leads, portfolios that look like you, bilingual builds — all from scratch, no templates.</p>
+      <span class="service-hub-link">Explore Websites →</span>
+    </a>
+    <a href="/apps" class="card service-hub-card">
+      <div class="kicker">02 / App Development</div>
+      <h3>Custom Apps</h3>
+      <p>When a website isn't enough. Job trackers, customer portals, booking systems, dispatch boards, internal tools — built for how your operation actually runs.</p>
+      <span class="service-hub-link">Explore Custom Apps →</span>
+    </a>
+  </div>
+</section>
 
 <section class="section">
   <div class="section-tag" data-i18n="prob-tag">The Problem</div>

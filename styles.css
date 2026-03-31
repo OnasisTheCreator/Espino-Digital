@@ -1013,3 +1013,97 @@ a.cdi-value:hover{color:var(--cyan)}
 @media(max-width:980px){
   .what-grid{grid-template-columns:1fr}
 }
+
+/* ═══════════════════════════════════════════
+   NAV DROPDOWN
+   ═══════════════════════════════════════════ */
+.nav-dropdown-wrap{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px}
+.nav-chevron{
+  font-size:9px;opacity:.55;line-height:1;margin-top:1px;
+  transition:transform .2s ease;display:inline-block;
+}
+.nav-dropdown-wrap:hover .nav-chevron{transform:rotate(180deg)}
+.nav-dropdown-menu{
+  position:absolute;top:calc(100% + 14px);left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  background:rgba(8,11,22,.97);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--border);
+  border-radius:12px;padding:8px;min-width:170px;
+  opacity:0;pointer-events:none;
+  transition:opacity .18s ease,transform .18s ease;
+  z-index:600;
+}
+.nav-dropdown-menu::before{
+  content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);
+  border-left:5px solid transparent;border-right:5px solid transparent;
+  border-bottom:5px solid var(--border);
+}
+.nav-dropdown-wrap:hover .nav-dropdown-menu{
+  opacity:1;pointer-events:all;
+  transform:translateX(-50%) translateY(0);
+}
+.nav-dropdown-item{
+  display:block;padding:10px 14px;
+  font-size:13px;font-weight:400;letter-spacing:.03em;
+  color:var(--muted);text-decoration:none;
+  border-radius:8px;transition:color .15s,background .15s;
+}
+.nav-dropdown-item:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-dropdown-item.active{color:var(--cyan)}
+
+/* Mobile nav sub-items */
+.mobile-nav .mobile-nav-sub{
+  font-size:20px;opacity:.55;
+  padding-left:28px;position:relative;
+}
+.mobile-nav .mobile-nav-sub::before{
+  content:'↳';position:absolute;left:4px;
+  font-family:'Space Mono',monospace;font-size:13px;opacity:.7;
+}
+
+/* ── Service hub cards (systems overview) ── */
+.service-hub-card{
+  text-decoration:none;display:block;
+  padding:36px;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.service-hub-card h3{font-size:28px;margin-bottom:14px;letter-spacing:-.02em}
+.service-hub-card p{color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:0}
+.service-hub-link{
+  display:inline-flex;align-items:center;gap:6px;margin-top:24px;
+  font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;
+  color:var(--cyan);transition:gap .2s;
+}
+.service-hub-card:hover .service-hub-link{gap:10px}
+
+/* ── Page variants for new pages ── */
+.page-websites .hero-orb-1{
+  left:-60px;top:-80px;
+  background:radial-gradient(circle,rgba(0,255,204,.14) 0%,transparent 65%);
+  animation:orb-drift-1 10s ease-in-out infinite alternate;
+}
+.page-websites .hero-orb-2{
+  right:-40px;top:-60px;
+  background:radial-gradient(circle,rgba(155,107,255,.16) 0%,transparent 65%);
+  animation:orb-drift-2 12s ease-in-out infinite alternate;
+}
+.page-websites .hero-orb-3{
+  bottom:-40px;left:45%;
+  background:radial-gradient(circle,rgba(0,200,255,.12) 0%,transparent 65%);
+}
+.page-apps .hero-orb-1{
+  left:auto;right:-40px;top:-80px;
+  background:radial-gradient(circle,rgba(155,107,255,.18) 0%,transparent 65%);
+  animation:orb-drift-2 10s ease-in-out infinite alternate;
+}
+.page-apps .hero-orb-2{
+  left:-40px;top:-40px;right:auto;
+  background:radial-gradient(circle,rgba(0,200,255,.14) 0%,transparent 65%);
+  animation:orb-drift-1 12s ease-in-out infinite alternate;
+}
+.page-apps .hero-orb-3{
+  bottom:-40px;left:40%;
+  background:radial-gradient(circle,rgba(0,255,204,.10) 0%,transparent 65%);
+  animation:orb-drift-3 9s 1s ease-in-out infinite alternate;
+}
