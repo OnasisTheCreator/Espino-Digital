@@ -11,7 +11,7 @@ window.ED_TRANS = {
       es: 'Creamos sitios web y apps<br><span class="accent">desde cero. Sin plantillas.</span>'
     },
     'hero-sub': {
-      en: 'Custom design, real code. For businesses that need a real web presence, creators building a personal brand, and anyone who wants something built specifically for them — not a theme someone else already used.',
+      en: 'Custom design, real code. For businesses that need a real web presence, creators building a personal brand, and anyone who wants something built specifically for them, not a theme someone else already used.',
       es: 'Diseño personalizado, código real. Para negocios que necesitan una presencia real en línea, creadores que construyen una marca personal y cualquier persona que quiere algo hecho específicamente para ellos.'
     },
     'hero-btn-primary': { en: 'Start a Project', es: 'Iniciar un Proyecto' },
@@ -22,7 +22,7 @@ window.ED_TRANS = {
       es: 'Cada proyecto empieza desde cero.<br><span class="accent">Construido alrededor de lo que haces.</span>'
     },
     'opp-sub': {
-      en: 'No page builders, no themes, no shortcuts. When we take on a project, we design and build from the ground up — around who you are, what you do, and what actually needs to work. Whether you\'re a business, a creator, or somewhere in between.',
+      en: 'No page builders, no themes, no shortcuts. When we take on a project, we design and build from the ground up, around who you are, what you do, and what actually needs to work. Whether you\'re a business, a creator, or somewhere in between.',
       es: 'Sin constructores de páginas, sin temas, sin atajos. Cuando tomamos un proyecto, diseñamos y construimos desde cero, alrededor de quién eres, lo que haces y lo que realmente necesita funcionar.'
     },
     'metric-1-span': { en: 'Custom builds. No templates, no themes, no shortcuts.', es: 'Construcciones personalizadas. Sin plantillas, sin temas, sin atajos.' },
@@ -31,9 +31,9 @@ window.ED_TRANS = {
     'terminal-kicker': { en: 'Project brief', es: 'Resumen de proyecto' },
     'bf-tag': { en: 'Who We Work With', es: 'Con Quién Trabajamos' },
     'bf-c1-title': { en: 'Businesses', es: 'Negocios' },
-    'bf-c1-text': { en: "You need a site that loads fast, positions you right, and doesn't need babysitting. Something that looks like you took it seriously — because you did.", es: 'Necesitas un sitio que cargue rápido, te posicione bien y no requiera supervisión constante. Algo que demuestre que lo tomaste en serio.' },
+    'bf-c1-text': { en: "You need a site that loads fast, positions you right, and doesn't need babysitting. Something that looks like you took it seriously, because you did.", es: 'Necesitas un sitio que cargue rápido, te posicione bien y no requiera supervisión constante. Algo que demuestre que lo tomaste en serio.' },
     'bf-c2-title': { en: 'Creators and freelancers', es: 'Creadores y freelancers' },
-    'bf-c2-text': { en: "Photographers, coaches, consultants, anyone building around their name. Your site should look as good as your work — not like a template someone else already used.", es: 'Fotógrafos, coaches, consultores, cualquier persona que construye alrededor de su nombre. Tu sitio debe verse tan bien como tu trabajo.' },
+    'bf-c2-text': { en: "Photographers, coaches, consultants, anyone building around their name. Your site should look as good as your work, not like a template someone else already used.", es: 'Fotógrafos, coaches, consultores, cualquier persona que construye alrededor de su nombre. Tu sitio debe verse tan bien como tu trabajo.' },
     'bf-c3-title': { en: 'Founders and builders', es: 'Fundadores y creadores de productos' },
     'bf-c3-text': { en: "Need a customer portal, an internal tool, or something that doesn't exist off the shelf? We write real code for real problems.", es: '¿Necesitas un portal de clientes, una herramienta interna o algo que no existe en el mercado? Escribimos código real para problemas reales.' },
     'wyg-tag': { en: 'The Work', es: 'El Trabajo' },
@@ -46,7 +46,7 @@ window.ED_TRANS = {
     'wyg-web-li4': { en: 'Bilingual ready', es: 'Listo para ser bilingüe' },
     'wyg-app-kicker': { en: 'Personal Brand', es: 'Marca Personal' },
     'wyg-app-title': { en: 'A site built around your name', es: 'Un sitio construido alrededor de tu nombre' },
-    'wyg-app-sub': { en: "Portfolio sites and personal landing pages for creatives, consultants, and freelancers. Designed around your work and how you want to be seen — not a layout someone else already used.", es: 'Sitios de portafolio y páginas de aterrizaje para creativos, consultores y freelancers. Diseñado alrededor de tu trabajo y cómo quieres ser visto.' },
+    'wyg-app-sub': { en: "Portfolio sites and personal landing pages for creatives, consultants, and freelancers. Designed around your work and how you want to be seen, not a layout someone else already used.", es: 'Sitios de portafolio y páginas de aterrizaje para creativos, consultores y freelancers. Diseñado alrededor de tu trabajo y cómo quieres ser visto.' },
     'wyg-app-li1': { en: 'Custom layouts for your content', es: 'Layouts personalizados para tu contenido' },
     'wyg-app-li2': { en: 'Designed around your work', es: 'Diseñado alrededor de tu trabajo' },
     'wyg-app-li3': { en: 'Fast and clean on any device', es: 'Rápido y limpio en cualquier dispositivo' },
