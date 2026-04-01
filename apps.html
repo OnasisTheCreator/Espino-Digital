@@ -284,10 +284,10 @@
 <section class="section band" style="max-width:none;">
   <div style="max-width:1280px;margin:0 auto;">
     <div class="section-tag">The Stack</div>
-    <div class="stack-layout">
-      <div class="stack-left">
+    <div class="grid-2">
+      <div>
         <h2 class="section-title">Production-grade.<br><span class="accent">Not patched together.</span></h2>
-        <p class="section-sub">Every tool in this stack is chosen because it scales, it's battle-tested, and any developer can pick it up. No proprietary lock-in, no mystery framework, no vendor that disappears in two years.</p>
+        <p class="section-sub" style="max-width:none">Every tool in this stack is chosen because it scales, it's battle-tested, and any developer can pick it up. No proprietary lock-in, no mystery framework, no vendor that disappears in two years.</p>
         <div class="stack-grid">
           <div class="stack-col">
             <div class="stack-col-label">Frontend</div>
@@ -330,25 +330,23 @@
           </div>
         </div>
       </div>
-      <div class="stack-right">
-        <div class="card mock">
-          <div class="kicker">Deployment log</div>
-          <div class="terminal">
-            <div>$ vercel deploy --prod</div>
-            <div class="ok">→ framework: next.js 15 (app router) ✓</div>
-            <div class="ok">→ language: typescript strict ✓</div>
-            <div class="ok">→ database: supabase + prisma ✓</div>
-            <div class="ok">→ cache: upstash redis ✓</div>
-            <div class="ok">→ auth: supabase auth + jwt ✓</div>
-            <div class="ok">→ cdn: cloudflare edge ✓</div>
-            <div class="ok">→ ci/cd: github actions ✓</div>
-            <div class="term-sep"></div>
-            <div class="term-cmd">$ build complete</div>
-            <div class="term-log">bundle optimized<span class="term-ok">✓</span></div>
-            <div class="term-log">edge functions deployed<span class="term-ok">✓</span></div>
-            <div class="term-log">health checks passed<span class="term-ok">✓</span></div>
-            <div class="hi">→ live in production<span class="terminal-cursor"></span></div>
-          </div>
+      <div class="card mock">
+        <div class="kicker">Deployment log</div>
+        <div class="terminal">
+          <div>$ vercel deploy --prod</div>
+          <div class="ok">→ framework: next.js 15 (app router) ✓</div>
+          <div class="ok">→ language: typescript strict ✓</div>
+          <div class="ok">→ database: supabase + prisma ✓</div>
+          <div class="ok">→ cache: upstash redis ✓</div>
+          <div class="ok">→ auth: supabase auth + jwt ✓</div>
+          <div class="ok">→ cdn: cloudflare edge ✓</div>
+          <div class="ok">→ ci/cd: github actions ✓</div>
+          <div class="term-sep"></div>
+          <div class="term-cmd">$ build complete</div>
+          <div class="term-log">bundle optimized<span class="term-ok">✓</span></div>
+          <div class="term-log">edge functions deployed<span class="term-ok">✓</span></div>
+          <div class="term-log">health checks passed<span class="term-ok">✓</span></div>
+          <div class="hi">→ live in production<span class="terminal-cursor"></span></div>
         </div>
       </div>
     </div>
