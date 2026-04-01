@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#00ffcc"/>
+      <stop offset="52%"  stop-color="#00c8ff"/>
+      <stop offset="100%" stop-color="#9b6bff"/>
+    </linearGradient>
+    <clipPath id="e-shape">
+      <!-- Vertical stem -->
+      <rect x="110" y="68"  width="82" height="376"/>
+      <!-- Top bar -->
+      <rect x="110" y="68"  width="292" height="82"/>
+      <!-- Mid bar (slightly shorter) -->
+      <rect x="110" y="215" width="248" height="74"/>
+      <!-- Bottom bar -->
+      <rect x="110" y="362" width="292" height="82"/>
+    </clipPath>
+  </defs>
+  <!-- Dark background -->
+  <rect width="512" height="512" rx="96" fill="#060810"/>
+  <!-- Subtle inner glow -->
+  <rect width="512" height="512" rx="96"
+        fill="url(#g)" opacity="0.06"/>
+  <!-- E letterform with gradient -->
+  <rect width="512" height="512" fill="url(#g)" clip-path="url(#e-shape)"/>
+</svg>

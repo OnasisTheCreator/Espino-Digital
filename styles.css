@@ -1427,6 +1427,46 @@ a.cdi-value:hover{color:var(--cyan)}
 .apps-process-step h4{font-family:'Syne',sans-serif;font-size:16px;letter-spacing:-.01em;margin-bottom:10px}
 .apps-process-step p{color:var(--muted);font-size:14px;line-height:1.65}
 
+/* ═══════════════════════════════════════════
+   APPS PAGE — Tech Stack Section
+   ═══════════════════════════════════════════ */
+.stack-layout{
+  display:grid;grid-template-columns:1.15fr 0.85fr;
+  gap:56px;align-items:start;
+}
+.stack-left .section-title{margin-bottom:14px}
+.stack-left .section-sub{margin-top:0;margin-bottom:28px}
+.stack-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:20px 32px;
+}
+.stack-col-label{
+  font-family:'Space Mono',monospace;font-size:9px;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(0,255,204,.45);margin-bottom:10px;
+}
+.stack-chips{display:flex;flex-wrap:wrap;gap:6px}
+.stack-chip{
+  font-family:'Space Mono',monospace;font-size:10px;
+  letter-spacing:.03em;color:rgba(242,242,248,.65);
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:4px;padding:4px 10px;
+  transition:border-color .15s,color .15s;
+}
+.stack-chip:hover{border-color:rgba(255,255,255,.22);color:var(--white)}
+.stack-chip-cyan{
+  color:rgba(0,255,204,.85);
+  background:rgba(0,255,204,.06);
+  border-color:rgba(0,255,204,.2);
+}
+.stack-chip-purple{
+  color:rgba(155,107,255,.85);
+  background:rgba(155,107,255,.06);
+  border-color:rgba(155,107,255,.2);
+}
+.stack-right .card.mock{height:100%}
+
 /* ── Mobile: all new apps layouts ── */
 @media(max-width:980px){
   .apps-featured-card{grid-template-columns:1fr}
@@ -1454,4 +1494,6 @@ a.cdi-value:hover{color:var(--cyan)}
   }
   .apps-process-step:last-child{padding-bottom:0}
   .apps-process-num{flex-shrink:0;margin-bottom:0}
+  .stack-layout{grid-template-columns:1fr}
+  .stack-grid{grid-template-columns:1fr 1fr}
 }

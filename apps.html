@@ -7,6 +7,10 @@
 <meta name="description" content="Custom apps and tools built from scratch for businesses. Job trackers, customer portals, booking systems, dispatch boards. Built around how you actually work, not what a SaaS platform assumes you need." />
 <link rel="canonical" href="https://espinodigital.com/apps" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="styles.css">
 <script src="translations.js"></script>
 </head>
@@ -280,26 +284,71 @@
 <section class="section band" style="max-width:none;">
   <div style="max-width:1280px;margin:0 auto;">
     <div class="section-tag">The Stack</div>
-    <div class="grid-2">
-      <div>
-        <h2 class="section-title">Real code.<br><span class="accent">Built to last.</span></h2>
-        <p class="section-sub">We build on proven tools that don't disappear next year. Next.js for the frontend, Supabase for the database and auth, deployed on Vercel or your own infrastructure. Fast, scalable, and maintainable by any developer if you ever need to hand it off.</p>
-        <div class="metric-grid" style="margin-top:2rem">
-          <div class="metric"><strong>Next.js</strong><span>Fast, production-ready frontend framework</span></div>
-          <div class="metric"><strong>Supabase</strong><span>Database, auth, and real-time built in</span></div>
-          <div class="metric"><strong>Vercel</strong><span>Instant deploys, global edge network</span></div>
+    <div class="stack-layout">
+      <div class="stack-left">
+        <h2 class="section-title">Production-grade.<br><span class="accent">Not patched together.</span></h2>
+        <p class="section-sub">Every tool in this stack is chosen because it scales, it's battle-tested, and any developer can pick it up. No proprietary lock-in, no mystery framework, no vendor that disappears in two years.</p>
+        <div class="stack-grid">
+          <div class="stack-col">
+            <div class="stack-col-label">Frontend</div>
+            <div class="stack-chips">
+              <span class="stack-chip stack-chip-cyan">Next.js 15</span>
+              <span class="stack-chip">TypeScript</span>
+              <span class="stack-chip">React</span>
+              <span class="stack-chip">Tailwind CSS</span>
+              <span class="stack-chip">Framer Motion</span>
+            </div>
+          </div>
+          <div class="stack-col">
+            <div class="stack-col-label">Backend &amp; Data</div>
+            <div class="stack-chips">
+              <span class="stack-chip stack-chip-cyan">Supabase</span>
+              <span class="stack-chip">PostgreSQL</span>
+              <span class="stack-chip">Prisma ORM</span>
+              <span class="stack-chip">Redis</span>
+              <span class="stack-chip">tRPC</span>
+            </div>
+          </div>
+          <div class="stack-col">
+            <div class="stack-col-label">Infrastructure</div>
+            <div class="stack-chips">
+              <span class="stack-chip stack-chip-purple">Vercel</span>
+              <span class="stack-chip">Cloudflare</span>
+              <span class="stack-chip">GitHub Actions</span>
+              <span class="stack-chip">Docker</span>
+            </div>
+          </div>
+          <div class="stack-col">
+            <div class="stack-col-label">Integrations</div>
+            <div class="stack-chips">
+              <span class="stack-chip">Stripe</span>
+              <span class="stack-chip">Resend</span>
+              <span class="stack-chip">Twilio</span>
+              <span class="stack-chip">Auth.js</span>
+              <span class="stack-chip">PostHog</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card mock">
-        <div class="kicker">Project scope</div>
-        <div class="terminal">
-          <div>$ new app initialized</div>
-          <div class="ok">→ type: dispatch / job tracking</div>
-          <div class="ok">→ stack: next.js + supabase ✓</div>
-          <div class="warn">→ template_used: none</div>
-          <div class="ok">→ bilingual: EN + ES ✓</div>
-          <div class="ok">→ offline_capable: true ✓</div>
-          <div class="hi">→ status: in build<span class="terminal-cursor"></span></div>
+      <div class="stack-right">
+        <div class="card mock">
+          <div class="kicker">Deployment log</div>
+          <div class="terminal">
+            <div>$ vercel deploy --prod</div>
+            <div class="ok">→ framework: next.js 15 (app router) ✓</div>
+            <div class="ok">→ language: typescript strict ✓</div>
+            <div class="ok">→ database: supabase + prisma ✓</div>
+            <div class="ok">→ cache: upstash redis ✓</div>
+            <div class="ok">→ auth: supabase auth + jwt ✓</div>
+            <div class="ok">→ cdn: cloudflare edge ✓</div>
+            <div class="ok">→ ci/cd: github actions ✓</div>
+            <div class="term-sep"></div>
+            <div class="term-cmd">$ build complete</div>
+            <div class="term-log">bundle optimized<span class="term-ok">✓</span></div>
+            <div class="term-log">edge functions deployed<span class="term-ok">✓</span></div>
+            <div class="term-log">health checks passed<span class="term-ok">✓</span></div>
+            <div class="hi">→ live in production<span class="terminal-cursor"></span></div>
+          </div>
         </div>
       </div>
     </div>
