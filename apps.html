@@ -289,7 +289,7 @@
         <h2 class="section-title">Production-grade.<br><span class="accent">Not patched together.</span></h2>
         <p class="section-sub" style="max-width:none">Every tool in this stack is chosen because it scales, it's battle-tested, and any developer can pick it up. No proprietary lock-in, no mystery framework, no vendor that disappears in two years.</p>
         <div class="stack-grid">
-          <div class="stack-col">
+          <div class="stack-col" data-chip-color="cyan">
             <div class="stack-col-label">Frontend</div>
             <div class="stack-chips">
               <span class="stack-chip stack-chip-cyan">Next.js 15</span>
@@ -299,7 +299,7 @@
               <span class="stack-chip">Framer Motion</span>
             </div>
           </div>
-          <div class="stack-col">
+          <div class="stack-col" data-chip-color="cyan">
             <div class="stack-col-label">Backend &amp; Data</div>
             <div class="stack-chips">
               <span class="stack-chip stack-chip-cyan">Supabase</span>
@@ -309,7 +309,7 @@
               <span class="stack-chip">tRPC</span>
             </div>
           </div>
-          <div class="stack-col">
+          <div class="stack-col" data-chip-color="purple">
             <div class="stack-col-label">Infrastructure</div>
             <div class="stack-chips">
               <span class="stack-chip stack-chip-purple">Vercel</span>
@@ -318,7 +318,7 @@
               <span class="stack-chip">Docker</span>
             </div>
           </div>
-          <div class="stack-col">
+          <div class="stack-col" data-chip-color="blue">
             <div class="stack-col-label">Integrations</div>
             <div class="stack-chips">
               <span class="stack-chip">Stripe</span>
@@ -394,6 +394,14 @@
       io.unobserve(el);
     });
   },{threshold:0.1});
+  document.querySelectorAll('.stack-chip').forEach(function(chip){
+    chip.addEventListener('click',function(){
+      var col=this.closest('[data-chip-color]');
+      var color=col?col.getAttribute('data-chip-color'):'cyan';
+      this.classList.toggle('chip-on');
+      this.setAttribute('data-active-color',this.classList.contains('chip-on')?color:'');
+    });
+  });
   document.querySelectorAll('.card,.metric,.apps-panel,.apps-bilingual-panel,.apps-case-item,.apps-process-step,.section-title').forEach(function(el){var r=el.getBoundingClientRect();if(r.top>window.innerHeight){el.classList.add('scroll-hidden');io.observe(el);}});
   var tagIO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;entry.target.classList.add('tag-visible');tagIO.unobserve(entry.target);});},{threshold:0.5});
   document.querySelectorAll('.section-tag').forEach(function(el){tagIO.observe(el);});

@@ -1452,9 +1452,10 @@ a.cdi-value:hover{color:var(--cyan)}
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.1);
   border-radius:4px;padding:4px 10px;
-  transition:border-color .15s,color .15s;
+  cursor:pointer;user-select:none;
+  transition:border-color .18s,color .18s,background .18s,box-shadow .18s,transform .12s;
 }
-.stack-chip:hover{border-color:rgba(255,255,255,.22);color:var(--white)}
+.stack-chip:hover{border-color:rgba(255,255,255,.26);color:var(--white);transform:translateY(-1px)}
 .stack-chip-cyan{
   color:rgba(0,255,204,.85);
   background:rgba(0,255,204,.06);
@@ -1464,6 +1465,25 @@ a.cdi-value:hover{color:var(--cyan)}
   color:rgba(155,107,255,.85);
   background:rgba(155,107,255,.06);
   border-color:rgba(155,107,255,.2);
+}
+/* Selected / active chip states */
+.stack-chip.chip-on[data-active-color="cyan"]{
+  color:var(--cyan);
+  background:rgba(0,255,204,.12);
+  border-color:rgba(0,255,204,.55);
+  box-shadow:0 0 10px rgba(0,255,204,.22),inset 0 0 8px rgba(0,255,204,.06);
+}
+.stack-chip.chip-on[data-active-color="purple"]{
+  color:rgba(155,107,255,.95);
+  background:rgba(155,107,255,.12);
+  border-color:rgba(155,107,255,.55);
+  box-shadow:0 0 10px rgba(155,107,255,.22),inset 0 0 8px rgba(155,107,255,.06);
+}
+.stack-chip.chip-on[data-active-color="blue"]{
+  color:rgba(0,200,255,.95);
+  background:rgba(0,200,255,.1);
+  border-color:rgba(0,200,255,.5);
+  box-shadow:0 0 10px rgba(0,200,255,.2),inset 0 0 8px rgba(0,200,255,.06);
 }
 .stack-right .card.mock{height:100%}
 
