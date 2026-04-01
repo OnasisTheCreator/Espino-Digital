@@ -19,6 +19,7 @@ body{
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
   overflow-x: clip;
+  letter-spacing:.014em;
 }
 body::before{
   content:'';
@@ -133,13 +134,13 @@ nav{
 .eyebrow .dot{width:6px;height:6px;background:var(--accent3);border-radius:50%}
 .hero-title,.section-title{
   font-family:'Syne', sans-serif;font-weight:800;
-  font-size:clamp(40px,7vw,88px);line-height:.96;letter-spacing:-.04em;
+  font-size:clamp(40px,7vw,88px);line-height:.96;letter-spacing:-.02em;
 }
 .hero-title .accent, .section-title .accent{
   background: linear-gradient(135deg, var(--cyan) 0%, #00d4ff 50%, var(--accent2) 100%);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
-.hero-sub,.section-sub{font-size:18px;color:var(--muted);line-height:1.7;max-width:700px;margin-top:22px}
+.hero-sub,.section-sub{font-size:18px;color:var(--muted);line-height:1.7;max-width:700px;margin-top:22px;letter-spacing:.012em}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
 .btn-primary,.btn-secondary{
   display:inline-flex; align-items:center; justify-content:center;
@@ -172,7 +173,7 @@ nav{
 .card h3{
   font-family:'Syne',sans-serif;font-size:26px;letter-spacing:-.02em;margin-bottom:12px
 }
-.card p{color:var(--muted);line-height:1.7;font-size:15px}
+.card p{color:var(--muted);line-height:1.7;font-size:15px;letter-spacing:.012em}
 .kicker{
   font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.15em;
   color:var(--accent3); text-transform:uppercase; margin-bottom:18px;
