@@ -292,7 +292,7 @@
           <div class="stack-col" data-chip-color="cyan">
             <div class="stack-col-label">Frontend</div>
             <div class="stack-chips">
-              <span class="stack-chip stack-chip-cyan">Next.js 15</span>
+              <span class="stack-chip">Next.js 15</span>
               <span class="stack-chip">TypeScript</span>
               <span class="stack-chip">React</span>
               <span class="stack-chip">Tailwind CSS</span>
@@ -302,7 +302,7 @@
           <div class="stack-col" data-chip-color="cyan">
             <div class="stack-col-label">Backend &amp; Data</div>
             <div class="stack-chips">
-              <span class="stack-chip stack-chip-cyan">Supabase</span>
+              <span class="stack-chip">Supabase</span>
               <span class="stack-chip">PostgreSQL</span>
               <span class="stack-chip">Prisma ORM</span>
               <span class="stack-chip">Redis</span>
@@ -312,7 +312,7 @@
           <div class="stack-col" data-chip-color="purple">
             <div class="stack-col-label">Infrastructure</div>
             <div class="stack-chips">
-              <span class="stack-chip stack-chip-purple">Vercel</span>
+              <span class="stack-chip">Vercel</span>
               <span class="stack-chip">Cloudflare</span>
               <span class="stack-chip">GitHub Actions</span>
               <span class="stack-chip">Docker</span>
@@ -394,12 +394,15 @@
       io.unobserve(el);
     });
   },{threshold:0.1});
+  document.querySelectorAll('[data-chip-color]').forEach(function(col){
+    var color=col.getAttribute('data-chip-color');
+    col.querySelectorAll('.stack-chip').forEach(function(chip){
+      chip.setAttribute('data-chip-color',color);
+    });
+  });
   document.querySelectorAll('.stack-chip').forEach(function(chip){
     chip.addEventListener('click',function(){
-      var col=this.closest('[data-chip-color]');
-      var color=col?col.getAttribute('data-chip-color'):'cyan';
       this.classList.toggle('chip-on');
-      this.setAttribute('data-active-color',this.classList.contains('chip-on')?color:'');
     });
   });
   document.querySelectorAll('.card,.metric,.apps-panel,.apps-bilingual-panel,.apps-case-item,.apps-process-step,.section-title').forEach(function(el){var r=el.getBoundingClientRect();if(r.top>window.innerHeight){el.classList.add('scroll-hidden');io.observe(el);}});

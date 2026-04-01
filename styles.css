@@ -1467,19 +1467,19 @@ a.cdi-value:hover{color:var(--cyan)}
   border-color:rgba(155,107,255,.2);
 }
 /* Selected / active chip states */
-.stack-chip.chip-on[data-active-color="cyan"]{
+.stack-chip.chip-on[data-chip-color="cyan"]{
   color:var(--cyan);
   background:rgba(0,255,204,.12);
   border-color:rgba(0,255,204,.55);
   box-shadow:0 0 10px rgba(0,255,204,.22),inset 0 0 8px rgba(0,255,204,.06);
 }
-.stack-chip.chip-on[data-active-color="purple"]{
+.stack-chip.chip-on[data-chip-color="purple"]{
   color:rgba(155,107,255,.95);
   background:rgba(155,107,255,.12);
   border-color:rgba(155,107,255,.55);
   box-shadow:0 0 10px rgba(155,107,255,.22),inset 0 0 8px rgba(155,107,255,.06);
 }
-.stack-chip.chip-on[data-active-color="blue"]{
+.stack-chip.chip-on[data-chip-color="blue"]{
   color:rgba(0,200,255,.95);
   background:rgba(0,200,255,.1);
   border-color:rgba(0,200,255,.5);
