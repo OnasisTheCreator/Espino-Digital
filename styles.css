@@ -38,7 +38,7 @@ nav{
   padding-top:calc(20px + env(safe-area-inset-top, 0px));
   display:flex; align-items:center; justify-content:space-between;
   gap:24px;
-  background:rgba(5,5,8,.94);
+  background:rgba(5,5,8,.82);
   -webkit-backdrop-filter:blur(20px);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
@@ -270,14 +270,20 @@ footer{
 @media (max-width: 980px){
   nav,.page-hero,.section,.cta-band,footer{padding-left:26px;padding-right:26px}
   nav{
+    /* Fixed on mobile — bypass overflow-x:clip breaking sticky on iOS Safari */
+    position:fixed;top:0;left:0;right:0;width:100%;
     padding-top:calc(14px + env(safe-area-inset-top, 0px));
     padding-bottom:14px;
-    /* Solid on mobile — no bleed-through during scroll */
-    background:rgba(5,5,8,.98);
-    -webkit-backdrop-filter:blur(12px);
-    backdrop-filter:blur(12px);
+    background:rgba(5,5,8,.86);
+    -webkit-backdrop-filter:blur(20px);
+    backdrop-filter:blur(20px);
   }
-  .page-hero{padding-top:calc(56px + env(safe-area-inset-top, 0px));padding-bottom:48px}
+  /* Spacer pushes page content below the fixed nav */
+  .nav-spacer{
+    display:block;
+    height:calc(54px + env(safe-area-inset-top, 0px));
+  }
+  .page-hero{padding-top:64px;padding-bottom:48px}
   .section{padding-top:56px;padding-bottom:56px}
   .cta-band{padding-top:64px;padding-bottom:64px}
   footer{padding-top:28px;padding-bottom:calc(24px + env(safe-area-inset-bottom, 0px))}
@@ -412,6 +418,8 @@ footer{
   transition:width .25s ease;
 }
 .nav-link:hover::after,.nav-link.active::after{width:100%}
+/* Spacer only exists on mobile — hidden on desktop */
+.nav-spacer{display:none}
 nav.scrolled{
   background:rgba(5,5,8,.97);
   -webkit-backdrop-filter:blur(32px) saturate(180%);
@@ -1353,7 +1361,7 @@ a.cdi-value:hover{color:var(--cyan)}
 }
 
 /* ═══════════════════════════════════════════
-   APPS PAGE — Case Study Panels
+   APPS PAGE — Interactive Case Cards
    ═══════════════════════════════════════════ */
 .apps-cases-section{
   background:var(--dark);
@@ -1361,47 +1369,110 @@ a.cdi-value:hover{color:var(--cyan)}
   padding:80px 60px;
 }
 .apps-cases-inner{max-width:1280px;margin:0 auto}
-.apps-case-item{
-  display:grid;grid-template-columns:1.1fr 1.5fr 0.65fr;
-  gap:48px;align-items:center;
-  padding:44px 0 44px 28px;
-  border-bottom:1px solid rgba(255,255,255,.07);
-  border-left:2px solid var(--cyan);
-  position:relative;
+.case-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:14px;
 }
-.apps-case-item:last-child{border-bottom:none}
-.apps-case-purple{border-left-color:rgba(155,107,255,.7)}
-.apps-case-blue{border-left-color:rgba(0,200,255,.7)}
-.apps-case-purple .aci-label{color:rgba(155,107,255,.9)}
-.apps-case-purple .aci-stat-num{color:rgba(155,107,255,.9)}
-.apps-case-blue .aci-label{color:rgba(0,200,255,.85)}
-.apps-case-blue .aci-stat-num{color:rgba(0,200,255,.85)}
-.aci-label{
-  font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;
-  color:var(--cyan);text-transform:uppercase;margin-bottom:14px;
+.case-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform .25s cubic-bezier(.22,.61,.36,1),
+             box-shadow .25s ease,
+             border-color .25s ease;
+  transform-style:preserve-3d;
+  perspective:800px;
+  outline:none;
 }
-.aci-title{
-  font-family:'Syne',sans-serif;font-size:clamp(18px,2vw,26px);
-  font-weight:800;letter-spacing:-.02em;line-height:1.15;
+.case-card:hover{
+  transform:translateY(-6px) rotateX(2deg);
+  box-shadow:0 24px 60px rgba(0,0,0,.36);
 }
-.aci-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.aci-tag{
-  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;
-  color:rgba(255,255,255,.35);background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:3px 10px;
+.case-card:focus-visible{
+  box-shadow:0 0 0 2px var(--cyan);
 }
-.aci-body p{color:var(--muted);font-size:15px;line-height:1.75}
-.aci-stat{text-align:right}
-.aci-stat-num{
+/* Cyan variant */
+.case-card[data-color="cyan"]{border-top:2px solid rgba(0,255,204,.4)}
+.case-card[data-color="cyan"]:hover,.case-card[data-color="cyan"].open{
+  border-color:rgba(0,255,204,.5);
+  box-shadow:0 24px 60px rgba(0,0,0,.36),0 0 28px rgba(0,255,204,.1);
+}
+/* Purple variant */
+.case-card[data-color="purple"]{border-top:2px solid rgba(155,107,255,.4)}
+.case-card[data-color="purple"]:hover,.case-card[data-color="purple"].open{
+  border-color:rgba(155,107,255,.5);
+  box-shadow:0 24px 60px rgba(0,0,0,.36),0 0 28px rgba(155,107,255,.1);
+}
+/* Blue variant */
+.case-card[data-color="blue"]{border-top:2px solid rgba(0,200,255,.4)}
+.case-card[data-color="blue"]:hover,.case-card[data-color="blue"].open{
+  border-color:rgba(0,200,255,.5);
+  box-shadow:0 24px 60px rgba(0,0,0,.36),0 0 28px rgba(0,200,255,.1);
+}
+
+.case-card-front{padding:26px 24px 20px}
+.case-card-stat{
   font-family:'Space Mono',monospace;
-  font-size:clamp(28px,4vw,52px);font-weight:700;
-  color:var(--cyan);line-height:1;letter-spacing:-.02em;
+  font-size:clamp(24px,3vw,40px);font-weight:700;
+  line-height:1;margin-bottom:14px;letter-spacing:-.02em;
 }
-.aci-stat-label{
+.case-card[data-color="cyan"]  .case-card-stat{color:var(--cyan)}
+.case-card[data-color="purple"] .case-card-stat{color:rgba(155,107,255,.95)}
+.case-card[data-color="blue"]  .case-card-stat{color:rgba(0,200,255,.95)}
+
+.case-card-industry{
+  font-family:'Space Mono',monospace;font-size:9px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin-bottom:10px;
+}
+.case-card-title{
+  font-family:'Syne',sans-serif;font-size:15px;
+  font-weight:700;letter-spacing:-.01em;line-height:1.25;
+  margin-bottom:14px;
+}
+.case-card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.case-card-tags span{
+  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.06em;
+  color:rgba(255,255,255,.3);background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.07);border-radius:100px;padding:3px 8px;
+}
+.case-card-cta{
   font-family:'Space Mono',monospace;font-size:10px;
-  letter-spacing:.06em;color:rgba(255,255,255,.3);
-  margin-top:6px;text-transform:uppercase;
+  letter-spacing:.06em;color:rgba(255,255,255,.25);
+  transition:color .2s;
 }
+.case-card:hover .case-card-cta,.case-card.open .case-card-cta{
+  color:rgba(255,255,255,.55);
+}
+.case-card.open .case-card-cta::after{content:' ↑';margin-left:2px}
+
+/* Expand / collapse body */
+.case-card-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s cubic-bezier(.22,.61,.36,1),
+             padding .3s ease;
+  padding:0 24px;
+  border-top:0px solid transparent;
+}
+.case-card.open .case-card-body{
+  max-height:300px;
+  padding:18px 24px 24px;
+  border-top:1px solid rgba(255,255,255,.07);
+}
+.case-card-body p{
+  color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:14px;
+}
+.case-card-outcome{
+  font-family:'Space Mono',monospace;font-size:11px;
+  color:rgba(255,255,255,.45);line-height:1.5;
+  padding:10px 14px;border-radius:8px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);
+}
+.case-card[data-color="cyan"]   .case-card-outcome span{color:var(--cyan)}
+.case-card[data-color="purple"] .case-card-outcome span{color:rgba(155,107,255,.9)}
+.case-card[data-color="blue"]   .case-card-outcome span{color:rgba(0,200,255,.9)}
 
 /* ═══════════════════════════════════════════
    APPS PAGE — Process Timeline
@@ -1507,11 +1578,8 @@ a.cdi-value:hover{color:var(--cyan)}
   .apps-panel-grid{grid-template-columns:1fr}
   .apps-bilingual-panel{grid-template-columns:1fr;gap:22px;padding:26px 24px}
   .apps-cases-section{padding:56px 26px}
-  .apps-case-item{
-    grid-template-columns:1fr;gap:16px;
-    padding:28px 0 28px 18px;
-  }
-  .aci-stat{text-align:left}
+  .case-grid{grid-template-columns:1fr 1fr}
+  .case-card:hover{transform:translateY(-3px) rotateX(1deg)}
   .apps-process-wrap{margin-top:36px}
   .apps-process-track{grid-template-columns:1fr;gap:0}
   .apps-process-line{display:none}
