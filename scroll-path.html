@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compliance Pipeline — Scroll Path Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Variables ──────────────────────────────────────────── */
+:root {
+  --coral:      #E8603C;
+  --coral-glow: rgba(232, 96, 60, 0.18);
+  --mint:       #EDF6F3;
+  --mint-dim:   #D4E9E3;
+  --ink:        #18202E;
+  --ink-2:      #3D4A5C;
+  --ink-3:      #7A8899;
+  --line-bg:    #BDD0CA;
+  --white:      #FFFFFF;
+  --card-s:     0 2px 20px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.035);
+  --card-sl:    0 10px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+/* ─── Base ───────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #EDF6F3;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 60px 100px;
+  gap: 60px;
+}
+
+.hero-text { flex: 1; max-width: 560px; }
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 32px;
+}
+.hero-kicker-rule {
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(46px, 5.8vw, 76px);
+  font-weight: 700;
+  line-height: 1.065;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--coral);
+}
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--ink-2);
+  max-width: 440px;
+  margin-bottom: 46px;
+}
+
+/* ─── Button ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--coral);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 13px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(232,96,60,.42);
+}
+.btn .arr { transition: transform 0.22s ease; display: inline-block; }
+.btn:hover .arr { transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════════════════════
+   FLOATING CHIPS
+═══════════════════════════════════════════════════════════ */
+.chips-wrap {
+  position: absolute;
+  top: 110px;
+  right: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.f-chip {
+  background: var(--white);
+  border-radius: 100px;
+  padding: 9px 18px 9px 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+  box-shadow: 0 4px 28px rgba(0,0,0,0.11), 0 1px 4px rgba(0,0,0,0.06);
+  white-space: nowrap;
+  cursor: default;
+  user-select: none;
+  /* entrance */
+  opacity: 0;
+  transform: translateY(-18px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.34, 1.5, 0.64, 1),
+              box-shadow 0.2s ease;
+  will-change: transform, opacity;
+}
+.f-chip:hover {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.07);
+}
+.f-chip.in {
+  opacity: 1;
+  transform: none;
+}
+
+.f-chip-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.f-chip-badge.coral { background: rgba(232,96,60,0.13); color: var(--coral); }
+.f-chip-badge.green { background: rgba(34,197,94,0.13); color: #15803d; }
+.f-chip-badge.amber { background: rgba(234,179,8,0.13); color: #92400e; }
+
+.f-chip-body { display: flex; flex-direction: column; line-height: 1.35; }
+.f-chip-title { font-size: 12px; font-weight: 600; color: var(--ink); }
+.f-chip-sub   { font-size: 10.5px; color: var(--ink-3); }
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION DIVIDER
+═══════════════════════════════════════════════════════════ */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 960px;
+  margin: 0 auto 24px;
+  padding: 0 20px;
+}
+.divider-rule { flex: 1; height: 1px; background: var(--mint-dim); }
+.divider-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PATH OUTER
+═══════════════════════════════════════════════════════════ */
+.path-outer {
+  padding: 10px 20px 80px;
+  position: relative;
+}
+/* Subtle page-level dot grid */
+.path-outer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.045) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Path section (dimensions set by JS) ─────────────────── */
+.path-section {
+  position: relative;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* ─── SVG ─────────────────────────────────────────────────── */
+.path-svg {
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NODE CARDS
+═══════════════════════════════════════════════════════════ */
+.path-node {
+  position: absolute;
+  will-change: transform, opacity;
+  /* side-specific initial states set below */
+}
+.path-node.right {
+  opacity: 0;
+  transform: translateX(22px);
+  transition: opacity 0.52s ease, transform 0.6s cubic-bezier(0.34, 1.18, 0.64, 1);
+}
+.path-node.left {
+  opacity: 0;
+  transform: translateX(-22px);
+  transition: opacity 0.52s ease, transform 0.6s cubic-bezier(0.34, 1.18, 0.64, 1);
+}
+.path-node.in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Stem line between SVG dot and card */
+.node-stem {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  pointer-events: none;
+  /* width, left/right, background set by JS */
+}
+
+/* Card shell */
+.node-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 26px 28px;
+  box-shadow: var(--card-sl);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+.path-node.in .node-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Coral top accent bar */
+.node-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--coral) 0%, transparent 80%);
+  border-radius: 20px 20px 0 0;
+}
+
+/* Dot grid inside card */
+.node-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.node-card-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.node-step {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 9px;
+}
+
+.node-title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.node-desc {
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.72;
+  color: var(--ink-2);
+  margin-bottom: 15px;
+}
+
+.node-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--mint);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--ink-2);
+  letter-spacing: 0.01em;
+}
+.node-tag-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--coral);
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════ */
+.footer {
+  text-align: center;
+  padding: 80px 40px 120px;
+  position: relative;
+  z-index: 1;
+}
+.footer h2 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4.2vw, 54px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.footer h2 em { font-style: italic; color: var(--coral); }
+.footer p {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink-3);
+  margin-bottom: 36px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 28px 60px;
+    gap: 0;
+  }
+  .chips-wrap {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 44px;
+  }
+  .f-chip { padding: 7px 14px 7px 7px; gap: 8px; }
+  .f-chip-badge { width: 24px; height: 24px; font-size: 10px; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 38px; }
+  .hero-sub { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-kicker">
+      <span class="hero-kicker-rule"></span>
+      Compliance Automation
+    </div>
+    <h1>Know your<br><em>customer,</em><br>end&#8209;to&#8209;end.</h1>
+    <p class="hero-sub">
+      From first intake to ongoing monitoring — one intelligent pipeline that maps
+      risk, surfaces alerts, and keeps you ahead of every regulation.
+    </p>
+    <a href="#" class="btn">
+      See how it works <span class="arr">→</span>
+    </a>
+  </div>
+
+  <!-- Floating notification chips -->
+  <div class="chips-wrap">
+    <div class="f-chip" id="fc0">
+      <div class="f-chip-badge coral">!</div>
+      <div class="f-chip-body">
+        <span class="f-chip-title">Screening alerts</span>
+        <span class="f-chip-sub">4 new this week</span>
+      </div>
+    </div>
+    <div class="f-chip" id="fc1">
+      <div class="f-chip-badge green">✓</div>
+      <div class="f-chip-body">
+        <span class="f-chip-title">UBO chain verified</span>
+        <span class="f-chip-sub">3-layer structure</span>
+      </div>
+    </div>
+    <div class="f-chip" id="fc2">
+      <div class="f-chip-badge amber">≈</div>
+      <div class="f-chip-body">
+        <span class="f-chip-title">PEP match flagged</span>
+        <span class="f-chip-sub">Tier 2 · review required</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ DIVIDER ════════════════════ -->
+<div class="divider">
+  <div class="divider-rule"></div>
+  <span class="divider-tag">The compliance pipeline</span>
+  <div class="divider-rule"></div>
+</div>
+
+<!-- ════════════════════ PATH ════════════════════ -->
+<div class="path-outer">
+  <div class="path-section" id="pathSection">
+
+    <svg class="path-svg" id="pathSvg" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background gray dashed path -->
+      <path id="pathBg"
+            fill="none"
+            stroke="var(--line-bg)"
+            stroke-width="1.5"
+            stroke-dasharray="5 6"/>
+      <!-- Active coral animated path -->
+      <path id="pathActive"
+            fill="none"
+            stroke="var(--coral)"
+            stroke-width="2.5"
+            stroke-linecap="round"/>
+      <!-- Node dots -->
+      <g id="gDots"></g>
+      <!-- Travel dot at the tracing tip -->
+      <g id="gTravel" style="opacity:0;transition:opacity 0.3s ease">
+        <circle id="travelPulse" r="14" fill="var(--coral)" fill-opacity="0.1"/>
+        <circle id="travelRing"  r="8"  fill="none" stroke="var(--coral)" stroke-width="1.5" stroke-opacity="0.4"/>
+        <circle id="travelCore" r="4.5" fill="var(--coral)"/>
+      </g>
+    </svg>
+
+    <!-- Node cards injected by JS -->
+    <div id="nodesWrap"></div>
+
+  </div>
+</div>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<div class="footer">
+  <h2>Start your<br><em>compliance journey</em></h2>
+  <p>Join hundreds of firms that trust our pipeline to stay compliant.</p>
+  <a href="#" class="btn">
+    Request a demo <span class="arr">→</span>
+  </a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ─── Node data ──────────────────────────────────────────── */
+  var DATA = [
+    {
+      side:  'right',
+      step:  '01',
+      title: 'Business Onboarding',
+      desc:  'Collect entity details, jurisdiction data, and corporate structure in one unified intake flow — no paperwork, no back-and-forth.',
+      tag:   'Automated KYB'
+    },
+    {
+      side:  'left',
+      step:  '02',
+      title: 'Screening Officers',
+      desc:  'Identify and verify all directors, officers, and authorised signatories against global watchlists in seconds.',
+      tag:   'Live watchlist match'
+    },
+    {
+      side:  'right',
+      step:  '03',
+      title: 'Sanctions',
+      desc:  'Cross-reference every entity against OFAC, EU, UN, and FATF consolidated sanctions lists in real time with audit-grade logs.',
+      tag:   'OFAC · EU · UN · FATF'
+    },
+    {
+      side:  'left',
+      step:  '04',
+      title: 'PEP',
+      desc:  'Detect politically exposed persons across 240+ countries with tiered risk scoring and source-of-funds prompts.',
+      tag:   '240+ countries'
+    },
+    {
+      side:  'right',
+      step:  '05',
+      title: 'UBO Mapping',
+      desc:  'Trace beneficial ownership chains through complex corporate structures — visualised in an interactive ownership graph.',
+      tag:   'Ownership graph'
+    }
+  ];
+
+  /* ─── DOM refs ───────────────────────────────────────────── */
+  var section    = document.getElementById('pathSection');
+  var svgEl      = document.getElementById('pathSvg');
+  var bgPath     = document.getElementById('pathBg');
+  var activePath = document.getElementById('pathActive');
+  var gDots      = document.getElementById('gDots');
+  var gTravel    = document.getElementById('gTravel');
+  var travelPulse = document.getElementById('travelPulse');
+  var travelRing  = document.getElementById('travelRing');
+  var travelCore  = document.getElementById('travelCore');
+  var nodesWrap  = document.getElementById('nodesWrap');
+
+  /* ─── State ──────────────────────────────────────────────── */
+  var pLen       = 0;
+  var nodeEls    = [];
+  var nodePos    = [];   /* [{x, y}] */
+  var triggered  = [];
+  var rafPending = false;
+  var resizeTmr;
+
+  /* ─── Layout config (responsive) ────────────────────────── */
+  function cfg() {
+    var vw     = window.innerWidth;
+    var narrow = vw < 520;
+    return {
+      maxW:    Math.min(960, vw - 28),
+      spacing: narrow ? 310 : 400,
+      swing:   narrow ? 0.14 : 0.215,
+      cardW:   narrow ? Math.min(vw - 56, 215) : 268,
+      stem:    narrow ? 14 : 28,
+      topPad:  90,
+      botPad:  110
+    };
+  }
+
+  /* ─── Build node card elements (run once) ────────────────── */
+  function buildCards() {
+    DATA.forEach(function (d, i) {
+      var el = document.createElement('div');
+      el.className = 'path-node ' + d.side;
+      el.id = 'pn' + i;
+      el.innerHTML =
+        '<div class="node-stem" id="st' + i + '"></div>' +
+        '<div class="node-card">' +
+          '<div class="node-card-inner">' +
+            '<div class="node-step">Step ' + d.step + '</div>' +
+            '<div class="node-title">' + d.title + '</div>' +
+            '<div class="node-desc">' + d.desc + '</div>' +
+            '<div class="node-tag">' +
+              '<span class="node-tag-dot"></span>' + d.tag +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      nodesWrap.appendChild(el);
+      nodeEls.push(el);
+      triggered.push(false);
+    });
+  }
+
+  /* ─── Build / rebuild layout ─────────────────────────────── */
+  function buildLayout() {
+    var c  = cfg();
+    var cx = c.maxW / 2;
+    var sw = c.maxW * c.swing;
+    var H  = c.topPad + DATA.length * c.spacing + c.botPad;
+
+    /* Container sizing */
+    section.style.width  = c.maxW + 'px';
+    section.style.height = H + 'px';
+    svgEl.setAttribute('width',   c.maxW);
+    svgEl.setAttribute('height',  H);
+    svgEl.setAttribute('viewBox', '0 0 ' + c.maxW + ' ' + H);
+
+    /* Compute node anchor positions */
+    nodePos = DATA.map(function (d, i) {
+      var nx = d.side === 'right' ? cx + sw : cx - sw;
+      /* Vertically centred between spacing bands, slightly higher */
+      var ny = c.topPad + i * c.spacing + c.spacing * 0.48;
+      return { x: nx, y: ny };
+    });
+
+    /* SVG cubic-bezier path */
+    var d  = 'M ' + cx + ' 0';
+    var px = cx, py = 0;
+    nodePos.forEach(function (pt) {
+      var dy  = pt.y - py;
+      /* S-curve: control points pulled tightly toward current x then released */
+      var c1x = px,    c1y = py + dy * 0.46;
+      var c2x = pt.x,  c2y = py + dy * 0.54;
+      d += ' C ' + c1x + ',' + c1y + ' ' + c2x + ',' + c2y + ' ' + pt.x + ',' + pt.y;
+      px = pt.x;  py = pt.y;
+    });
+    /* Tail — sweep back to centre */
+    d += ' C ' + px  + ',' + (H - 70)
+       + ' '   + cx  + ',' + (H - 55)
+       + ' '   + cx  + ',' + H;
+
+    bgPath.setAttribute('d', d);
+    activePath.setAttribute('d', d);
+
+    /* ── SVG node circles ── */
+    gDots.innerHTML = '';
+    nodePos.forEach(function (pt, i) {
+      var ns = 'http://www.w3.org/2000/svg';
+
+      /* Outer halo */
+      var halo = document.createElementNS(ns, 'circle');
+      halo.setAttribute('cx', pt.x);
+      halo.setAttribute('cy', pt.y);
+      halo.setAttribute('r', '11');
+      halo.setAttribute('fill', 'none');
+      halo.setAttribute('stroke', '#E8603C');
+      halo.setAttribute('stroke-width', '1.5');
+      halo.style.opacity = '0';
+      halo.style.transition = 'opacity 0.45s ease';
+      halo.id = 'dh' + i;
+      gDots.appendChild(halo);
+
+      /* Inner dot */
+      var dot = document.createElementNS(ns, 'circle');
+      dot.setAttribute('cx', pt.x);
+      dot.setAttribute('cy', pt.y);
+      dot.setAttribute('r', '5');
+      dot.setAttribute('fill', '#BDD0CA');
+      dot.style.transition = 'fill 0.4s ease';
+      dot.id = 'dd' + i;
+      gDots.appendChild(dot);
+    });
+
+    /* ── Position card elements ── */
+    nodeEls.forEach(function (el, i) {
+      var nd    = DATA[i];
+      var pt    = nodePos[i];
+      var stem  = document.getElementById('st' + i);
+      var cardEl = el.querySelector('.node-card');
+      var cardH  = (cardEl && cardEl.offsetHeight > 0) ? cardEl.offsetHeight : 190;
+
+      el.style.width = c.cardW + 'px';
+      el.style.top   = (pt.y - cardH / 2) + 'px';
+
+      if (nd.side === 'right') {
+        el.style.left  = (pt.x + c.stem) + 'px';
+        el.style.right = 'auto';
+        if (stem) {
+          stem.style.left       = (-c.stem) + 'px';
+          stem.style.right      = 'auto';
+          stem.style.width      = c.stem + 'px';
+          stem.style.background = 'linear-gradient(to right, #E8603C 0%, rgba(189,208,202,0.2) 100%)';
+        }
+      } else {
+        el.style.right = (c.maxW - pt.x + c.stem) + 'px';
+        el.style.left  = 'auto';
+        if (stem) {
+          stem.style.right      = (-c.stem) + 'px';
+          stem.style.left       = 'auto';
+          stem.style.width      = c.stem + 'px';
+          stem.style.background = 'linear-gradient(to left, #E8603C 0%, rgba(189,208,202,0.2) 100%)';
+        }
+      }
+    });
+
+    /* ── Path animation init ── */
+    pLen = activePath.getTotalLength();
+    activePath.style.strokeDasharray  = pLen;
+    activePath.style.strokeDashoffset = pLen;
+
+    /* ── Reset trigger state ── */
+    for (var i = 0; i < triggered.length; i++) triggered[i] = false;
+    nodeEls.forEach(function (el) { el.classList.remove('in'); });
+    nodePos.forEach(function (_, i) {
+      var h = document.getElementById('dh' + i);
+      var d = document.getElementById('dd' + i);
+      if (h) h.style.opacity = '0';
+      if (d) d.setAttribute('fill', '#BDD0CA');
+    });
+
+    updateScroll();
+  }
+
+  /* ─── Scroll update (called every rAF during scroll) ────── */
+  function updateScroll() {
+    var rect     = section.getBoundingClientRect();
+    var secH     = section.offsetHeight;
+    var vh       = window.innerHeight;
+
+    /*
+      progress 0 → section top at 55% of viewport
+      progress 1 → section bottom at 55% of viewport
+    */
+    var scrolled = vh * 0.55 - rect.top;
+    var progress = Math.max(0, Math.min(1, scrolled / secH));
+
+    /* Stroke-dashoffset */
+    activePath.style.strokeDashoffset = pLen * (1 - progress);
+
+    /* Travel dot — moves with the tip of the drawn line */
+    if (pLen > 0 && progress > 0.004 && progress < 0.996) {
+      var tp = activePath.getPointAtLength(progress * pLen);
+      travelCore.setAttribute('cx',  tp.x);
+      travelCore.setAttribute('cy',  tp.y);
+      travelRing.setAttribute('cx',  tp.x);
+      travelRing.setAttribute('cy',  tp.y);
+      travelPulse.setAttribute('cx', tp.x);
+      travelPulse.setAttribute('cy', tp.y);
+      gTravel.style.opacity = '1';
+    } else {
+      gTravel.style.opacity = '0';
+    }
+
+    /* Node card triggers */
+    nodePos.forEach(function (pt, i) {
+      /* fire when the line's progress Y reaches ~92% of the node's Y fraction */
+      var thr = (pt.y / secH) * 0.92;
+      if (!triggered[i] && progress >= thr) {
+        triggered[i] = true;
+
+        /* Activate SVG dot */
+        var halo = document.getElementById('dh' + i);
+        var dot  = document.getElementById('dd' + i);
+        if (halo) halo.style.opacity = '0.75';
+        if (dot)  dot.setAttribute('fill', '#E8603C');
+
+        /* Card slide-in (small delay for the "drawn to it" feel) */
+        ;(function (idx) {
+          setTimeout(function () {
+            nodeEls[idx].classList.add('in');
+          }, 80);
+        }(i));
+      }
+    });
+  }
+
+  /* ─── rAF-throttled scroll listener ─────────────────────── */
+  window.addEventListener('scroll', function () {
+    if (!rafPending) {
+      rafPending = true;
+      requestAnimationFrame(function () {
+        rafPending = false;
+        updateScroll();
+      });
+    }
+  }, { passive: true });
+
+  /* ─── Debounced resize listener ──────────────────────────── */
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTmr);
+    resizeTmr = setTimeout(buildLayout, 160);
+  });
+
+  /* ─── Floating chips staggered entrance ──────────────────── */
+  ['fc0', 'fc1', 'fc2'].forEach(function (id, i) {
+    setTimeout(function () {
+      var el = document.getElementById(id);
+      if (el) el.classList.add('in');
+    }, 800 + i * 220);
+  });
+
+  /* ─── Init ───────────────────────────────────────────────── */
+  buildCards();
+  buildLayout();
+
+  /* Second pass after browser paint for accurate card heights */
+  requestAnimationFrame(function () {
+    requestAnimationFrame(buildLayout);
+  });
+
+}());
+</script>
+</body>
+</html>
