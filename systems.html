@@ -3,264 +3,270 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Custom Apps and Automation Systems | Espino Digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<title>Systems and Services | Espino Digital</title>
+<meta name="description" content="Custom websites, apps, automation, and workflow systems for businesses that want better operations and better presence. Built from scratch by Espino Digital.">
+<link rel="canonical" href="https://espinodigital.com/systems">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css">
-<script src="translations.js"></script>
+<link rel="stylesheet" href="/styles.css">
+<script src="/translations.js"></script>
 </head>
 <body class="page-systems">
+
 <nav>
   <a href="/" class="nav-logo">Espino <span>Digital</span></a>
   <div class="nav-links">
     <a href="/" class="nav-link">Home</a>
-    <div class="nav-dropdown-wrap">
-      <a href="/systems" class="nav-link active nav-dropdown-trigger">Services <span class="nav-chevron">▾</span></a>
-      <div class="nav-dropdown-menu">
-        <a href="/systems" class="nav-dropdown-item active">Overview</a>
-        <a href="/websites" class="nav-dropdown-item">Websites</a>
-        <a href="/apps" class="nav-dropdown-item">Custom Apps</a>
-      </div>
-    </div>
+    <a href="/systems" class="nav-link active">Systems</a>
     <a href="/work" class="nav-link">Work</a>
     <a href="/about" class="nav-link">About</a>
     <a href="/contact" class="nav-link">Contact</a>
   </div>
-  <a href="/contact" class="nav-cta">Talk About Your Business →</a>
-  <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
-  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav-right">
+    <a href="/contact" class="nav-cta">Start a Project</a>
+    <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 <div class="nav-spacer" aria-hidden="true"></div>
 <div class="mobile-nav" id="mobileNav">
   <a href="/">Home</a>
-  <a href="/systems">Services</a>
-  <a href="/websites" class="mobile-nav-sub">Websites</a>
-  <a href="/apps" class="mobile-nav-sub">Custom Apps</a>
+  <a href="/systems">Systems</a>
   <a href="/work">Work</a>
   <a href="/about">About</a>
-  <a href="/contact" class="mobile-cta">Book a Call →</a>
+  <a href="/contact" class="mobile-cta">Start a Project</a>
 </div>
-<header class="page-hero">
-  <canvas class="hero-canvas" aria-hidden="true"></canvas>
-  <div class="hero-grid-bg"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
-  <div class="hero-scan"></div>
-  <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Websites · Apps · Automation · Bilingual</span></div>
-    <h1 class="hero-title" data-i18n="hero-title">Built for your business.<br><span class="accent">Not someone else's.</span></h1>
-    <p class="hero-sub" data-i18n="hero-sub">Generic software wasn't designed for how your company runs. We build custom apps, automation, and follow up systems around your specific workflow, so you stop managing around your tools and start running a tighter operation.</p>
-    <div class="hero-actions">
-      <a href="/contact" class="btn-primary" data-i18n="hero-btn-primary">Talk About Your Business</a>
-      <a href="/systems" class="btn-secondary" data-i18n="hero-btn-secondary">Explore Services</a>
-    </div>
-  </div>
-</header>
 
+<!-- HERO -->
+<div class="inner-hero">
+  <div class="inner-hero-tag">Systems and Services</div>
+  <h1 class="inner-hero-title fade-up">Everything connects.<br><span class="accent">None of it should be separate.</span></h1>
+  <p class="inner-hero-sub fade-up delay-1">Your website, your internal tools, your follow-up flows. Most businesses treat these as different problems. We build them as one connected system so nothing falls through the gaps.</p>
+  <div class="hero-actions fade-up delay-2">
+    <a href="/contact" class="btn-primary">Talk About Your Business</a>
+    <a href="/work" class="btn-secondary">See the Work</a>
+  </div>
+</div>
+
+<!-- THREE SERVICE PILLARS -->
 <section class="section">
-  <div class="section-tag">Our Services</div>
-  <div class="grid-2">
-    <a href="/websites" class="card service-hub-card">
-      <div class="kicker">01 / Web Design &amp; Development</div>
+  <div class="section-tag fade-up">What We Build</div>
+  <div class="grid-3 fade-up">
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
       <h3>Websites</h3>
-      <p>Custom-built sites for businesses and creators. Business sites that bring in leads, portfolios that look like you, bilingual builds — all from scratch, no templates.</p>
-      <span class="service-hub-link">Explore Websites →</span>
-    </a>
-    <a href="/apps" class="card service-hub-card">
-      <div class="kicker">02 / App Development</div>
+      <p class="desc">Custom-built sites that do actual work. Business sites that present your company properly and move visitors toward a decision. Not a template with your logo on it.</p>
+      <ul class="list">
+        <li>Custom design, no templates or page builders</li>
+        <li>Mobile-first, fast, and search-ready from day one</li>
+        <li>Bilingual English and Spanish builds</li>
+        <li>Lead capture, forms, and conversion logic</li>
+        <li>Ongoing support and updates available</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
       <h3>Custom Apps</h3>
-      <p>When a website isn't enough. Job trackers, customer portals, booking systems, dispatch boards, internal tools — built for how your operation actually runs.</p>
-      <span class="service-hub-link">Explore Custom Apps →</span>
-    </a>
+      <p class="desc">When a website is not enough. Purpose-built internal tools for the parts of your operation that generic software handles badly or not at all.</p>
+      <ul class="list">
+        <li>Dispatch and job tracking dashboards</li>
+        <li>Customer portals and estimate tools</li>
+        <li>Booking and scheduling systems</li>
+        <li>Data aggregation from multiple sources</li>
+        <li>Internal reporting and visibility tools</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔁</div>
+      <h3>Automation</h3>
+      <p class="desc">Follow-up flows, review requests, lead routing, and missed-call recovery. Systems that handle the repetitive handoffs so your team can focus on the work that matters.</p>
+      <ul class="list">
+        <li>Missed call text-back in seconds</li>
+        <li>Bilingual follow-up sequences</li>
+        <li>Review requests after every job</li>
+        <li>Lead qualification and routing</li>
+        <li>Return-customer reactivation flows</li>
+      </ul>
+    </div>
   </div>
 </section>
 
+<!-- WORKFLOW VISUALIZATION -->
+<div class="section-band">
+  <div class="band-inner">
+    <div class="section-tag fade-up">How It Flows</div>
+    <h2 class="section-title fade-up" style="margin-bottom:12px">A lead enters your business.<br><span class="accent">Here's what happens at every step.</span></h2>
+    <p class="section-sub fade-up delay-1" style="margin-bottom:0">Each node below is something we build. Most businesses are missing two or three of them. That's where jobs disappear.</p>
+
+    <div class="workflow-track fade-up delay-2">
+      <div class="workflow-line"><div class="wl-fill" id="wlFill"></div></div>
+
+      <div class="workflow-step" id="ws0">
+        <div class="wf-node">📱</div>
+        <div class="wf-label">First contact</div>
+        <div class="wf-sub">Call, form, or search click</div>
+      </div>
+      <div class="workflow-step" id="ws1">
+        <div class="wf-node">🌐</div>
+        <div class="wf-label">Your website</div>
+        <div class="wf-sub">First impression. Do they stay?</div>
+      </div>
+      <div class="workflow-step" id="ws2">
+        <div class="wf-node">💬</div>
+        <div class="wf-label">Instant reply</div>
+        <div class="wf-sub">Text-back or auto-response</div>
+      </div>
+      <div class="workflow-step" id="ws3">
+        <div class="wf-node">📅</div>
+        <div class="wf-label">Booking</div>
+        <div class="wf-sub">Estimate or appointment set</div>
+      </div>
+      <div class="workflow-step" id="ws4">
+        <div class="wf-node">🔧</div>
+        <div class="wf-label">Service done</div>
+        <div class="wf-sub">Job complete</div>
+      </div>
+      <div class="workflow-step" id="ws5">
+        <div class="wf-node">⭐</div>
+        <div class="wf-label">Review request</div>
+        <div class="wf-sub">Automated post-service</div>
+      </div>
+      <div class="workflow-step" id="ws6">
+        <div class="wf-node">🔄</div>
+        <div class="wf-label">Return path</div>
+        <div class="wf-sub">Reactivation later</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THE PROBLEM / WITHOUT A SYSTEM -->
 <section class="section">
-  <div class="section-tag" data-i18n="prob-tag">The Problem</div>
-  <div class="grid-2 prob-grid">
+  <div class="section-tag fade-up">The Problem</div>
+  <div class="grid-2 fade-up">
     <div class="chaos-panel">
-      <div class="chaos-header">
-        <span class="chaos-pulse"></span>
-        <span data-i18n="chaos-header">Without a system in place</span>
+      <div class="chaos-header"><div class="chaos-pulse"></div>Without a system in place</div>
+      <div class="chaos-row">
+        <span class="ctag ctag-r">MISSED</span>
+        <div class="crow-body"><strong>Calls going unanswered</strong><span>No text-back, no follow-up. That lead is gone.</span></div>
       </div>
       <div class="chaos-row">
-        <span class="ctag ctag-red">MISSED</span>
-        <div class="crow-body">
-          <strong data-i18n="chaos-r1-title">Calls with no answer</strong>
-          <span data-i18n="chaos-r1-sub">No text back, no follow up sent</span>
-        </div>
-        <span class="crow-count" data-i18n="chaos-r1-count">14 this week</span>
+        <span class="ctag ctag-y">WAITING</span>
+        <div class="crow-body"><strong>"Are you still available?"</strong><span>Customer messaged 3 days ago. No reply yet.</span></div>
       </div>
       <div class="chaos-row">
-        <span class="ctag ctag-yellow">WAITING</span>
-        <div class="crow-body">
-          <strong data-i18n="chaos-r2-title">"Still available?"</strong>
-          <span data-i18n="chaos-r2-sub">Customer texted 3 days ago, no reply</span>
-        </div>
+        <span class="ctag ctag-y">QUOTE</span>
+        <div class="crow-body"><strong>Estimate sent last week</strong><span>No follow-up. Probably chose someone else.</span></div>
       </div>
       <div class="chaos-row">
-        <span class="ctag ctag-yellow">QUOTE</span>
-        <div class="crow-body">
-          <strong data-i18n="chaos-r3-title">Estimate sent last week</strong>
-          <span data-i18n="chaos-r3-sub">Went quiet. Probably moved on.</span>
-        </div>
+        <span class="ctag ctag-r">REVIEWS</span>
+        <div class="crow-body"><strong>3.2 stars on Google</strong><span>Competitor has 4.8 and 200 reviews. You have 14.</span></div>
       </div>
       <div class="chaos-row">
-        <span class="ctag ctag-red">REVIEWS</span>
-        <div class="crow-body">
-          <strong data-i18n="chaos-r4-title">3.2 stars on Google</strong>
-          <span data-i18n="chaos-r4-sub">Top competitor has 4.8 and 200 reviews</span>
-        </div>
+        <span class="ctag ctag-y">SEARCH</span>
+        <div class="crow-body"><strong>Not showing up locally</strong><span>They searched, clicked the next result, moved on.</span></div>
       </div>
-      <div class="chaos-row">
-        <span class="ctag ctag-yellow">SEARCH</span>
-        <div class="crow-body">
-          <strong data-i18n="chaos-r5-title">Not showing up locally</strong>
-          <span data-i18n="chaos-r5-sub">They searched, clicked the next result</span>
-        </div>
-      </div>
-      <div class="chaos-footer">
-        <span class="chaos-dot-pulse"></span>
-        <span data-i18n="chaos-footer">Work leaving. Quietly. Every week.</span>
-      </div>
+      <div class="chaos-footer"><div class="chaos-dot"></div>Work leaving. Quietly. Every week.</div>
     </div>
-    <div class="card prob-fix-card">
-      <div class="kicker" data-i18n="fix-kicker">Why this matters</div>
-      <h3 data-i18n="fix-title">Good work doesn't matter if the lead dies first.</h3>
-      <p data-i18n="fix-p1">Most local businesses don't lose work because they're bad at the job. They lose it because the gap between first contact and follow up is too slow, too quiet, or completely absent.</p>
-      <p data-i18n="fix-p2">Espino Digital covers those gaps: missed call recovery, bilingual follow up, review building, and a site that actually moves people toward a call.</p>
-      <div class="prob-fix-items">
-        <div class="prob-fix-item"><span class="pfi-dot"></span><span data-i18n="fix-item1">Missed call text back in seconds</span></div>
-        <div class="prob-fix-item"><span class="pfi-dot"></span><span data-i18n="fix-item2">Bilingual follow up that keeps leads warm</span></div>
-        <div class="prob-fix-item"><span class="pfi-dot"></span><span data-i18n="fix-item3">Review requests after every job</span></div>
-        <div class="prob-fix-item"><span class="pfi-dot"></span><span data-i18n="fix-item4">A website that helps people say yes</span></div>
-      </div>
+    <div class="card">
+      <div class="kicker">Why this matters</div>
+      <h3 style="font-size:22px;margin-bottom:16px">Good work doesn't matter if the lead disappears first.</h3>
+      <p style="color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:16px">Most businesses don't lose work because they're bad at what they do. They lose it because the gap between first contact and follow-up is too slow, too quiet, or completely absent.</p>
+      <p style="color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:24px">We fill that gap. The website, the response, the follow-up, the reviews. Everything that happens between someone finding you and someone hiring you.</p>
+      <ul class="list">
+        <li>Missed call text-back that fires in seconds</li>
+        <li>Bilingual follow-up that keeps Spanish-speaking leads warm</li>
+        <li>Review requests that go out automatically after every job</li>
+        <li>A website that gives people a reason to choose you</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="section band" style="max-width:none;">
-  <div style="max-width:1280px;margin:0 auto;">
-    <div class="section-tag" data-i18n="wd-tag">What We Do</div>
-    <div class="grid-3">
-      <div class="card"><div class="kicker" data-i18n="wd-c1-kicker">01 / Custom App</div><h3 data-i18n="wd-c1-title">Software built around your business</h3><p data-i18n="wd-c1-text">A purpose-built app for your specific operation, not a generic platform with features you'll never use.</p><ul class="list"><li>Job tracking &amp; dispatch dashboards</li><li>Customer portals &amp; estimate tools</li><li>Team scheduling &amp; workflow apps</li><li>Offline-capable field tools</li></ul></div>
-      <div class="card"><div class="kicker" data-i18n="wd-c2-kicker">02 / Automation</div><h3 data-i18n="wd-c2-title">Never miss another customer</h3><p data-i18n="wd-c2-text">When you are busy, the system responds, follows up, and keeps the conversation moving.</p><ul class="list"><li>Missed call text back</li><li>Bilingual AI chat</li><li>Appointment handling</li><li>Customer reactivation</li></ul></div>
-      <div class="card"><div class="kicker" data-i18n="wd-c3-kicker">03 / Website</div><h3 data-i18n="wd-c3-title">A website that actually works</h3><p data-i18n="wd-c3-text">Not a brochure. A conversion tool built to get calls and qualified leads.</p><ul class="list"><li>Fast performance</li><li>Premium positioning</li><li>Lead forms + CRM-ready flow</li><li>Clear mobile experience</li></ul></div>
-      <div class="card"><div class="kicker" data-i18n="wd-c4-kicker">04 / Local Growth</div><h3 data-i18n="wd-c4-title">Get found. Get chosen.</h3><p data-i18n="wd-c4-text">Improve how the business appears online so more searches turn into booked work.</p><ul class="list"><li>Google Business optimization</li><li>Review generation</li><li>Local SEO foundations</li><li>Monthly clarity</li></ul></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-tag" data-i18n="apps-tag">Custom Apps</div>
-  <div class="grid-2">
-    <div>
-      <h2 class="section-title" data-i18n="apps-title">Built for the way<br><span class="accent">your business actually runs.</span></h2>
-      <p class="section-sub" data-i18n="apps-sub1">Most companies are running on a mix of texts, spreadsheets, and tools that weren't designed for their trade. We replace that with something purpose-built. An app that fits your exact workflow, whether that's tracking jobs, managing crews, handling estimates, or communicating with customers.</p>
-      <p class="section-sub" data-i18n="apps-sub2">No bloated platform. No features you don't need. Just the right tool for your operation, bilingual where it matters, and built to grow with you.</p>
-      <div class="hero-actions" style="margin-top:2rem">
-        <a href="/contact" class="btn-primary" data-i18n="apps-btn">Talk About Your App</a>
+<!-- BILINGUAL SECTION -->
+<div class="section-band">
+  <div class="band-inner">
+    <div class="section-tag fade-up">Bilingual Builds</div>
+    <div class="grid-2 fade-up" style="align-items:center;gap:clamp(32px,5vw,80px)">
+      <div>
+        <h2 class="section-title">English and Spanish.<br><span class="accent">Built in, not bolted on.</span></h2>
+        <p class="section-sub">Translation plugins are a patch. We build bilingual from the ground up so both versions of your site, your follow-up, and your tools feel right for the person reading them. Not translated. Written.</p>
+        <div class="hero-actions">
+          <a href="/contact" class="btn-primary">Talk About Your Build</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="kicker">What this covers</div>
+        <ul class="list">
+          <li>Homepage and all service pages in both languages</li>
+          <li>Follow-up texts and email sequences in Spanish and English</li>
+          <li>Review requests that match the customer's language</li>
+          <li>Bilingual booking confirmations and reminders</li>
+          <li>A language toggle that actually switches everything</li>
+        </ul>
+        <div style="margin-top:24px;padding:16px;background:var(--surface);border-radius:var(--radius-sm);border:1px solid var(--border)">
+          <div style="font-family:var(--fm);font-size:11px;color:var(--muted-2);margin-bottom:10px;letter-spacing:.06em">SAMPLE AUTO-REPLY</div>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:10px">EN: "Thanks for calling. We're with another customer right now. We'll be with you shortly."</p>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7">ES: "Gracias por llamar. Estamos con otro cliente en este momento. Le atenderemos pronto."</p>
+        </div>
       </div>
     </div>
-    <div>
-      <div class="card" style="margin-bottom:1rem"><div class="kicker">Example</div><h3>HVAC company job board</h3><p>Dispatcher sees all open jobs on one screen. Techs check in from the field. Customers get automatic status updates in English or Spanish.</p></div>
-      <div class="card" style="margin-bottom:1rem"><div class="kicker">Example</div><h3>Contractor estimate portal</h3><p>Customers request quotes online. Owner reviews, adjusts, and sends, all from a mobile-friendly dashboard built for the way estimates actually get done.</p></div>
-      <div class="card"><div class="kicker">Example</div><h3>Cleaning company scheduler</h3><p>Recurring appointments, team assignments, and automated reminders. One tool that replaces five group chats and a shared calendar nobody updates.</p></div>
-    </div>
   </div>
-</section>
+</div>
 
-<section class="section">
-  <div class="section-tag" data-i18n="how-tag">How It Works</div>
-  <div class="grid-3">
-    <div class="flow-item"><h4 data-i18n="how-1-title">1. Customer calls or visits site</h4><p data-i18n="how-1-text">The lead enters through your website, Google profile, or direct call.</p></div>
-    <div class="flow-item"><h4 data-i18n="how-2-title">2. System responds fast</h4><p data-i18n="how-2-text">If nobody picks up, text back and chat automation keep the lead warm.</p></div>
-    <div class="flow-item"><h4 data-i18n="how-3-title">3. Follow up closes more work</h4><p data-i18n="how-3-text">Appointments, reminders, review requests, and reactivation help create more value from every lead.</p></div>
+<!-- CTA -->
+<div class="cta-band fade-up">
+  <div class="section-tag" style="justify-content:center">Next Step</div>
+  <h2 class="section-title">Not sure where to start?<br><span class="accent">Start with the conversation.</span></h2>
+  <p class="section-sub">Tell me what your business does and what's not working. I'll tell you what I'd build and why.</p>
+  <div class="hero-actions">
+    <a href="/contact" class="btn-primary">Talk About Your Business</a>
+    <a href="/work" class="btn-secondary">See Example Work</a>
   </div>
-</section>
-
-<section class="section">
-  <div class="section-tag" data-i18n="ip-tag">In Practice</div>
-  <div class="photo-grid">
-    <figure class="photo-card">
-      <div class="photo-wrap">
-        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=534&fit=crop&auto=format&q=80" alt="Missed call recovered via instant text-back on mobile" loading="lazy">
-      </div>
-      <figcaption>
-        <strong data-i18n="ip-fig1-title">Recover the missed call</strong>
-        <span data-i18n="ip-fig1-text">When the shop is busy and nobody answers, an automatic text goes out in seconds, in English or Spanish, before the customer moves to your competitor.</span>
-      </figcaption>
-    </figure>
-    <figure class="photo-card">
-      <div class="photo-wrap">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=534&fit=crop&auto=format&q=80" alt="Automation dashboard running follow up sequences in the background" loading="lazy">
-      </div>
-      <figcaption>
-        <strong data-i18n="ip-fig2-title">Follow up runs without you</strong>
-        <span data-i18n="ip-fig2-text">While you're on the job, the system is sending appointment reminders, chasing estimates, and re-engaging customers who went quiet. No manual work required.</span>
-      </figcaption>
-    </figure>
-    <figure class="photo-card">
-      <div class="photo-wrap">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=534&fit=crop&auto=format&q=80" alt="Business analytics and Google reputation growth dashboard" loading="lazy">
-      </div>
-      <figcaption>
-        <strong data-i18n="ip-fig3-title">Reviews build the reputation</strong>
-        <span data-i18n="ip-fig3-text">After every job, a review request goes out automatically. Over time, more reviews mean a stronger Google presence and more inbound calls that don't require paid ads.</span>
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="cta-band">
-  <h2 class="section-title" data-i18n="cta-title">Your business deserves<br><span class="accent">software built for it.</span></h2>
-  <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="cta-sub">We don't sell templates. We talk about how your operation works, identify where the friction is, and build something that actually fits, from a custom app to the systems around it.</p>
-  <div class="hero-actions" style="justify-content:center">
-    <a href="/contact" class="btn-primary" data-i18n="cta-btn">Talk About Your Business</a>
-  </div>
-</section>
-
+</div>
 
 <footer>
   <div class="footer-logo">Espino <span>Digital</span></div>
   <div class="footer-links">
     <a href="/" class="footer-link">Home</a>
-    <a href="/systems" class="footer-link">Services</a>
+    <a href="/systems" class="footer-link">Systems</a>
     <a href="/work" class="footer-link">Work</a>
     <a href="/about" class="footer-link">About</a>
     <a href="/contact" class="footer-link">Contact</a>
   </div>
   <div class="footer-meta">© 2026 Espino Digital · Charlotte, NC</div>
 </footer>
+
 <script>
 (function(){
-  ED_LANG.init();
   var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
-  var hamburger=document.querySelector('.nav-hamburger');
-  var mobileNav=document.getElementById('mobileNav');
-  hamburger.addEventListener('click',function(){var open=mobileNav.classList.toggle('open');hamburger.classList.toggle('open',open);hamburger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';});
-  mobileNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mobileNav.classList.remove('open');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting)return;
-      var el=entry.target;
-      var siblings=Array.from(el.parentElement.children).filter(function(c){return c.classList.contains('scroll-hidden')||c.classList.contains('scroll-visible')});
-      var idx=siblings.indexOf(el);
-      el.style.animationDelay=(idx*0.08)+'s';
-      el.classList.remove('scroll-hidden');el.classList.add('scroll-visible');
-      io.unobserve(el);
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  var btn=document.querySelector('.nav-hamburger');
+  var mob=document.getElementById('mobileNav');
+  if(btn&&mob){btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);});}
+  ED_LANG.init();
+
+  // Fade-up + workflow animation
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        // light up workflow steps sequentially
+        if(e.target.classList.contains('workflow-track')){
+          var fill=document.getElementById('wlFill');
+          if(fill) fill.classList.add('in-view');
+          var steps=document.querySelectorAll('.workflow-step');
+          steps.forEach(function(s,i){
+            setTimeout(function(){s.classList.add('lit');},200+i*180);
+          });
+        }
+      }
     });
   },{threshold:0.1});
-  document.querySelectorAll('.card,.metric,.problem-item,.flow-item,.stat-item,.section-title,.photo-card').forEach(function(el){var r=el.getBoundingClientRect();if(r.top>window.innerHeight){el.classList.add('scroll-hidden');io.observe(el);}});
-  var tagIO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;entry.target.classList.add('tag-visible');tagIO.unobserve(entry.target);});},{threshold:0.5});
-  document.querySelectorAll('.section-tag').forEach(function(el){tagIO.observe(el);});
+  document.querySelectorAll('.fade-up, .workflow-track').forEach(function(el){obs.observe(el);});
 })();
 </script>
-<script src="gradient.js"></script>
 </body>
 </html>

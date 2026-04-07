@@ -354,10 +354,10 @@ nav.scrolled {
 
 /* ─── Case study ────────────────────────────────────── */
 .case-study { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 40px; }
-.case-study-header { padding: clamp(28px,4vw,56px); border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 32px; }
-.case-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
-.case-study-header h2 { font-size: clamp(24px,3.5vw,40px); max-width: 600px; margin-bottom: 14px; }
-.case-intro { font-size: 16px; color: var(--muted); line-height: 1.78; max-width: 560px; }
+.case-study-header { padding: clamp(28px,4vw,56px); border-bottom: 1px solid var(--border); }
+.case-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.case-study-header h2 { font-size: clamp(24px,3.5vw,40px); max-width: 680px; margin-bottom: 14px; }
+.case-intro { font-size: 16px; color: var(--muted); line-height: 1.78; max-width: 620px; }
 .case-study-body { display: grid; grid-template-columns: 1fr 1fr; }
 .cs-panel { padding: clamp(24px,3vw,40px); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .cs-panel:nth-child(2n) { border-right: none; }
@@ -517,7 +517,7 @@ footer { border-top: 1px solid var(--border); padding: 44px clamp(20px,5vw,80px)
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
-  .case-study-header { grid-template-columns: 1fr; }
+  /* case-study-header is now single-column block, no override needed */
   .form-row { grid-template-columns: 1fr; }
   footer { flex-direction: column; align-items: flex-start; }
   .workflow-track { overflow-x: auto; padding-bottom: 16px; }

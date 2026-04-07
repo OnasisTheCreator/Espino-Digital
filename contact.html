@@ -3,173 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Get in Touch | Espino Digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<title>Contact | Espino Digital</title>
+<meta name="description" content="Start a conversation about your website, internal tools, or automation system. No pitch, no pressure — just a straight conversation about what would help your business.">
+<link rel="canonical" href="https://espinodigital.com/contact">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css">
-<script src="translations.js"></script>
+<link rel="stylesheet" href="/styles.css">
+<script src="/translations.js"></script>
 </head>
 <body class="page-contact">
+
 <nav>
   <a href="/" class="nav-logo">Espino <span>Digital</span></a>
   <div class="nav-links">
     <a href="/" class="nav-link">Home</a>
-    <div class="nav-dropdown-wrap">
-      <a href="/systems" class="nav-link nav-dropdown-trigger">Services <span class="nav-chevron">▾</span></a>
-      <div class="nav-dropdown-menu">
-        <a href="/systems" class="nav-dropdown-item">Overview</a>
-        <a href="/websites" class="nav-dropdown-item">Websites</a>
-        <a href="/apps" class="nav-dropdown-item">Custom Apps</a>
-      </div>
-    </div>
+    <a href="/systems" class="nav-link">Systems</a>
     <a href="/work" class="nav-link">Work</a>
     <a href="/about" class="nav-link">About</a>
     <a href="/contact" class="nav-link active">Contact</a>
   </div>
-  <a href="tel:9804756920" class="nav-cta">Call Now →</a>
-  <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
-  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav-right">
+    <a href="/contact" class="nav-cta">Start a Project</a>
+    <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 <div class="nav-spacer" aria-hidden="true"></div>
 <div class="mobile-nav" id="mobileNav">
   <a href="/">Home</a>
-  <a href="/systems">Services</a>
-  <a href="/websites" class="mobile-nav-sub">Websites</a>
-  <a href="/apps" class="mobile-nav-sub">Custom Apps</a>
+  <a href="/systems">Systems</a>
   <a href="/work">Work</a>
   <a href="/about">About</a>
-  <a href="/contact" class="mobile-cta">Get in Touch →</a>
+  <a href="/contact" class="mobile-cta">Start a Project</a>
 </div>
-<header class="page-hero">
-  <canvas class="hero-canvas" aria-hidden="true"></canvas>
-  <div class="hero-grid-bg"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
-  <div class="hero-scan"></div>
-  <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Websites · Apps · Automation · Bilingual</span></div>
-    <h1 class="hero-title" data-i18n="hero-title">Tell me what's<br><span class="accent">going on.</span></h1>
-    <p class="hero-sub" data-i18n="hero-sub">No pitch deck. Just a direct conversation about your site, your calls, and your follow up. If there's something we can do about it, I'll tell you what that looks like.</p>
-    <div class="hero-actions">
-      <a href="tel:9804756920" class="btn-primary">Call Now</a>
-      <a href="/systems" class="btn-secondary" data-i18n="hero-btn-secondary">Explore Services</a>
-    </div>
-  </div>
-</header>
 
-<section class="section">
-  <div class="section-tag" data-i18n="contact-tag">Contact</div>
-  <div class="grid-2">
-    <div>
-      <h2 class="section-title" data-i18n="contact-title">Let’s talk about<br><span class="accent">your business.</span></h2>
-      <p class="section-sub" data-i18n="contact-sub">Fill out the form or reach out directly. Either way, the first conversation is just a conversation. No pressure, no package pitch.</p>
-      <div class="contact-direct">
-        <div class="contact-direct-item">
-          <span class="cdi-label" data-i18n="cdi-phone-label">Phone</span>
-          <a href="tel:9804756920" class="cdi-value">(980) 475-6920</a>
+<!-- HERO -->
+<div class="inner-hero" style="padding-bottom:clamp(40px,6vw,80px)">
+  <div class="inner-hero-tag">Contact</div>
+  <h1 class="inner-hero-title fade-up">Tell me what<br><span class="accent">you're working on.</span></h1>
+  <p class="inner-hero-sub fade-up delay-1">You don't need a perfect brief. Just describe your business, what's not working, and what you're trying to fix. I'll take it from there.</p>
+</div>
+
+<!-- CONTACT SPLIT -->
+<section class="section" style="padding-top:0">
+  <div class="contact-grid fade-up">
+
+    <!-- FORM SIDE -->
+    <div class="contact-form-wrap">
+      <form class="contact-form" action="https://formspree.io/f/xgegqwwl" method="POST" id="contactForm">
+        <input type="hidden" name="_subject" value="New Inquiry — Espino Digital">
+        <input type="hidden" name="_replyto" value="onasis@espinodigital.com">
+
+        <!-- Inquiry type selector -->
+        <div class="form-group">
+          <label class="form-label">What are you looking for?</label>
+          <div class="inquiry-tabs" id="inquiryTabs">
+            <button type="button" class="itab active" data-val="website">Website</button>
+            <button type="button" class="itab" data-val="systems">Systems / App</button>
+            <button type="button" class="itab" data-val="automation">Automation</button>
+            <button type="button" class="itab" data-val="both">Multiple</button>
+            <button type="button" class="itab" data-val="notsure">Not sure yet</button>
+          </div>
+          <input type="hidden" name="inquiry_type" id="inquiryType" value="website">
         </div>
-        <div class="contact-direct-item">
-          <span class="cdi-label" data-i18n="cdi-email-label">Email</span>
-          <a href="mailto:hello@espinodigital.com" class="cdi-value">hello@espinodigital.com</a>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fname">Name</label>
+            <input class="form-input" type="text" id="fname" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="femail">Email</label>
+            <input class="form-input" type="email" id="femail" name="email" placeholder="your@email.com" required>
+          </div>
         </div>
-        <div class="contact-direct-item">
-          <span class="cdi-label" data-i18n="cdi-loc-label">Location</span>
-          <span class="cdi-value" style="font-size:16px;cursor:default">Charlotte, NC</span>
+
+        <div class="form-group">
+          <label class="form-label" for="fbiz">Business name <span class="form-optional">(optional)</span></label>
+          <input class="form-input" type="text" id="fbiz" name="business" placeholder="What's the business called?">
         </div>
-        <div class="contact-direct-item">
-          <span class="cdi-label" data-i18n="cdi-expect-label">What to expect</span>
-          <p style="font-size:14px;color:var(--muted);line-height:1.65;margin-top:4px" data-i18n="cdi-expect-text">I look at your site, your call volume, your reviews, and how your follow up works right now. Then I tell you what I see. If it makes sense to move forward, you’ll know exactly what that looks like.</p>
+
+        <div class="form-group">
+          <label class="form-label" for="fmsg">What's going on?</label>
+          <textarea class="form-input form-textarea" id="fmsg" name="message" rows="6" placeholder="Describe your business and what you're trying to solve. Don't overthink it — a few sentences is fine." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="fbudget">Rough budget range <span class="form-optional">(optional)</span></label>
+          <select class="form-input form-select" id="fbudget" name="budget">
+            <option value="" disabled selected>Select a range</option>
+            <option value="under-2k">Under $2,000</option>
+            <option value="2k-5k">$2,000 – $5,000</option>
+            <option value="5k-10k">$5,000 – $10,000</option>
+            <option value="10k-plus">$10,000+</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary form-submit" id="formSubmit">Send Message</button>
+        <p class="form-note">I reply within one business day. Usually faster.</p>
+
+        <div class="form-success" id="formSuccess" style="display:none">
+          <div class="fs-icon">✓</div>
+          <div class="fs-title">Message received.</div>
+          <div class="fs-sub">I'll be in touch within one business day.</div>
+        </div>
+      </form>
+    </div>
+
+    <!-- INFO SIDE -->
+    <div class="contact-info">
+      <div class="card" style="margin-bottom:20px">
+        <div class="kicker">What happens next</div>
+        <ol class="contact-steps">
+          <li>
+            <div class="cs-num">01</div>
+            <div class="cs-body">
+              <strong>You send the message</strong>
+              <span>Describe your business and the problem. No polished brief required.</span>
+            </div>
+          </li>
+          <li>
+            <div class="cs-num">02</div>
+            <div class="cs-body">
+              <strong>I review and reply</strong>
+              <span>I'll respond with what I think makes sense and whether it's something I can help with.</span>
+            </div>
+          </li>
+          <li>
+            <div class="cs-num">03</div>
+            <div class="cs-body">
+              <strong>We have a real conversation</strong>
+              <span>If it's a good fit, we'll get on a call, go deeper on the problem, and figure out what to build.</span>
+            </div>
+          </li>
+          <li>
+            <div class="cs-num">04</div>
+            <div class="cs-body">
+              <strong>Proposal and timeline</strong>
+              <span>Clear scope, clear price, clear delivery. No hidden fees, no vague deliverables.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Direct contact</div>
+        <a href="mailto:onasis@espinodigital.com" class="contact-email-link">onasis@espinodigital.com</a>
+        <div class="contact-detail-row">
+          <span class="cd-label">Based in</span>
+          <span class="cd-val">Charlotte, NC</span>
+        </div>
+        <div class="contact-detail-row">
+          <span class="cd-label">Response time</span>
+          <span class="cd-val">Within 1 business day</span>
+        </div>
+        <div class="contact-detail-row">
+          <span class="cd-label">Languages</span>
+          <span class="cd-val">English and Spanish</span>
         </div>
       </div>
     </div>
-    <div class="form-wrap">
-      <div class="kicker" data-i18n="form-kicker">Get In Touch</div>
-      <form action="https://formspree.io/f/mnjodwzd" method="POST">
-        <div class="form-row">
-          <div><label data-i18n="form-name-label">Your Name</label><input type="text" name="name" placeholder="Juan García" required></div>
-          <div><label data-i18n="form-biz-label">Business Name</label><input type="text" name="business" placeholder="García Auto Repair" required></div>
-        </div>
-        <div><label data-i18n="form-phone-label">Phone Number</label><input type="tel" name="phone" placeholder="(704) 555-0123" required></div>
-        <div><label data-i18n="form-email-label">Email Address</label><input type="email" name="email" placeholder="you@yourbusiness.com" required></div>
-        <div><label data-i18n="form-type-label">Type of Business</label>
-          <select name="industry" required>
-            <option value="" disabled selected data-i18n="form-select-ph">Select your type of business</option>
-            <option>Auto Repair</option>
-            <option>Cleaning Service</option>
-            <option>Electrician</option>
-            <option>Flooring</option>
-            <option>Garage Doors</option>
-            <option>General Contractor / Handyman</option>
-            <option>HVAC</option>
-            <option>Landscaping / Lawn Care</option>
-            <option>Moving Company</option>
-            <option>Painting</option>
-            <option>Pest Control</option>
-            <option>Plumbing</option>
-            <option>Pool Service</option>
-            <option>Roofing</option>
-            <option>Tree Service / Arborist</option>
-            <option>Window Cleaning / Pressure Washing</option>
-            <option>Other Local Business</option>
-          </select>
-        </div>
-        <div><label data-i18n="form-msg-label">What’s the biggest bottleneck right now?</label><textarea name="details" placeholder="Missed calls, site that doesn’t convert, no follow up, low reviews, not showing up on Google..."></textarea></div>
-        <button type="submit" class="btn-primary" style="border:none;cursor:pointer" data-i18n="form-submit">Send My Info</button>
-      </form>
-    </div>
+
   </div>
 </section>
 
-<section class="cta-band">
-  <h2 class="section-title" data-i18n="cta-title">Prefer to just<br><span class="accent">call or email?</span></h2>
-  <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="cta-sub">Either works. We’ll talk through what’s happening and figure out what makes sense from there.</p>
-  <div class="hero-actions" style="justify-content:center">
-    <a href="tel:9804756920" class="btn-primary">Call (980) 475-6920</a>
-    <a href="mailto:hello@espinodigital.com" class="btn-secondary">hello@espinodigital.com</a>
+<!-- BOTTOM NOTE -->
+<div class="section-band">
+  <div class="band-inner" style="text-align:center;max-width:600px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,5vw,80px)">
+    <p style="color:var(--muted);font-size:15px;line-height:1.8">Not sure if you're ready? That's fine. Send a message anyway and we'll figure out together whether the timing makes sense. There's no commitment in starting a conversation.</p>
   </div>
-</section>
-
+</div>
 
 <footer>
   <div class="footer-logo">Espino <span>Digital</span></div>
   <div class="footer-links">
     <a href="/" class="footer-link">Home</a>
-    <a href="/systems" class="footer-link">Services</a>
+    <a href="/systems" class="footer-link">Systems</a>
     <a href="/work" class="footer-link">Work</a>
     <a href="/about" class="footer-link">About</a>
     <a href="/contact" class="footer-link">Contact</a>
   </div>
   <div class="footer-meta">© 2026 Espino Digital · Charlotte, NC</div>
 </footer>
+
 <script>
 (function(){
-  ED_LANG.init();
   var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
-  var hamburger=document.querySelector('.nav-hamburger');
-  var mobileNav=document.getElementById('mobileNav');
-  hamburger.addEventListener('click',function(){var open=mobileNav.classList.toggle('open');hamburger.classList.toggle('open',open);hamburger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';});
-  mobileNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mobileNav.classList.remove('open');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting)return;
-      var el=entry.target;
-      var siblings=Array.from(el.parentElement.children).filter(function(c){return c.classList.contains('scroll-hidden')||c.classList.contains('scroll-visible')});
-      var idx=siblings.indexOf(el);
-      el.style.animationDelay=(idx*0.08)+'s';
-      el.classList.remove('scroll-hidden');el.classList.add('scroll-visible');
-      io.unobserve(el);
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  var btn=document.querySelector('.nav-hamburger');
+  var mob=document.getElementById('mobileNav');
+  if(btn&&mob){btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);});}
+  ED_LANG.init();
+
+  // Inquiry type tabs
+  var tabs=document.querySelectorAll('.itab');
+  var hiddenType=document.getElementById('inquiryType');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      hiddenType.value=t.getAttribute('data-val');
     });
+  });
+
+  // Form submit with success state
+  var form=document.getElementById('contactForm');
+  var submitBtn=document.getElementById('formSubmit');
+  var successEl=document.getElementById('formSuccess');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      submitBtn.textContent='Sending…';
+      submitBtn.disabled=true;
+      var data=new FormData(form);
+      fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}})
+        .then(function(r){
+          if(r.ok){
+            form.querySelectorAll('.form-group,.form-row,.form-submit,.form-note').forEach(function(el){el.style.display='none';});
+            successEl.style.display='flex';
+          } else {
+            submitBtn.textContent='Send Message';
+            submitBtn.disabled=false;
+            alert('Something went wrong. Please email onasis@espinodigital.com directly.');
+          }
+        })
+        .catch(function(){
+          submitBtn.textContent='Send Message';
+          submitBtn.disabled=false;
+          alert('Something went wrong. Please email onasis@espinodigital.com directly.');
+        });
+    });
+  }
+
+  // Fade-up
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in-view');});
   },{threshold:0.1});
-  document.querySelectorAll('.card,.metric,.problem-item,.flow-item,.stat-item,.section-title').forEach(function(el){var r=el.getBoundingClientRect();if(r.top>window.innerHeight){el.classList.add('scroll-hidden');io.observe(el);}});
-  var tagIO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;entry.target.classList.add('tag-visible');tagIO.unobserve(entry.target);});},{threshold:0.5});
-  document.querySelectorAll('.section-tag').forEach(function(el){tagIO.observe(el);});
+  document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
 })();
 </script>
-<script src="gradient.js"></script>
 </body>
 </html>

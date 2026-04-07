@@ -3,288 +3,652 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Our Work: Websites, Apps, and Systems | Espino Digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<title>Work and Case Studies | Espino Digital</title>
+<meta name="description" content="Real projects from Espino Digital. Custom apps, websites, and systems built for real businesses. See the trucking operations dashboard, auto repair setup, and interactive demos.">
+<link rel="canonical" href="https://espinodigital.com/work">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css">
-<script src="translations.js"></script>
+<link rel="stylesheet" href="/styles.css">
+<script src="/translations.js"></script>
+<style>
+/* ── SE App Showcase ───────────────────────────────── */
+.se-showcase { border-top: 1px solid rgba(255,255,255,.07); background: #06080c; overflow: hidden; }
+.se-chrome { display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #0e1118; border-bottom: 1px solid rgba(255,255,255,.06); }
+.se-chrome-buttons { display: flex; gap: 6px; flex-shrink: 0; }
+.se-chrome-btn { width: 11px; height: 11px; border-radius: 50%; }
+.se-chrome-btn.r { background: #ff5f57; }
+.se-chrome-btn.y { background: #febc2e; }
+.se-chrome-btn.g { background: #28c840; }
+.se-chrome-url { flex: 1; display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.07); border-radius: 5px; padding: 4px 10px; font-size: 11px; color: rgba(255,255,255,.35); font-family: var(--fm); max-width: 280px; margin: 0 auto; }
+.se-chrome-url svg { flex-shrink: 0; opacity: .5; }
+.se-chrome-live { display: flex; align-items: center; gap: 5px; font-family: var(--fm); font-size: 10px; color: #2cd686; letter-spacing: .05em; flex-shrink: 0; }
+.se-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #2cd686; animation: se-pulse 2s ease-in-out infinite; }
+@keyframes se-pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(44,214,134,.4)} 60%{opacity:.7;box-shadow:0 0 0 5px rgba(44,214,134,0)} }
+
+.se-app { display: grid; grid-template-columns: 195px 1fr; min-height: 500px; }
+
+/* Sidebar */
+.se-sidenav { background: rgba(8,11,17,.95); border-right: 1px solid rgba(255,255,255,.06); padding: 16px 10px; display: flex; flex-direction: column; gap: 2px; }
+.se-brand-row { display: flex; align-items: center; gap: 10px; padding: 6px 6px 16px; margin-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.06); }
+.se-brand-icon { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg,#ff7a00,#ff4d00); display: flex; align-items: center; justify-content: center; font-family: var(--fm); font-size: 12px; font-weight: 900; color: #fff; flex-shrink: 0; box-shadow: 0 8px 20px rgba(255,100,0,.28); }
+.se-brand-name { font-size: 13px; font-weight: 700; color: #eef4ff; line-height: 1.3; }
+.se-brand-sub { font-size: 9.5px; color: rgba(255,255,255,.3); font-family: var(--fm); }
+.se-navbtn { width: 100%; display: flex; align-items: center; gap: 9px; padding: 9px 10px; border-radius: 9px; border: 1px solid transparent; background: transparent; color: rgba(255,255,255,.4); font-size: 12px; cursor: pointer; transition: all .14s; text-align: left; }
+.se-navbtn::before { content:''; width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.12); flex-shrink: 0; transition: background .14s; }
+.se-navbtn:hover { color: rgba(255,255,255,.72); background: rgba(255,122,0,.06); }
+.se-navbtn.active { background: linear-gradient(135deg,rgba(255,122,0,.16),rgba(255,122,0,.07)); border-color: rgba(255,122,0,.22); color: #fff; }
+.se-navbtn.active::before { background: linear-gradient(135deg,#ff7a00,#ff4d00); box-shadow: 0 0 8px rgba(255,122,0,.5); }
+.se-nav-count { margin-left: auto; font-family: var(--fm); font-size: 10px; color: rgba(255,255,255,.25); }
+.se-owner-card { margin-top: auto; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.02); }
+.se-owner-card-label { font-size: 11px; font-weight: 700; color: #eef4ff; margin-bottom: 4px; }
+.se-owner-card-sub { font-size: 10px; color: rgba(255,255,255,.35); line-height: 1.5; }
+
+/* Main */
+.se-main { padding: 16px; overflow: hidden; background: #07090e; }
+.se-view { display: none; }
+.se-view.active { display: block; }
+.se-view-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.se-view-title { font-size: 17px; font-weight: 800; color: #eef4ff; }
+.se-view-sub { font-size: 11px; color: rgba(255,255,255,.35); font-family: var(--fm); }
+
+/* KPI tiles */
+.se-kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 12px; }
+.se-kpi { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 11px 13px; position: relative; overflow: hidden; }
+.se-kpi::after { content:''; position:absolute; right:-16px; top:-16px; width:60px; height:60px; border-radius:50%; background:radial-gradient(circle,rgba(255,122,0,.1),transparent 70%); }
+.se-kpi-label { font-family: var(--fm); font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.38); margin-bottom: 7px; }
+.se-kpi-val { font-size: 24px; font-weight: 800; color: #eef4ff; font-family: var(--fm); }
+.se-kpi-sub { font-size: 9.5px; color: rgba(255,255,255,.28); margin-top: 3px; }
+.se-kpi-ri { background: rgba(44,214,134,.04); border-color: rgba(44,214,134,.14); }
+.se-kpi-ri::after { background: radial-gradient(circle,rgba(44,214,134,.1),transparent 70%); }
+.se-kpi-ri .se-kpi-val { color: #2cd686; }
+
+/* Pipeline */
+.se-pipeline { display: grid; grid-template-columns: repeat(5,1fr); gap: 6px; margin-bottom: 12px; }
+.se-pcol { background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.05); border-radius: 8px; padding: 8px 7px; }
+.se-pcol-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; font-family: var(--fm); font-size: 9px; text-transform: uppercase; letter-spacing: .07em; color: rgba(255,195,140,.65); }
+.se-pcnt { font-size: 9.5px; color: rgba(255,255,255,.25); background: rgba(255,255,255,.05); padding: 1px 6px; border-radius: 999px; }
+.se-pcard { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 5px; padding: 6px 7px; margin-bottom: 4px; }
+.se-pcard-ri { border-color: rgba(44,214,134,.18); background: rgba(44,214,134,.03); }
+.se-pcard-lane { font-size: 9.5px; font-weight: 600; color: rgba(255,255,255,.82); margin-bottom: 3px; line-height: 1.35; }
+.se-pcard-meta { font-size: 8.5px; color: rgba(255,255,255,.32); }
+.se-orange { color: #ff9a40; font-weight: 700; }
+.se-green { color: #2cd686; font-weight: 700; }
+
+/* Week / load table */
+.se-week-table, .se-full-table { background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06); border-radius: 9px; overflow: hidden; }
+.se-week-row { display: grid; grid-template-columns: 110px 1fr 70px 56px 56px; gap: 8px; padding: 8px 11px; border-bottom: 1px solid rgba(255,255,255,.05); align-items: center; font-size: 11px; color: #c8d8ee; }
+.se-week-head { background: rgba(255,122,0,.07); font-family: var(--fm); font-size: 9px; text-transform: uppercase; letter-spacing: .07em; color: #ffc38e; }
+.se-week-row:last-child { border-bottom: none; }
+.se-week-ri { outline: 1px solid rgba(44,214,134,.1) inset; background: rgba(44,214,134,.02); }
+
+/* Full table (loads + brokers) */
+.se-ft-head { display: grid; grid-template-columns: 100px 1fr 110px 70px 56px 56px 52px; gap: 8px; padding: 8px 11px; background: rgba(255,122,0,.07); font-family: var(--fm); font-size: 9px; text-transform: uppercase; letter-spacing: .07em; color: #ffc38e; }
+.se-ft-row { display: grid; grid-template-columns: 100px 1fr 110px 70px 56px 56px 52px; gap: 8px; padding: 8px 11px; border-bottom: 1px solid rgba(255,255,255,.05); align-items: start; font-size: 11px; color: #c8d8ee; }
+.se-ft-row:last-child { border-bottom: none; }
+.se-ft-ri { background: rgba(44,214,134,.02); outline: 1px solid rgba(44,214,134,.08) inset; }
+
+/* Shared */
+.se-pill { display: inline-flex; align-items: center; gap: 4px; padding: 3px 7px; border-radius: 999px; font-family: var(--fm); font-size: 9.5px; font-weight: 700; white-space: nowrap; }
+.se-pill::before { content:''; width:5px; height:5px; border-radius:50%; background:currentColor; }
+.se-pill-active { color: #ff7a00; background: rgba(255,122,0,.13); }
+.se-pill-upcoming { color: #c77dff; background: rgba(199,125,255,.12); }
+.se-pill-offered { color: #57a6ff; background: rgba(87,166,255,.12); }
+.se-ri-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; border-radius: 999px; font-family: var(--fm); font-size: 9px; font-weight: 800; color: #9ee17f; background: rgba(158,225,127,.1); }
+.se-pos { color: #2cd686; font-weight: 700; }
+.se-lane { font-size: 11px; color: #c8d8ee; }
+.se-muted { font-size: 9.5px; color: rgba(255,255,255,.32); }
+
+/* Loads toolbar */
+.se-loads-toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+.se-search-mock { flex: 1; min-width: 160px; padding: 6px 10px; border-radius: 7px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); font-size: 11px; color: rgba(255,255,255,.28); font-family: var(--fm); }
+.se-status-tabs { display: flex; gap: 4px; }
+.se-stab { padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,.08); background: transparent; color: rgba(255,255,255,.38); font-size: 10px; font-family: var(--fm); cursor: default; }
+.se-stab.active { background: rgba(255,122,0,.14); border-color: rgba(255,122,0,.28); color: #ff9a40; }
+
+/* Driver cards */
+.se-driver-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.se-dcard { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 10px; padding: 14px; }
+.se-dcard-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
+.se-dcard-name { font-size: 15px; font-weight: 800; color: #eef4ff; }
+.se-dcard-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.se-dtag { font-size: 10px; color: rgba(255,255,255,.38); background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.07); padding: 3px 8px; border-radius: 999px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .se-app { grid-template-columns: 1fr; }
+  .se-sidenav { display: none; }
+  .se-kpis { grid-template-columns: repeat(2,1fr); }
+  .se-pipeline { grid-template-columns: repeat(3,1fr); }
+  .se-week-row, .se-ft-head, .se-ft-row { grid-template-columns: 90px 1fr 56px 56px; }
+  .se-week-row > :nth-child(3), .se-ft-head > :nth-child(3), .se-ft-row > :nth-child(3),
+  .se-ft-head > :nth-child(7), .se-ft-row > :nth-child(7) { display: none; }
+  .se-driver-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .se-pipeline { grid-template-columns: repeat(2,1fr); }
+  .se-kpis { grid-template-columns: repeat(2,1fr); }
+}
+</style>
 </head>
 <body class="page-work">
+
 <nav>
   <a href="/" class="nav-logo">Espino <span>Digital</span></a>
   <div class="nav-links">
     <a href="/" class="nav-link">Home</a>
-    <div class="nav-dropdown-wrap">
-      <a href="/systems" class="nav-link nav-dropdown-trigger">Services <span class="nav-chevron">▾</span></a>
-      <div class="nav-dropdown-menu">
-        <a href="/systems" class="nav-dropdown-item">Overview</a>
-        <a href="/websites" class="nav-dropdown-item">Websites</a>
-        <a href="/apps" class="nav-dropdown-item">Custom Apps</a>
-      </div>
-    </div>
+    <a href="/systems" class="nav-link">Systems</a>
     <a href="/work" class="nav-link active">Work</a>
     <a href="/about" class="nav-link">About</a>
     <a href="/contact" class="nav-link">Contact</a>
   </div>
-  <a href="/contact" class="nav-cta">Start a Project →</a>
-  <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
-  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav-right">
+    <a href="/contact" class="nav-cta">Start a Project</a>
+    <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 <div class="nav-spacer" aria-hidden="true"></div>
 <div class="mobile-nav" id="mobileNav">
   <a href="/">Home</a>
-  <a href="/systems">Services</a>
-  <a href="/websites" class="mobile-nav-sub">Websites</a>
-  <a href="/apps" class="mobile-nav-sub">Custom Apps</a>
+  <a href="/systems">Systems</a>
   <a href="/work">Work</a>
   <a href="/about">About</a>
-  <a href="/contact" class="mobile-cta">Start a Project →</a>
+  <a href="/contact" class="mobile-cta">Start a Project</a>
 </div>
-<header class="page-hero">
-  <canvas class="hero-canvas" aria-hidden="true"></canvas>
-  <div class="hero-grid-bg"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
-  <div class="hero-scan"></div>
-  <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Websites · Apps · Automation · Bilingual</span></div>
-    <h1 class="hero-title" data-i18n="hero-title">See what we<br><span class="accent">build.</span></h1>
-    <p class="hero-sub" data-i18n="hero-sub">We keep the client list focused on purpose. Here's what the work actually looks like.</p>
-    <div class="hero-actions">
-      <a href="/contact" class="btn-primary" data-i18n="hero-btn-primary">Start a Project</a>
-      <a href="/systems" class="btn-secondary" data-i18n="hero-btn-secondary">Explore Services</a>
-    </div>
-  </div>
-</header>
 
+<!-- HERO -->
+<div class="inner-hero">
+  <div class="inner-hero-tag">Selected Work</div>
+  <h1 class="inner-hero-title fade-up">Built to solve<br><span class="accent">real problems.</span></h1>
+  <p class="inner-hero-sub fade-up delay-1">We keep the client list focused on purpose. Here's what the work actually looks like, how it was built, and what it solved.</p>
+</div>
+
+<!-- MAIN SECTION -->
 <section class="section">
-  <div class="section-tag" data-i18n="work-tag">Our Work</div>
-  <div class="grid-2">
-    <div class="card">
-      <div class="kicker" data-i18n="work-kicker">Example System</div>
-      <h3 data-i18n="work-title">Charlotte auto repair setup</h3>
-      <p data-i18n="work-text">An auto repair shop in Charlotte was missing over a dozen calls a week with no follow up in place. We built a text back system, a bilingual response flow, and automated review requests after every job. This is what the full setup looks like.</p>
-      <ul class="list">
-        <li data-i18n="work-li1">Homepage built to get calls</li>
-        <li data-i18n="work-li2">Immediate text back for missed calls</li>
-        <li data-i18n="work-li3">Review request flow after service</li>
-        <li data-i18n="work-li4">Return-customer reminders later on</li>
-      </ul>
-    </div>
-    <div class="card mock">
-      <div class="kicker">System Snapshot</div>
-      <div class="terminal">
-        <div class="warn">→ missed_calls_this_week: 14</div>
-        <div class="warn">→ followup_sent: 0 &nbsp;&nbsp;← revenue leak</div>
-        <div class="warn">→ spanish_response: none</div>
-        <div style="margin:10px 0;height:1px;background:rgba(255,255,255,.07)"></div>
-        <div class="ok">→ text_back: armed ✓</div>
-        <div class="ok">→ bilingual_flow: active ✓</div>
-        <div class="ok">→ review_trigger: post-service ✓</div>
-        <div class="hi">→ leads_recovered: running<span class="terminal-cursor"></span></div>
+
+  <!-- FILTER TABS -->
+  <div class="work-filters fade-up">
+    <button class="work-filter active" data-filter="all">All Work</button>
+    <button class="work-filter" data-filter="systems">Business Systems</button>
+    <button class="work-filter" data-filter="web">Web Experiences</button>
+    <button class="work-filter" data-filter="interactive">Interactive</button>
+  </div>
+
+  <!-- ─── CASE STUDY 1: TRUCKING OPS ─────────────────── -->
+  <div class="case-study fade-up" data-category="systems">
+    <div class="case-study-header">
+      <div class="case-meta">
+        <span class="badge b-accent">Business Systems</span>
+        <span class="badge">Custom App</span>
+        <span class="badge">Operations</span>
+        <span class="badge b-ok">Live Production</span>
       </div>
+      <h2>Trucking Operations Dashboard</h2>
+      <p class="case-intro">A trucking owner-operator was managing load offers, broker communications, and dispatch decisions across email, texts, and multiple spreadsheets. Nothing talked to each other. We built a single internal tool that pulls everything into one place and surfaces what actually needs attention.</p>
     </div>
-  </div>
-</section>
 
-<section class="section band" style="max-width:none;">
-  <div style="max-width:1280px;margin:0 auto;">
-    <div class="section-tag" data-i18n="flow-tag">Flow</div>
-    <div class="grid-3">
-      <div class="flow-item"><h4 data-i18n="flow-1-title">Customer calls, shop is busy</h4><p data-i18n="flow-1-text">The call is missed, but the system takes over instead of letting the lead disappear.</p></div>
-      <div class="flow-item"><h4 data-i18n="flow-2-title">Text back starts the conversation</h4><p data-i18n="flow-2-text">The customer gets a fast reply, in English or Spanish, with the next step.</p></div>
-      <div class="flow-item"><h4 data-i18n="flow-3-title">Booking and review loop</h4><p data-i18n="flow-3-text">Appointment gets set, service happens, review request goes out, and reactivation comes later.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-tag" data-i18n="demo-tag">Custom App Demo</div>
-  <div class="grid-2" style="align-items:end;margin-bottom:10px">
-    <div>
-      <h2 class="section-title">This is what custom<br><span class="accent">operations software looks like.</span></h2>
-      <p class="section-sub" data-i18n="demo-intro">Most businesses run operations on a patchwork of emails, texts, and spreadsheets that were never designed to work together. This is a real custom internal tool built for a trucking operation. It shows what we can do when the software is organized around how a business actually moves, pulling data from multiple sources into one place.</p>
-    </div>
-    <div class="card" style="align-self:start">
-      <div class="kicker">What this proves</div>
-      <p style="color:var(--muted);font-size:15px;line-height:1.7">We build more than brochure websites. This is purpose-built internal software organized around how a business actually moves, pulling data from multiple sources, filtering the noise, and helping the owner make better decisions faster.</p>
-      <ul class="list" style="margin-top:16px">
-        <li>Gmail ingestion: load offers pulled directly from inbox</li>
-        <li>Load board feed filtered by lane, rate, and broker</li>
-        <li>Broker ranking by booking rate and revenue</li>
-        <li>Kanban pipeline: offer to booked to closed</li>
-        <li>Operational metrics surfaced at a glance</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="demo-metrics">
-    <div class="demo-metric">
-      <strong>24</strong>
-      <span>Loads pulled today</span>
-    </div>
-    <div class="demo-metric">
-      <strong>11</strong>
-      <span>Active opportunities</span>
-    </div>
-    <div class="demo-metric">
-      <strong>67%</strong>
-      <span>Booked load rate</span>
-    </div>
-    <div class="demo-metric">
-      <strong>83%</strong>
-      <span>Best broker rate (Transfix)</span>
-    </div>
-    <div class="demo-metric">
-      <strong>Live</strong>
-      <span>Revenue visibility</span>
-    </div>
-  </div>
-
-  <div class="demo-shell">
-    <div class="demo-titlebar">
-      <div class="demo-dots"><span></span><span></span><span></span></div>
-      <div class="demo-url">trucking-ops.internal / dashboard</div>
-    </div>
-    <div class="demo-layout">
-      <aside class="demo-sidebar">
-        <div class="demo-nav-item demo-nav-active">&#9638; &nbsp;Dashboard</div>
-        <div class="demo-nav-item">&#9993; &nbsp;Gmail Inbox <span class="demo-badge">8</span></div>
-        <div class="demo-nav-item">&#9783; &nbsp;Load Board</div>
-        <div class="demo-nav-item">&#9650; &nbsp;Broker Rankings</div>
-        <div class="demo-nav-item">&#8859; &nbsp;Pipeline</div>
-        <div class="demo-nav-item">&#9711; &nbsp;Lane Scoring</div>
-        <div class="demo-nav-sep"></div>
-        <div class="demo-nav-item">&#9881; &nbsp;Settings</div>
-      </aside>
-      <div class="demo-main">
-        <div class="demo-pipeline">
-          <div class="demo-column">
-            <div class="demo-col-header">New Offers <span class="demo-count">12</span></div>
-            <div class="demo-load-card">CHI &#8594; ATL &nbsp;·&nbsp; $2,840 &nbsp;·&nbsp; 48ft</div>
-            <div class="demo-load-card">DFW &#8594; CLT &nbsp;·&nbsp; $1,920 &nbsp;·&nbsp; Dry Van</div>
-            <div class="demo-load-card demo-load-hot">NYC &#8594; MIA &nbsp;·&nbsp; $3,100 &nbsp;·&nbsp; &#9650; Priority</div>
-            <div class="demo-load-card">ORD &#8594; BOS &nbsp;·&nbsp; $2,210</div>
-          </div>
-          <div class="demo-column">
-            <div class="demo-col-header">Reviewing <span class="demo-count">4</span></div>
-            <div class="demo-load-card">LAX &#8594; PHX &nbsp;·&nbsp; $1,480 &nbsp;·&nbsp; Flatbed</div>
-            <div class="demo-load-card">SEA &#8594; PDX &nbsp;·&nbsp; $980</div>
-            <div class="demo-load-card">DEN &#8594; SLC &nbsp;·&nbsp; $1,140</div>
-          </div>
-          <div class="demo-column">
-            <div class="demo-col-header">Booked <span class="demo-count">7</span></div>
-            <div class="demo-load-card demo-load-booked">CLT &#8594; ATL &nbsp;·&nbsp; $2,200 &#10003;</div>
-            <div class="demo-load-card demo-load-booked">MIA &#8594; JAX &nbsp;·&nbsp; $1,650 &#10003;</div>
-            <div class="demo-load-card demo-load-booked">ATL &#8594; CHI &nbsp;·&nbsp; $2,980 &#10003;</div>
-          </div>
-          <div class="demo-column">
-            <div class="demo-col-header">Dead <span class="demo-count">3</span></div>
-            <div class="demo-load-card demo-load-dead">BOS &#8594; NYC &nbsp;·&nbsp; $640</div>
-            <div class="demo-load-card demo-load-dead">PHX &#8594; LAS &nbsp;·&nbsp; $510</div>
-          </div>
-        </div>
-        <div class="demo-table-wrap">
-          <div class="demo-table-header">Top Brokers This Month</div>
-          <table class="demo-table">
-            <thead>
-              <tr><th>Broker</th><th>Loads Offered</th><th>Avg Rate</th><th>Book Rate</th><th>Status</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Transfix</td><td>6</td><td>$2,580</td><td class="demo-green">83%</td><td class="demo-green">&#9679; Active</td></tr>
-              <tr><td>Coyote Logistics</td><td>14</td><td>$2,340</td><td class="demo-green">78%</td><td class="demo-green">&#9679; Active</td></tr>
-              <tr><td>Echo Global</td><td>9</td><td>$2,105</td><td class="demo-green">67%</td><td class="demo-green">&#9679; Active</td></tr>
-              <tr><td>CH Robinson</td><td>11</td><td>$1,890</td><td class="demo-warn">45%</td><td class="demo-warn">&#9679; Watch</td></tr>
-              <tr><td>Total Quality</td><td>4</td><td>$1,620</td><td class="demo-dead">28%</td><td class="demo-dead">&#9679; Low</td></tr>
-            </tbody>
-          </table>
-        </div>
+    <div class="case-study-body">
+      <div class="cs-panel">
+        <div class="cs-label">The Problem</div>
+        <h4>Data spread across too many places</h4>
+        <p>Load offers came in through email. Broker rates were in one spreadsheet. Booked loads in another. Revenue estimates in a third. Making a good decision required pulling from all of them simultaneously, which meant decisions were slow or just guessed at.</p>
       </div>
-    </div>
-  </div>
-
-  <div class="grid-2" style="margin-top:60px;align-items:start">
-    <div>
-      <h3 style="font-family:'Syne',sans-serif;font-size:28px;letter-spacing:-.02em;margin-bottom:16px" data-i18n="demo-desc-title">Built around how the business actually runs</h3>
-      <p style="color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:16px" data-i18n="demo-desc-p1">This tool doesn't try to be everything. It handles exactly what a trucking operation needs: pulling load offers from Gmail, filtering opportunities by lane and rate, tracking which brokers are worth chasing, and keeping the pipeline visible without a spreadsheet.</p>
-      <p style="color:var(--muted);font-size:15px;line-height:1.75" data-i18n="demo-desc-p2">That's what custom software should do: organize fragmented workflow into one place, surface what matters, and get out of the way.</p>
-    </div>
-    <div>
-      <div class="card" style="margin-bottom:14px">
-        <div class="kicker">Interface modules</div>
+      <div class="cs-panel">
+        <div class="cs-label">The Build</div>
+        <h4>Custom web app with live data aggregation</h4>
+        <p>We built a purpose-built internal tool that pulls load offers directly from Gmail, aggregates load board data, ranks brokers by actual booking rate and revenue history, and presents everything in a Kanban pipeline from offer to booked to closed. One screen. Full picture.</p>
+      </div>
+      <div class="cs-panel">
+        <div class="cs-label">Interface Modules</div>
         <ul class="list">
-          <li>Gmail ingestion &amp; load offer parsing</li>
-          <li>Load board feed with lane and rate filters</li>
-          <li>Broker ranking table sorted by performance</li>
-          <li>Status pipeline: offer, reviewing, booked, dead</li>
-          <li>Lane scoring and margin visibility</li>
-          <li>Progress tracker and active follow up queue</li>
+          <li>Inbox view: Load offers parsed and filtered from Gmail automatically</li>
+          <li>Load board: External feed filtered by lane, rate floor, and broker score</li>
+          <li>Broker rankings: Sorted by booking rate and cumulative revenue</li>
+          <li>Kanban pipeline: Drag from offer to negotiating to booked</li>
+          <li>Metrics dashboard: Today's loads, active offers, book rate, top broker performance</li>
         </ul>
       </div>
-      <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(242,242,248,.35);padding:0 4px">
-        This is a real tool built for a client. The data shown here is demo data for presentation, but the app itself reflects real workflow and real capability.
-      </p>
+      <div class="cs-panel">
+        <div class="cs-label">What It Solved</div>
+        <h4>One screen instead of five</h4>
+        <p>Every load decision now starts from the same place. The operator has full visibility into what's available, who's offering it, and whether it's worth taking based on that broker's actual track record. Decisions that used to take 20 minutes of context-switching now take 3.</p>
+      </div>
+    </div>
+
+    <div class="se-showcase">
+      <!-- macOS chrome bar -->
+      <div class="se-chrome">
+        <div class="se-chrome-buttons">
+          <span class="se-chrome-btn r"></span>
+          <span class="se-chrome-btn y"></span>
+          <span class="se-chrome-btn g"></span>
+        </div>
+        <div class="se-chrome-url">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          dispatch.sunsetexpress.com
+        </div>
+        <div class="se-chrome-live"><span class="se-live-dot"></span>Live Production</div>
+      </div>
+
+      <!-- App shell -->
+      <div class="se-app">
+        <!-- Sidebar -->
+        <aside class="se-sidenav">
+          <div class="se-brand-row">
+            <div class="se-brand-icon">SE</div>
+            <div>
+              <div class="se-brand-name">Sunset Express</div>
+              <div class="se-brand-sub">Owner View · Kewin</div>
+            </div>
+          </div>
+          <button class="se-navbtn active" onclick="seTab('dashboard',this)">Dashboard<span class="se-nav-count">Home</span></button>
+          <button class="se-navbtn" onclick="seTab('loads',this)">Loads<span class="se-nav-count">11</span></button>
+          <button class="se-navbtn" onclick="seTab('brokers',this)">Brokers / CRM<span class="se-nav-count">26</span></button>
+          <button class="se-navbtn" onclick="seTab('drivers',this)">Drivers</button>
+          <div class="se-owner-card">
+            <div class="se-owner-card-label">RI Preferred</div>
+            <div class="se-owner-card-sub">Loads ending in Rhode Island are auto-highlighted across every view.</div>
+          </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="se-main">
+
+          <!-- Dashboard -->
+          <div class="se-view active" id="se-dashboard">
+            <div class="se-view-head">
+              <div class="se-view-title">Dashboard</div>
+              <div class="se-view-sub">Active loads, upcoming work, and RI-priority at a glance.</div>
+            </div>
+            <div class="se-kpis">
+              <div class="se-kpi"><div class="se-kpi-label">Active Loads</div><div class="se-kpi-val" data-target="7">0</div><div class="se-kpi-sub">Currently moving</div></div>
+              <div class="se-kpi"><div class="se-kpi-label">Upcoming</div><div class="se-kpi-val" data-target="4">0</div><div class="se-kpi-sub">Scheduled this week</div></div>
+              <div class="se-kpi se-kpi-ri"><div class="se-kpi-label">RI Destinations</div><div class="se-kpi-val" data-target="5">0</div><div class="se-kpi-sub">Priority loads</div></div>
+              <div class="se-kpi"><div class="se-kpi-label">Projected Net</div><div class="se-kpi-val" data-target="4820" data-prefix="$">$0</div><div class="se-kpi-sub">After costs</div></div>
+            </div>
+            <div class="se-pipeline">
+              <div class="se-pcol">
+                <div class="se-pcol-head"><span>Offered</span><span class="se-pcnt">3</span></div>
+                <div class="se-pcard"><div class="se-pcard-lane">Boston → Providence, RI</div><div class="se-pcard-meta">GEODIS · <span class="se-orange">$920</span></div></div>
+                <div class="se-pcard se-pcard-ri"><div class="se-pcard-lane">Taunton → Providence ✦</div><div class="se-pcard-meta">R+L Carriers · <span class="se-orange">$850</span></div></div>
+              </div>
+              <div class="se-pcol">
+                <div class="se-pcol-head"><span>Won</span><span class="se-pcnt">2</span></div>
+                <div class="se-pcard se-pcard-ri"><div class="se-pcard-lane">Norton → Cranston, RI ✦</div><div class="se-pcard-meta">Sysco · <span class="se-orange">$1,100</span></div></div>
+                <div class="se-pcard"><div class="se-pcard-lane">Fall River → Providence</div><div class="se-pcard-meta">Amazon · <span class="se-orange">$740</span></div></div>
+              </div>
+              <div class="se-pcol">
+                <div class="se-pcol-head"><span>Active</span><span class="se-pcnt">7</span></div>
+                <div class="se-pcard se-pcard-ri"><div class="se-pcard-lane">Woonsocket → Providence ✦</div><div class="se-pcard-meta">CVS DC · <span class="se-orange">$680</span></div></div>
+                <div class="se-pcard"><div class="se-pcard-lane">Mansfield → Johnston, RI</div><div class="se-pcard-meta">Ryder · <span class="se-orange">$960</span></div></div>
+                <div class="se-pcard se-pcard-ri"><div class="se-pcard-lane">Taunton → N. Kingstown ✦</div><div class="se-pcard-meta">GEODIS · <span class="se-orange">$840</span></div></div>
+              </div>
+              <div class="se-pcol">
+                <div class="se-pcol-head"><span>Upcoming</span><span class="se-pcnt">4</span></div>
+                <div class="se-pcard se-pcard-ri"><div class="se-pcard-lane">Franklin → Providence ✦</div><div class="se-pcard-meta">DHL · <span class="se-orange">$1,080</span></div></div>
+                <div class="se-pcard"><div class="se-pcard-lane">Boston → Pawtucket, RI</div><div class="se-pcard-meta">XPO · <span class="se-orange">$790</span></div></div>
+              </div>
+              <div class="se-pcol">
+                <div class="se-pcol-head"><span>Delivered</span><span class="se-pcnt">12</span></div>
+                <div class="se-pcard"><div class="se-pcard-lane">Seabrook → Providence</div><div class="se-pcard-meta">US Foods · <span class="se-green">✓ $1,200</span></div></div>
+                <div class="se-pcard"><div class="se-pcard-lane">Providence → Johnston</div><div class="se-pcard-meta">Hasbro · <span class="se-green">✓ $580</span></div></div>
+              </div>
+            </div>
+            <div class="se-week-table">
+              <div class="se-week-row se-week-head"><div>Status</div><div>Lane</div><div>Driver</div><div>Rate</div><div>Net</div></div>
+              <div class="se-week-row se-week-ri"><div><span class="se-pill se-pill-active">Active</span> <span class="se-ri-badge">RI</span></div><div class="se-lane">Woonsocket → Providence, RI<br><span class="se-muted">42 mi · Carlos</span></div><div>Carlos</div><div>$680</div><div class="se-pos">+$452</div></div>
+              <div class="se-week-row"><div><span class="se-pill se-pill-active">Active</span></div><div class="se-lane">Mansfield → Johnston, RI<br><span class="se-muted">58 mi</span></div><div>Carlos</div><div>$960</div><div class="se-pos">+$614</div></div>
+              <div class="se-week-row se-week-ri"><div><span class="se-pill se-pill-upcoming">Upcoming</span> <span class="se-ri-badge">RI</span></div><div class="se-lane">Franklin → Providence, RI<br><span class="se-muted">76 mi</span></div><div>Carlos</div><div>$1,080</div><div class="se-pos">+$731</div></div>
+              <div class="se-week-row"><div><span class="se-pill se-pill-upcoming">Upcoming</span></div><div class="se-lane">Boston → Pawtucket, RI<br><span class="se-muted">64 mi</span></div><div>Local Driver</div><div>$790</div><div class="se-pos">+$498</div></div>
+            </div>
+          </div>
+
+          <!-- Loads -->
+          <div class="se-view" id="se-loads">
+            <div class="se-view-head">
+              <div class="se-view-title">Loads</div>
+              <div class="se-view-sub">All offers, won loads, and active work in one board.</div>
+            </div>
+            <div class="se-kpis">
+              <div class="se-kpi"><div class="se-kpi-label">Offered</div><div class="se-kpi-val">3</div></div>
+              <div class="se-kpi"><div class="se-kpi-label">Won</div><div class="se-kpi-val">2</div></div>
+              <div class="se-kpi se-kpi-ri"><div class="se-kpi-label">Active</div><div class="se-kpi-val">7</div></div>
+              <div class="se-kpi"><div class="se-kpi-label">Upcoming</div><div class="se-kpi-val">4</div></div>
+            </div>
+            <div class="se-loads-toolbar">
+              <div class="se-search-mock">Search loads, brokers, drivers...</div>
+              <div class="se-status-tabs">
+                <span class="se-stab active">All</span>
+                <span class="se-stab">Offered</span>
+                <span class="se-stab">Active</span>
+                <span class="se-stab">Delivered</span>
+              </div>
+            </div>
+            <div class="se-full-table">
+              <div class="se-ft-head"><div>Status</div><div>Lane</div><div>Broker / Contact</div><div>Driver</div><div>Rate</div><div>Net</div><div>Pickup</div></div>
+              <div class="se-ft-row se-ft-ri"><div><span class="se-pill se-pill-active">Active</span><br><span class="se-ri-badge" style="margin-top:3px;display:inline-flex">RI</span></div><div class="se-lane">Woonsocket → Providence, RI<br><span class="se-muted">42 mi</span></div><div>CVS Distribution<br><span class="se-muted">Megan</span></div><div>Carlos</div><div>$680</div><div class="se-pos">+$452</div><div>Apr 6</div></div>
+              <div class="se-ft-row"><div><span class="se-pill se-pill-active">Active</span></div><div class="se-lane">Mansfield → Johnston, RI<br><span class="se-muted">58 mi</span></div><div>Ryder SC<br><span class="se-muted">Jason</span></div><div>Carlos</div><div>$960</div><div class="se-pos">+$614</div><div>Apr 6</div></div>
+              <div class="se-ft-row se-ft-ri"><div><span class="se-pill se-pill-upcoming">Upcoming</span><br><span class="se-ri-badge" style="margin-top:3px;display:inline-flex">RI</span></div><div class="se-lane">Franklin → Providence, RI<br><span class="se-muted">76 mi</span></div><div>DHL Supply<br><span class="se-muted">Sarah</span></div><div>Carlos</div><div>$1,080</div><div class="se-pos">+$731</div><div>Apr 7</div></div>
+              <div class="se-ft-row"><div><span class="se-pill se-pill-upcoming">Upcoming</span></div><div class="se-lane">Boston → Pawtucket, RI<br><span class="se-muted">64 mi</span></div><div>XPO Logistics<br><span class="se-muted">Tom</span></div><div>Local Driver</div><div>$790</div><div class="se-pos">+$498</div><div>Apr 7</div></div>
+              <div class="se-ft-row se-ft-ri"><div><span class="se-pill se-pill-offered">Offered</span><br><span class="se-ri-badge" style="margin-top:3px;display:inline-flex">RI</span></div><div class="se-lane">Taunton → Providence, RI<br><span class="se-muted">78 mi</span></div><div>GEODIS<br><span class="se-muted">Megan</span></div><div>Unassigned</div><div>$850</div><div class="se-pos">+$562</div><div>Apr 8</div></div>
+            </div>
+          </div>
+
+          <!-- Brokers -->
+          <div class="se-view" id="se-brokers">
+            <div class="se-view-head">
+              <div class="se-view-title">Brokers / CRM</div>
+              <div class="se-view-sub">26 companies tracked · RI-preferred lanes · Ranked by avg net.</div>
+            </div>
+            <div class="se-kpis">
+              <div class="se-kpi"><div class="se-kpi-label">CRM Companies</div><div class="se-kpi-val">26</div></div>
+              <div class="se-kpi se-kpi-ri"><div class="se-kpi-label">Best Avg Net</div><div class="se-kpi-val">$731</div></div>
+              <div class="se-kpi"><div class="se-kpi-label">Loads Won</div><div class="se-kpi-val">11</div></div>
+              <div class="se-kpi"><div class="se-kpi-label">Need Follow-Up</div><div class="se-kpi-val">8</div></div>
+            </div>
+            <div class="se-full-table">
+              <div class="se-ft-head" style="grid-template-columns:1.4fr .9fr .7fr .9fr .5fr 1fr"><div>Company</div><div>Category</div><div>Location</div><div>Status</div><div>Loads</div><div>Notes</div></div>
+              <div class="se-ft-row se-ft-ri" style="grid-template-columns:1.4fr .9fr .7fr .9fr .5fr 1fr"><div><strong>CVS Distribution</strong><br><span class="se-muted">warehouse</span></div><div>Distribution Center</div><div>Woonsocket, RI</div><div><span class="se-pill se-pill-active">Good Contact</span></div><div>3</div><div class="se-muted">Local HQ dist.</div></div>
+              <div class="se-ft-row se-ft-ri" style="grid-template-columns:1.4fr .9fr .7fr .9fr .5fr 1fr"><div><strong>GEODIS</strong><br><span class="se-muted">3pl</span></div><div>Best Fit Now</div><div>Taunton, MA</div><div><span class="se-pill se-pill-upcoming">Call Back</span></div><div>2</div><div class="se-muted">RI-friendly lanes</div></div>
+              <div class="se-ft-row" style="grid-template-columns:1.4fr .9fr .7fr .9fr .5fr 1fr"><div><strong>Sysco</strong><br><span class="se-muted">warehouse</span></div><div>Food Distribution</div><div>Norton, MA</div><div><span class="se-pill se-pill-active">Interested</span></div><div>2</div><div class="se-muted">Daily food freight</div></div>
+              <div class="se-ft-row" style="grid-template-columns:1.4fr .9fr .7fr .9fr .5fr 1fr"><div><strong>XPO Logistics</strong><br><span class="se-muted">3pl</span></div><div>Best Fit Now</div><div>Cranston, RI</div><div><span class="se-pill se-pill-offered">New Lead</span></div><div>1</div><div class="se-muted">Overflow + terminal</div></div>
+              <div class="se-ft-row" style="grid-template-columns:1.4fr .9fr .7fr .9fr .5fr 1fr"><div><strong>Ryder Supply Chain</strong><br><span class="se-muted">3pl</span></div><div>Best Fit Now</div><div>Mansfield, MA</div><div><span class="se-pill se-pill-upcoming">Call Back</span></div><div>1</div><div class="se-muted">Contract logistics</div></div>
+            </div>
+          </div>
+
+          <!-- Drivers -->
+          <div class="se-view" id="se-drivers">
+            <div class="se-view-head">
+              <div class="se-view-title">Drivers</div>
+              <div class="se-view-sub">Carlos (main) and Local Driver (backup) — workload split.</div>
+            </div>
+            <div class="se-kpis" style="grid-template-columns:repeat(3,1fr)">
+              <div class="se-kpi"><div class="se-kpi-label">Carlos · Active Loads</div><div class="se-kpi-val">7</div><div class="se-kpi-sub">Main driver</div></div>
+              <div class="se-kpi"><div class="se-kpi-label">Local Driver</div><div class="se-kpi-val">2</div><div class="se-kpi-sub">Backup / short runs</div></div>
+              <div class="se-kpi se-kpi-ri"><div class="se-kpi-label">Carlos Revenue</div><div class="se-kpi-val">$5,840</div><div class="se-kpi-sub">Active gross</div></div>
+            </div>
+            <div class="se-driver-cards">
+              <div class="se-dcard">
+                <div class="se-dcard-head"><div><div class="se-dcard-name">Carlos</div><div class="se-muted" style="font-size:10px;margin-top:2px">Main over-the-road driver</div></div><span class="se-pill se-pill-active">Primary</span></div>
+                <div class="se-dcard-tags"><span class="se-dtag">Preferred for main loads</span><span class="se-dtag">Can stay on bigger runs</span><span class="se-dtag">7 active / upcoming</span></div>
+              </div>
+              <div class="se-dcard">
+                <div class="se-dcard-head"><div><div class="se-dcard-name">Local Driver</div><div class="se-muted" style="font-size:10px;margin-top:2px">Backup for local work</div></div><span class="se-pill se-pill-upcoming">Support</span></div>
+                <div class="se-dcard-tags"><span class="se-dtag">Short / local loads</span><span class="se-dtag">Frees Carlos for next run</span><span class="se-dtag">2 active</span></div>
+              </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="section-tag">Social Proof</div>
-  <div class="testimonials">
-    <div class="card"><p class="quote">“I had no clue how many people were calling and just not leaving a message. Once we set this up, we started hearing from people we would have never known about.”</p><div class="quote-author">Miguel R. · Auto Repair Shop · Charlotte</div></div>
-    <div class="card"><p class="quote">“My customers are mostly Spanish speakers. When they get a response in Spanish, it builds trust right away.”</p><div class="quote-author">Carlos M. · Landscaping · Charlotte</div></div>
-    <div class="card"><p class="quote">“Now we actually have a way to collect reviews without having to ask awkwardly in person.”</p><div class="quote-author">Sandra T. · Cleaning Service · Charlotte</div></div>
+  <!-- ─── CASE STUDY 2: AUTO REPAIR ──────────────────── -->
+  <div class="case-study fade-up" data-category="web systems">
+    <div class="case-study-header">
+      <div>
+        <div class="case-meta">
+          <span class="badge b-accent">Web + Systems</span>
+          <span class="badge">Local Business</span>
+          <span class="badge">Bilingual</span>
+        </div>
+        <h2>Auto Repair: Website and Follow-up System</h2>
+        <p class="case-intro">A Charlotte auto repair shop had a weak website, no system for missed calls, and almost no Google reviews. Work was coming in through word of mouth but not converting from online search. We rebuilt their digital presence and added automated follow-up that runs without anyone having to manage it.</p>
+      </div>
+    </div>
+
+    <div class="case-study-body">
+      <div class="cs-panel">
+        <div class="cs-label">The Problem</div>
+        <h4>Visible but not converting</h4>
+        <p>People were finding the shop through Google Maps, but the website looked dated and the shop had fewer than 20 reviews against competitors with 200+. Calls were being missed with no follow-up. Spanish-speaking customers had no clear path.</p>
+      </div>
+      <div class="cs-panel">
+        <div class="cs-label">The Build</div>
+        <h4>New site, text-back, review flow</h4>
+        <p>We built a new custom site with clear service structure, bilingual copy, and a layout that leads visitors toward calling or booking. We added missed-call text-back that fires in under 60 seconds, and a post-service review request that goes out automatically after every job closes.</p>
+      </div>
+      <div class="cs-panel">
+        <div class="cs-label">What Was Delivered</div>
+        <ul class="list">
+          <li>Custom website in English and Spanish</li>
+          <li>Missed call text-back (fires in under 60 seconds)</li>
+          <li>Bilingual follow-up sequence for cold leads</li>
+          <li>Review request flow triggered after job close</li>
+          <li>Return customer reactivation at 3 and 6 months</li>
+        </ul>
+      </div>
+      <div class="cs-panel">
+        <div class="cs-label">What It Solved</div>
+        <h4>Fewer leads disappearing quietly</h4>
+        <p>Missed calls now get an immediate response instead of silence. The review system runs automatically instead of relying on staff to remember to ask. Spanish-speaking customers have a proper experience from first click to follow-up. The shop stopped apologizing for its site when showing it to customers.</p>
+      </div>
+    </div>
   </div>
-</section>
 
-<section class="cta-band">
-  <h2 class="section-title" data-i18n="cta-title">Built to help people<br><span class="accent">find you and choose you faster.</span></h2>
-  <div class="hero-actions" style="justify-content:center">
-    <a href="/contact" class="btn-primary" data-i18n="cta-btn">Start a Project</a>
+  <!-- ─── CASE STUDY 3: GARAGE DOOR VISUALIZER ─────── -->
+  <div class="case-study fade-up" data-category="interactive">
+    <div class="case-study-header">
+      <div>
+        <div class="case-meta">
+          <span class="badge" style="background:rgba(155,123,255,.12);border-color:rgba(155,123,255,.28);color:var(--accent-2)">Interactive</span>
+          <span class="badge">Product Configurator</span>
+          <span class="badge">Demo</span>
+        </div>
+        <h2>Garage Door Style Visualizer</h2>
+        <p class="case-intro">An interactive product configurator that lets customers preview garage door styles and colors on a house before making a decision. Built as a standalone tool that can be embedded on any contractor or supplier website. The goal was to reduce indecision and increase order confidence.</p>
+      </div>
+    </div>
+
+    <div class="case-study-body">
+      <div class="cs-panel">
+        <div class="cs-label">The Problem</div>
+        <h4>Customers couldn't visualize the product</h4>
+        <p>Most garage door companies show a catalog of panels in isolation. Customers struggle to picture how a door will actually look on their house. This leads to hesitation, more back-and-forth, and sometimes a decision to just keep the old door.</p>
+      </div>
+      <div class="cs-panel">
+        <div class="cs-label">The Build</div>
+        <h4>CSS and JavaScript configurator, no 3D engine</h4>
+        <p>Built entirely with CSS and vanilla JavaScript, no three.js or WebGL required. The house, roof, and door are all rendered in CSS. Color and style changes animate in real time. Embeds in a single script tag. Works on mobile. Runs fast.</p>
+      </div>
+      <div class="cs-panel">
+        <div class="cs-label">Capabilities</div>
+        <ul class="list">
+          <li>4 panel styles: Raised, Flat, Carriage, Modern</li>
+          <li>8 color options with live preview</li>
+          <li>Smooth CSS transitions between selections</li>
+          <li>Fully responsive, works on any screen size</li>
+          <li>Embeddable in any HTML page</li>
+        </ul>
+      </div>
+      <div class="cs-panel">
+        <div class="cs-label">What It Shows</div>
+        <h4>Interactive tools reduce hesitation</h4>
+        <p>When customers can see the product in context, the decision becomes easier. This same pattern applies to paint colors, window styles, roofing materials, landscaping, or any product where the visual matters as much as the spec.</p>
+      </div>
+    </div>
+
+    <!-- Interactive demo -->
+    <div style="padding:clamp(24px,3vw,40px);border-top:1px solid var(--border)">
+      <div class="kicker">Live Demo</div>
+      <h4 style="font-size:18px;margin-bottom:20px">Try it yourself</h4>
+      <div class="gd-demo" id="gdDemo">
+        <div class="gd-controls">
+          <span class="gd-label">Style:</span>
+          <button class="gd-style-btn active" data-style="raised">Raised Panel</button>
+          <button class="gd-style-btn" data-style="flat">Flat Panel</button>
+          <button class="gd-style-btn" data-style="carriage">Carriage</button>
+          <button class="gd-style-btn" data-style="modern">Modern</button>
+          <div class="gd-sep"></div>
+          <span class="gd-label">Color:</span>
+          <div class="gd-swatch active" style="background:#e8e8e8" data-color="#e8e8e8" title="White"></div>
+          <div class="gd-swatch" style="background:#d4b896" data-color="#c9a97a" title="Almond"></div>
+          <div class="gd-swatch" style="background:#5a4a3a" data-color="#4a3a2a" title="Walnut"></div>
+          <div class="gd-swatch" style="background:#2c2c2c" data-color="#1a1a1a" title="Black"></div>
+          <div class="gd-swatch" style="background:#7a8c6e" data-color="#6a7c5e" title="Forest"></div>
+          <div class="gd-swatch" style="background:#8b1a1a" data-color="#7a1010" title="Barn Red"></div>
+          <div class="gd-swatch" style="background:#4a6080" data-color="#3a5070" title="Navy"></div>
+          <div class="gd-swatch" style="background:#c0a060" data-color="#b09050" title="Sand"></div>
+        </div>
+        <div class="gd-scene">
+          <div class="gd-house">
+            <div class="gd-roof"></div>
+            <div class="gd-walls">
+              <div class="gd-door-wrap">
+                <div class="gd-door" id="gdDoor">
+                  <div class="gd-door-panel"></div>
+                  <div class="gd-door-panel"></div>
+                  <div class="gd-door-panel"></div>
+                  <div class="gd-door-panel"></div>
+                </div>
+              </div>
+              <div class="gd-drive"></div>
+            </div>
+            <div class="gd-ground"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
 </section>
 
+<!-- CTA -->
+<div class="cta-band fade-up">
+  <div class="section-tag" style="justify-content:center">Next</div>
+  <h2 class="section-title">Have a project in mind?<br><span class="accent">Let's talk about it.</span></h2>
+  <p class="section-sub">These are just the examples I can show publicly. Most client work is internal and stays internal. Tell me what you're building.</p>
+  <div class="hero-actions">
+    <a href="/contact" class="btn-primary">Start a Project</a>
+    <a href="/systems" class="btn-secondary">See What We Build</a>
+  </div>
+</div>
 
 <footer>
   <div class="footer-logo">Espino <span>Digital</span></div>
   <div class="footer-links">
     <a href="/" class="footer-link">Home</a>
-    <a href="/systems" class="footer-link">Services</a>
+    <a href="/systems" class="footer-link">Systems</a>
     <a href="/work" class="footer-link">Work</a>
     <a href="/about" class="footer-link">About</a>
     <a href="/contact" class="footer-link">Contact</a>
   </div>
   <div class="footer-meta">© 2026 Espino Digital · Charlotte, NC</div>
 </footer>
+
 <script>
 (function(){
-  ED_LANG.init();
   var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
-  var hamburger=document.querySelector('.nav-hamburger');
-  var mobileNav=document.getElementById('mobileNav');
-  hamburger.addEventListener('click',function(){var open=mobileNav.classList.toggle('open');hamburger.classList.toggle('open',open);hamburger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';});
-  mobileNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mobileNav.classList.remove('open');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting)return;
-      var el=entry.target;
-      var siblings=Array.from(el.parentElement.children).filter(function(c){return c.classList.contains('scroll-hidden')||c.classList.contains('scroll-visible')});
-      var idx=siblings.indexOf(el);
-      el.style.animationDelay=(idx*0.08)+'s';
-      el.classList.remove('scroll-hidden');el.classList.add('scroll-visible');
-      io.unobserve(el);
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  var btn=document.querySelector('.nav-hamburger');
+  var mob=document.getElementById('mobileNav');
+  if(btn&&mob){btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);});}
+  var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in-view');});},{threshold:0.06});
+  document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
+  ED_LANG.init();
+
+  // SE app tab switcher
+  window.seTab = function(view, btn) {
+    document.querySelectorAll('.se-view').forEach(function(v){ v.classList.remove('active'); });
+    var el = document.getElementById('se-' + view);
+    if (el) el.classList.add('active');
+    document.querySelectorAll('.se-navbtn').forEach(function(b){ b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+  };
+
+  // SE KPI number counters — fire once when the showcase enters view
+  (function(){
+    var fired = false;
+    function runCounters() {
+      if (fired) return;
+      fired = true;
+      document.querySelectorAll('.se-kpi-val[data-target]').forEach(function(el) {
+        var target = parseInt(el.dataset.target, 10);
+        var prefix = el.dataset.prefix || '';
+        var duration = 800;
+        var start = Date.now();
+        var raf = function() {
+          var pct = Math.min((Date.now() - start) / duration, 1);
+          var ease = 1 - Math.pow(1 - pct, 3);
+          var cur = Math.round(ease * target);
+          el.textContent = prefix + (prefix === '$' ? cur.toLocaleString() : cur);
+          if (pct < 1) requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
+      });
+    }
+    var showcase = document.querySelector('.se-showcase');
+    if (showcase && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) runCounters();
+      }, { threshold: 0.2 }).observe(showcase);
+    }
+  })();
+
+  // Work filter tabs
+  var filters=document.querySelectorAll('.work-filter');
+  var studies=document.querySelectorAll('.case-study');
+  filters.forEach(function(f){
+    f.addEventListener('click',function(){
+      filters.forEach(function(x){x.classList.remove('active');});
+      f.classList.add('active');
+      var cat=f.dataset.filter;
+      studies.forEach(function(s){
+        if(cat==='all'){
+          s.style.display='';
+        } else {
+          var sc=s.dataset.category||'';
+          s.style.display=sc.indexOf(cat)!==-1?'':'none';
+        }
+      });
     });
-  },{threshold:0.1});
-  document.querySelectorAll('.card,.metric,.demo-metric,.problem-item,.flow-item,.stat-item,.section-title').forEach(function(el){var r=el.getBoundingClientRect();if(r.top>window.innerHeight){el.classList.add('scroll-hidden');io.observe(el);}});
-  var tagIO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;entry.target.classList.add('tag-visible');tagIO.unobserve(entry.target);});},{threshold:0.5});
-  document.querySelectorAll('.section-tag').forEach(function(el){tagIO.observe(el);});
+  });
+
+  // Garage door visualizer
+  var door=document.getElementById('gdDoor');
+  if(door){
+    var currentColor='#e8e8e8';
+    var currentStyle='raised';
+    var styleVariants={
+      raised:  {panelStyle:'border-radius:2px',innerBorder:'3px 12px'},
+      flat:    {panelStyle:'border-radius:0',innerBorder:'4px 8px'},
+      carriage:{panelStyle:'border-radius:4px 4px 0 0',innerBorder:'6px 20px'},
+      modern:  {panelStyle:'border-radius:0',innerBorder:'0 0'}
+    };
+
+    function updateDoor(){
+      var panels=door.querySelectorAll('.gd-door-panel');
+      var variant=styleVariants[currentStyle]||styleVariants.raised;
+      panels.forEach(function(p){
+        p.style.background=currentColor;
+        p.style.borderRadius=variant.panelStyle.replace('border-radius:','');
+      });
+    }
+
+    document.querySelectorAll('.gd-swatch').forEach(function(sw){
+      sw.addEventListener('click',function(){
+        document.querySelectorAll('.gd-swatch').forEach(function(x){x.classList.remove('active');});
+        sw.classList.add('active');
+        currentColor=sw.dataset.color;
+        updateDoor();
+      });
+    });
+
+    document.querySelectorAll('.gd-style-btn').forEach(function(sb){
+      sb.addEventListener('click',function(){
+        document.querySelectorAll('.gd-style-btn').forEach(function(x){x.classList.remove('active');});
+        sb.classList.add('active');
+        currentStyle=sb.dataset.style;
+        updateDoor();
+      });
+    });
+
+    updateDoor();
+  }
 })();
 </script>
-<script src="gradient.js"></script>
 </body>
 </html>
