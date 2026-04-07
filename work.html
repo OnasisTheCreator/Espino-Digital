@@ -621,10 +621,9 @@
 
     function updateDoor(){
       var panels=door.querySelectorAll('.gd-door-panel');
-      var variant=styleVariants[currentStyle]||styleVariants.raised;
+      door.className = 'gd-door style-' + currentStyle;
       panels.forEach(function(p){
         p.style.background=currentColor;
-        p.style.borderRadius=variant.panelStyle.replace('border-radius:','');
       });
     }
 
