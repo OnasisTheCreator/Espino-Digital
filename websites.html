@@ -190,7 +190,8 @@
 (function(){
   ED_LANG.init();
   var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+  var lastY=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;nav.classList.toggle('scrolled',y>80);if(y>100){nav.classList.toggle('nav-hidden',y>lastY);}else{nav.classList.remove('nav-hidden');}lastY=y;},{passive:true});
   var hamburger=document.querySelector('.nav-hamburger');
   var mobileNav=document.getElementById('mobileNav');
   hamburger.addEventListener('click',function(){var open=mobileNav.classList.toggle('open');hamburger.classList.toggle('open',open);hamburger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';});
@@ -229,5 +230,6 @@
 })();
 </script>
 <script src="gradient.js"></script>
+<script src="/interactions.js"></script>
 </body>
 </html>

@@ -176,8 +176,79 @@
     <button class="work-filter" data-filter="interactive">Interactive</button>
   </div>
 
+  <!-- ─── PINNED SCROLL LAYOUT ──────────────────────── -->
+  <div class="work-pinned-wrap">
+
+    <!-- LEFT: sticky project info panel -->
+    <div class="work-pin-left" aria-hidden="true">
+
+      <!-- Card 01 -->
+      <div class="wpl-card active" data-project="0">
+        <div class="wpl-badges">
+          <span class="badge b-accent">Business Systems</span>
+          <span class="badge b-ok">Live Production</span>
+        </div>
+        <div class="wpl-num">01</div>
+        <h3 class="wpl-title">Trucking Operations Dashboard</h3>
+        <p class="wpl-outcome">Load decisions that took 20 minutes now take 3.</p>
+        <div class="wpl-meta">
+          <span class="wpl-meta-item">Custom App</span>
+          <span class="wpl-meta-dot"></span>
+          <span class="wpl-meta-item">Gmail + Load Board</span>
+          <span class="wpl-meta-dot"></span>
+          <span class="wpl-meta-item">Kanban Pipeline</span>
+        </div>
+      </div>
+
+      <!-- Card 02 -->
+      <div class="wpl-card" data-project="1">
+        <div class="wpl-badges">
+          <span class="badge b-accent">Web + Systems</span>
+          <span class="badge">Bilingual</span>
+        </div>
+        <div class="wpl-num">02</div>
+        <h3 class="wpl-title">Auto Repair Website and Follow-up System</h3>
+        <p class="wpl-outcome">Missed calls answered in under 60 seconds, automatically.</p>
+        <div class="wpl-meta">
+          <span class="wpl-meta-item">Custom Website</span>
+          <span class="wpl-meta-dot"></span>
+          <span class="wpl-meta-item">Text-back</span>
+          <span class="wpl-meta-dot"></span>
+          <span class="wpl-meta-item">EN + ES</span>
+        </div>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="wpl-card" data-project="2">
+        <div class="wpl-badges">
+          <span class="badge" style="background:rgba(155,123,255,.12);border-color:rgba(155,123,255,.28);color:var(--accent-2)">Interactive</span>
+          <span class="badge">Demo</span>
+        </div>
+        <div class="wpl-num">03</div>
+        <h3 class="wpl-title">Garage Door Style Visualizer</h3>
+        <p class="wpl-outcome">Customers preview door styles and colors in real time, before calling.</p>
+        <div class="wpl-meta">
+          <span class="wpl-meta-item">CSS + Vanilla JS</span>
+          <span class="wpl-meta-dot"></span>
+          <span class="wpl-meta-item">4 Styles</span>
+          <span class="wpl-meta-dot"></span>
+          <span class="wpl-meta-item">8 Colors</span>
+        </div>
+      </div>
+
+      <!-- Progress dots -->
+      <div class="wpl-dots">
+        <span class="wpl-dot active" data-dot="0"></span>
+        <span class="wpl-dot" data-dot="1"></span>
+        <span class="wpl-dot" data-dot="2"></span>
+      </div>
+    </div>
+
+    <!-- RIGHT: scrollable case studies -->
+    <div class="work-pin-right">
+
   <!-- ─── CASE STUDY 1: TRUCKING OPS ─────────────────── -->
-  <div class="case-study fade-up" data-category="systems">
+  <div class="case-study fade-up" data-category="systems" data-project="0">
     <div class="case-study-header">
       <div class="case-meta">
         <span class="badge b-accent">Business Systems</span>
@@ -387,7 +458,7 @@
   </div>
 
   <!-- ─── CASE STUDY 2: AUTO REPAIR ──────────────────── -->
-  <div class="case-study fade-up" data-category="web systems">
+  <div class="case-study fade-up" data-category="web systems" data-project="1">
     <div class="case-study-header">
       <div>
         <div class="case-meta">
@@ -430,7 +501,7 @@
   </div>
 
   <!-- ─── CASE STUDY 3: GARAGE DOOR VISUALIZER ─────── -->
-  <div class="case-study fade-up" data-category="interactive">
+  <div class="case-study fade-up" data-category="interactive" data-project="2">
     <div class="case-study-header">
       <div>
         <div class="case-meta">
@@ -483,6 +554,9 @@
     </div>
   </div>
 
+    </div><!-- /work-pin-right -->
+  </div><!-- /work-pinned-wrap -->
+
 </section>
 
 <!-- CTA -->
@@ -508,16 +582,42 @@
   <div class="footer-meta">© 2026 Espino Digital · Charlotte, NC</div>
 </footer>
 
+<script src="/interactions.js"></script>
 <script>
 (function(){
   var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  var lastY=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;nav.classList.toggle('scrolled',y>60);if(y>100){nav.classList.toggle('nav-hidden',y>lastY);}else{nav.classList.remove('nav-hidden');}lastY=y;},{passive:true});
   var btn=document.querySelector('.nav-hamburger');
   var mob=document.getElementById('mobileNav');
   if(btn&&mob){btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);});}
   var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in-view');});},{threshold:0.06});
   document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
   ED_LANG.init();
+
+  // Pinned scroll — update left panel as case studies enter view
+  (function(){
+    var cards = document.querySelectorAll('.wpl-card');
+    var dots  = document.querySelectorAll('.wpl-dot');
+    var studies = document.querySelectorAll('.case-study[data-project]');
+    if(!cards.length || !studies.length) return;
+
+    function setActive(idx) {
+      cards.forEach(function(c,i){ c.classList.toggle('active', i===idx); });
+      dots.forEach(function(d,i){ d.classList.toggle('active', i===idx); });
+    }
+
+    var pinObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var idx = parseInt(entry.target.dataset.project, 10);
+          if(!isNaN(idx)) setActive(idx);
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '-10% 0px -40% 0px' });
+
+    studies.forEach(function(s){ pinObs.observe(s); });
+  })();
 
   // SE app tab switcher
   window.seTab = function(view, btn) {

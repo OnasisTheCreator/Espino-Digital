@@ -45,6 +45,7 @@
 
 <!-- HERO -->
 <header class="page-hero">
+  <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
   <canvas class="hero-canvas" aria-hidden="true"></canvas>
   <div class="hero-vignette"></div>
 
@@ -137,207 +138,129 @@
     </div>
   </div>
 
-  <div class="services-accordion fade-up" id="servicesAccordion">
+  <div class="bento-grid fade-up" id="bentoGrid">
 
-    <!-- 01 -->
-    <div class="sa-item" data-cat="presence">
-      <button class="sa-trigger" aria-expanded="false">
-        <span class="sa-num">01</span>
-        <span class="sa-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </span>
-        <span class="sa-title">Premium Business Websites</span>
-        <span class="sa-cat-badge">Digital Presence</span>
-        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="sa-body">
-        <div class="sa-body-inner">
-          <p>Custom from scratch. No templates, no themes — built around your business, your brand, and what moves a visitor toward an inquiry. The goal is always the same: make the right impression and turn traffic into leads.</p>
-          <div class="sa-tags">
-            <span class="sa-tag">Custom design</span>
-            <span class="sa-tag">Mobile-first</span>
-            <span class="sa-tag">Fast load</span>
-            <span class="sa-tag">Lead-focused</span>
-            <span class="sa-tag">English + Spanish</span>
+    <!-- 01 Websites — 2×2 hero card -->
+    <a href="/contact" class="bento-card bento-lg" data-cat="presence">
+      <div class="bc-header">
+        <span class="bc-num">01</span>
+        <span class="bc-badge">Digital Presence</span>
+      </div>
+      <div class="bc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3 class="bc-title">Premium Business Websites</h3>
+      <p class="bc-desc">Custom from scratch. No templates, no themes — built around your business, your brand, and what moves a visitor toward an inquiry. The goal is always the same: make the right impression and turn traffic into leads.</p>
+      <div class="bc-tags">
+        <span>Custom design</span><span>Mobile-first</span><span>Fast load</span><span>Lead-focused</span><span>EN + ES</span>
+      </div>
+    </a>
+
+    <!-- 02 Customer Portals — 1×1 -->
+    <a href="/contact" class="bento-card" data-cat="presence">
+      <div class="bc-header">
+        <span class="bc-num">02</span>
+        <span class="bc-badge">Digital Presence</span>
+      </div>
+      <div class="bc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3 class="bc-title">Customer Portals</h3>
+      <p class="bc-desc">A dedicated space for clients to track jobs, view invoices, and access documents — without calling.</p>
+    </a>
+
+    <!-- 03 Booking — 1×1 -->
+    <a href="/contact" class="bento-card" data-cat="operations">
+      <div class="bc-header">
+        <span class="bc-num">03</span>
+        <span class="bc-badge ops">Operations</span>
+      </div>
+      <div class="bc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3 class="bc-title">Booking and Scheduling</h3>
+      <p class="bc-desc">Custom booking flows built around your actual service model, not a generic SaaS widget.</p>
+    </a>
+
+    <!-- 04 Dispatch — 2×1 wide -->
+    <a href="/contact" class="bento-card bento-wide" data-cat="operations">
+      <div class="bc-header">
+        <span class="bc-num">04</span>
+        <span class="bc-badge ops">Operations</span>
+      </div>
+      <div class="bc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <h3 class="bc-title">Dispatch and Job Tracking</h3>
+      <p class="bc-desc">Operational dashboards built around how your jobs actually move — live job board, status pipeline, driver view, load tracking. One screen, full picture.</p>
+      <div class="bc-tags">
+        <span>Live job board</span><span>Status pipeline</span><span>Load tracking</span><span>Multi-source data</span>
+      </div>
+    </a>
+
+    <!-- 05 Estimate — 1×1 -->
+    <a href="/contact" class="bento-card" data-cat="presence">
+      <div class="bc-header">
+        <span class="bc-num">05</span>
+        <span class="bc-badge">Digital Presence</span>
+      </div>
+      <div class="bc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h3 class="bc-title">Estimate and Quote Tools</h3>
+      <p class="bc-desc">Interactive configurators that give customers a real price range before they contact you.</p>
+    </a>
+
+    <!-- 06 Internal Dashboards — 1×1 -->
+    <a href="/contact" class="bento-card" data-cat="operations">
+      <div class="bc-header">
+        <span class="bc-num">06</span>
+        <span class="bc-badge ops">Operations</span>
+      </div>
+      <div class="bc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+      </div>
+      <h3 class="bc-title">Internal Dashboards</h3>
+      <p class="bc-desc">Email, spreadsheets, APIs — pulled into one clean internal view so decisions take seconds, not tabs.</p>
+    </a>
+
+    <!-- 07 Automation — 2×1 wide -->
+    <a href="/contact" class="bento-card bento-wide" data-cat="operations">
+      <div class="bc-header">
+        <span class="bc-num">07</span>
+        <span class="bc-badge ops">Operations</span>
+      </div>
+      <div class="bc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </div>
+      <h3 class="bc-title">Automation and Workflows</h3>
+      <p class="bc-desc">Missed-call text-back, follow-up sequences, review requests, lead routing, reactivation campaigns. Systems that run in the background while you do the actual work.</p>
+      <div class="bc-tags">
+        <span>Missed-call text-back</span><span>Follow-up sequences</span><span>Review requests</span><span>Lead routing</span>
+      </div>
+    </a>
+
+    <!-- 08 Bilingual — full width -->
+    <a href="/contact" class="bento-card bento-full" data-cat="presence">
+      <div class="bc-full-inner">
+        <div class="bc-full-left">
+          <div class="bc-header">
+            <span class="bc-num">08</span>
+            <span class="bc-badge">Digital Presence</span>
+          </div>
+          <div class="bc-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="bc-title">Bilingual Digital Experiences</h3>
+          <p class="bc-desc">Full English and Spanish builds — not a plugin, not Google Translate. Both languages written and built properly from the start.</p>
+        </div>
+        <div class="bc-full-right">
+          <div class="bc-tags">
+            <span>English + Spanish</span><span>Purpose-written copy</span><span>Toggle switcher</span><span>Both languages indexed</span><span>No plugins</span>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- 02 -->
-    <div class="sa-item" data-cat="presence">
-      <button class="sa-trigger" aria-expanded="false">
-        <span class="sa-num">02</span>
-        <span class="sa-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </span>
-        <span class="sa-title">Customer Portals</span>
-        <span class="sa-cat-badge">Digital Presence</span>
-        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="sa-body">
-        <div class="sa-body-inner">
-          <p>Give your clients a dedicated space to track their job status, view invoices, access documents, and communicate — without them having to call or email to find out what's going on. Reduces friction for them and interruptions for you.</p>
-          <div class="sa-tags">
-            <span class="sa-tag">Login-gated</span>
-            <span class="sa-tag">Job status</span>
-            <span class="sa-tag">Document access</span>
-            <span class="sa-tag">Invoice view</span>
-            <span class="sa-tag">Real-time updates</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 03 -->
-    <div class="sa-item" data-cat="operations">
-      <button class="sa-trigger" aria-expanded="false">
-        <span class="sa-num">03</span>
-        <span class="sa-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        </span>
-        <span class="sa-title">Booking and Scheduling</span>
-        <span class="sa-cat-badge">Operations</span>
-        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="sa-body">
-        <div class="sa-body-inner">
-          <p>Custom booking flows built around your actual service model — not a generic SaaS widget dropped on the page. Customers see real availability, pick what works, and get confirmed automatically. You get the right information from the start.</p>
-          <div class="sa-tags">
-            <span class="sa-tag">Custom flow</span>
-            <span class="sa-tag">Auto-confirm</span>
-            <span class="sa-tag">Reminders</span>
-            <span class="sa-tag">Service-specific logic</span>
-            <span class="sa-tag">Calendar sync</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 04 -->
-    <div class="sa-item" data-cat="operations">
-      <button class="sa-trigger" aria-expanded="false">
-        <span class="sa-num">04</span>
-        <span class="sa-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </span>
-        <span class="sa-title">Dispatch and Job Tracking</span>
-        <span class="sa-cat-badge">Operations</span>
-        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="sa-body">
-        <div class="sa-body-inner">
-          <p>Operational dashboards built around how your jobs actually move — not adapted from generic project management software. See what's in progress, what needs attention, and what's closed, all from one screen. Built specifically for field service and logistics operations.</p>
-          <div class="sa-tags">
-            <span class="sa-tag">Live job board</span>
-            <span class="sa-tag">Status pipeline</span>
-            <span class="sa-tag">Driver/crew view</span>
-            <span class="sa-tag">Load tracking</span>
-            <span class="sa-tag">Multi-source data</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 05 -->
-    <div class="sa-item" data-cat="presence">
-      <button class="sa-trigger" aria-expanded="false">
-        <span class="sa-num">05</span>
-        <span class="sa-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </span>
-        <span class="sa-title">Estimate and Quote Tools</span>
-        <span class="sa-cat-badge">Digital Presence</span>
-        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="sa-body">
-        <div class="sa-body-inner">
-          <p>Interactive configurators that walk a customer through their options and give them a realistic price range before they ever contact you. Fewer back-and-forths. More qualified leads. Customers who reach out already know what things cost.</p>
-          <div class="sa-tags">
-            <span class="sa-tag">Interactive pricing</span>
-            <span class="sa-tag">Option configurator</span>
-            <span class="sa-tag">Lead capture</span>
-            <span class="sa-tag">Embeddable</span>
-            <span class="sa-tag">Mobile-ready</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 06 -->
-    <div class="sa-item" data-cat="operations">
-      <button class="sa-trigger" aria-expanded="false">
-        <span class="sa-num">06</span>
-        <span class="sa-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-        </span>
-        <span class="sa-title">Internal Dashboards</span>
-        <span class="sa-cat-badge">Operations</span>
-        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="sa-body">
-        <div class="sa-body-inner">
-          <p>Pull data from email, spreadsheets, Google Sheets, APIs, and other tools into one clean internal view. Instead of context-switching between five places to make a decision, you see everything in one place, organized the way your operation actually works.</p>
-          <div class="sa-tags">
-            <span class="sa-tag">Multi-source data</span>
-            <span class="sa-tag">Gmail integration</span>
-            <span class="sa-tag">Sheets sync</span>
-            <span class="sa-tag">Custom metrics</span>
-            <span class="sa-tag">Role-based views</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 07 -->
-    <div class="sa-item" data-cat="operations">
-      <button class="sa-trigger" aria-expanded="false">
-        <span class="sa-num">07</span>
-        <span class="sa-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        </span>
-        <span class="sa-title">Automation and Workflows</span>
-        <span class="sa-cat-badge">Operations</span>
-        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="sa-body">
-        <div class="sa-body-inner">
-          <p>Follow-up sequences, missed-call text-back, review request flows, lead routing, reactivation campaigns. Systems that run in the background while you focus on the actual work. Once built and triggered, they run without anyone managing them.</p>
-          <div class="sa-tags">
-            <span class="sa-tag">Missed-call text-back</span>
-            <span class="sa-tag">Follow-up sequences</span>
-            <span class="sa-tag">Review requests</span>
-            <span class="sa-tag">Lead routing</span>
-            <span class="sa-tag">Reactivation</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 08 -->
-    <div class="sa-item" data-cat="presence">
-      <button class="sa-trigger" aria-expanded="false">
-        <span class="sa-num">08</span>
-        <span class="sa-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </span>
-        <span class="sa-title">Bilingual Digital Experiences</span>
-        <span class="sa-cat-badge">Digital Presence</span>
-        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="sa-body">
-        <div class="sa-body-inner">
-          <p>Full English and Spanish builds — not a plugin, not Google Translate on top of an English-only site. Both languages are written and built properly from the start. For businesses serving Spanish-speaking communities, this is the difference between reaching those customers and not.</p>
-          <div class="sa-tags">
-            <span class="sa-tag">English + Spanish</span>
-            <span class="sa-tag">Properly written copy</span>
-            <span class="sa-tag">Toggle switcher</span>
-            <span class="sa-tag">Both languages indexed</span>
-            <span class="sa-tag">No plugins</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    </a>
 
   </div>
 </section>
@@ -462,10 +385,12 @@
 </footer>
 
 <script src="/gradient.js"></script>
+<script src="/interactions.js"></script>
 <script>
 (function(){
   var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  var lastY=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;nav.classList.toggle('scrolled',y>60);if(y>100){nav.classList.toggle('nav-hidden',y>lastY);}else{nav.classList.remove('nav-hidden');}lastY=y;},{passive:true});
   var btn=document.querySelector('.nav-hamburger');
   var mob=document.getElementById('mobileNav');
   if(btn&&mob){btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);});}
@@ -473,71 +398,62 @@
   document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
   ED_LANG.init();
 
-  // Services accordion
+  // Hero mouse glow
   (function(){
-    var accordion = document.getElementById('servicesAccordion');
-    if (!accordion) return;
-
-    // Accordion open/close
-    accordion.querySelectorAll('.sa-trigger').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var expanded = btn.getAttribute('aria-expanded') === 'true';
-        var body = btn.nextElementSibling;
-        // Close all others
-        accordion.querySelectorAll('.sa-trigger').forEach(function(b){
-          b.setAttribute('aria-expanded','false');
-          var bb = b.nextElementSibling;
-          if(bb) bb.style.maxHeight = '0';
-        });
-        if(!expanded){
-          btn.setAttribute('aria-expanded','true');
-          body.style.maxHeight = body.scrollHeight + 'px';
-        }
+    var glow=document.getElementById('heroGlow');
+    var hero=document.querySelector('.page-hero');
+    if(!glow||!hero)return;
+    var rafId=null;
+    var tx=50,ty=42;
+    hero.addEventListener('mousemove',function(e){
+      var r=hero.getBoundingClientRect();
+      tx=((e.clientX-r.left)/r.width)*100;
+      ty=((e.clientY-r.top)/r.height)*100;
+      if(!rafId)rafId=requestAnimationFrame(function(){
+        glow.style.setProperty('--gx',tx+'%');
+        glow.style.setProperty('--gy',ty+'%');
+        rafId=null;
       });
+    },{passive:true});
+    hero.addEventListener('mouseleave',function(){
+      glow.style.setProperty('--gx','50%');
+      glow.style.setProperty('--gy','42%');
     });
+  })();
 
-    // Dropdown filter
+  // Bento grid filter
+  (function(){
     var trigger = document.getElementById('svcDdTrigger');
     var menu = document.getElementById('svcDdMenu');
     var valueEl = document.getElementById('svcDdValue');
-    if(trigger && menu){
-      trigger.addEventListener('click', function(e){
+    var cards = document.querySelectorAll('.bento-card');
+    if(!trigger || !menu) return;
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      trigger.classList.toggle('open', open);
+      trigger.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', function(){
+      menu.classList.remove('open');
+      trigger.classList.remove('open');
+      trigger.setAttribute('aria-expanded','false');
+    });
+    menu.querySelectorAll('.svc-dd-option').forEach(function(opt){
+      opt.addEventListener('click', function(e){
         e.stopPropagation();
-        var open = menu.classList.toggle('open');
-        trigger.classList.toggle('open', open);
-        trigger.setAttribute('aria-expanded', open);
-      });
-      document.addEventListener('click', function(){
+        menu.querySelectorAll('.svc-dd-option').forEach(function(o){ o.classList.remove('active'); });
+        opt.classList.add('active');
+        valueEl.textContent = opt.textContent;
         menu.classList.remove('open');
         trigger.classList.remove('open');
         trigger.setAttribute('aria-expanded','false');
-      });
-      menu.querySelectorAll('.svc-dd-option').forEach(function(opt){
-        opt.addEventListener('click', function(e){
-          e.stopPropagation();
-          menu.querySelectorAll('.svc-dd-option').forEach(function(o){ o.classList.remove('active'); });
-          opt.classList.add('active');
-          valueEl.textContent = opt.textContent;
-          menu.classList.remove('open');
-          trigger.classList.remove('open');
-          trigger.setAttribute('aria-expanded','false');
-          // Filter items
-          var cat = opt.dataset.cat;
-          accordion.querySelectorAll('.sa-item').forEach(function(item){
-            if(cat === 'all' || item.dataset.cat === cat){
-              item.classList.remove('hidden');
-            } else {
-              item.classList.add('hidden');
-              // Close if hidden
-              var b = item.querySelector('.sa-trigger');
-              var bd = item.querySelector('.sa-body');
-              if(b) b.setAttribute('aria-expanded','false');
-              if(bd) bd.style.maxHeight = '0';
-            }
-          });
+        var cat = opt.dataset.cat;
+        cards.forEach(function(card){
+          card.classList.toggle('bc-dimmed', cat !== 'all' && card.dataset.cat !== cat);
         });
       });
-    }
+    });
   })();
 
   // 3D panel parallax

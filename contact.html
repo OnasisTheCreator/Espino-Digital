@@ -189,10 +189,12 @@
   <div class="footer-meta">© 2026 Espino Digital · Charlotte, NC</div>
 </footer>
 
+<script src="/interactions.js"></script>
 <script>
 (function(){
   var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  var lastY=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;nav.classList.toggle('scrolled',y>60);if(y>100){nav.classList.toggle('nav-hidden',y>lastY);}else{nav.classList.remove('nav-hidden');}lastY=y;},{passive:true});
   var btn=document.querySelector('.nav-hamburger');
   var mob=document.getElementById('mobileNav');
   if(btn&&mob){btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);});}

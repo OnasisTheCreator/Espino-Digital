@@ -1120,7 +1120,8 @@
 
   // Nav scroll
   var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+  var lastY=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;nav.classList.toggle('scrolled',y>80);if(y>100){nav.classList.toggle('nav-hidden',y>lastY);}else{nav.classList.remove('nav-hidden');}lastY=y;},{passive:true});
 
   // Section tag line
   var tagIO=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;entry.target.classList.add('tag-visible');tagIO.unobserve(entry.target);});},{threshold:0.5});
@@ -1128,6 +1129,7 @@
 })();
 </script>
 <script src="gradient.js"></script>
+<script src="/interactions.js"></script>
 
 </body>
 </html>
