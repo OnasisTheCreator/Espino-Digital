@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Trucking Operations Dashboard — Case Study | Espino Digital</title>
+<meta name="description" content="How Espino Digital built a custom internal tool for a trucking owner-operator: Gmail ingestion, load board aggregation, broker rankings, and a Kanban pipeline — all in one screen.">
+<link rel="canonical" href="https://espinodigital.com/case-study">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css">
+<script src="/translations.js"></script>
+<style>
+/* ── Case Study page-specific styles ── */
+.cs-page-hero {
+  padding: clamp(56px,8vw,100px) clamp(20px,5vw,80px) clamp(40px,5vw,72px);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.cs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fm);
+  font-size: 11px;
+  color: var(--muted-2);
+  letter-spacing: .06em;
+  margin-bottom: 32px;
+}
+.cs-breadcrumb a { color: var(--muted-2); transition: color .2s; }
+.cs-breadcrumb a:hover { color: var(--text); }
+.cs-breadcrumb svg { flex-shrink: 0; }
+.cs-page-title {
+  font-family: var(--fd);
+  font-weight: 800;
+  font-size: clamp(34px,5vw,64px);
+  line-height: 1.06;
+  letter-spacing: -.03em;
+  margin-bottom: 24px;
+  max-width: 820px;
+}
+.cs-page-intro {
+  font-size: clamp(16px,1.8vw,19px);
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+.cs-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.cs-meta-item { display: flex; flex-direction: column; gap: 4px; }
+.cs-meta-label { font-family: var(--fm); font-size: 10px; color: var(--muted-2); letter-spacing: .1em; text-transform: uppercase; }
+.cs-meta-value { font-size: 14px; font-weight: 500; color: var(--text); }
+
+/* Timeline */
+.cs-timeline {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 clamp(20px,5vw,80px) clamp(56px,8vw,100px);
+}
+.cs-tl-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+}
+.cs-tl-item:last-child { border-bottom: 1px solid var(--border); }
+.cs-tl-label-wrap { position: sticky; top: calc(var(--nav-h) + 24px); height: fit-content; }
+.cs-tl-num { font-family: var(--fm); font-size: 10px; color: var(--accent); letter-spacing: .1em; margin-bottom: 8px; }
+.cs-tl-label { font-family: var(--fd); font-weight: 700; font-size: 18px; letter-spacing: -.015em; }
+.cs-tl-content h3 { font-family: var(--fd); font-weight: 700; font-size: clamp(20px,2.5vw,28px); letter-spacing: -.02em; margin-bottom: 16px; }
+.cs-tl-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+.cs-tl-content p:last-of-type { margin-bottom: 0; }
+
+/* Feature cards grid */
+.cs-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+.cs-feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  transition: border-color .2s;
+}
+.cs-feature-card:hover { border-color: var(--border-h); }
+.cs-fc-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(91,115,255,.1);
+  border: 1px solid rgba(91,115,255,.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.cs-fc-title { font-family: var(--fd); font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+.cs-fc-desc { font-size: 13px; color: var(--muted-2); line-height: 1.65; }
+
+/* Result callouts */
+.cs-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 28px;
+}
+.cs-result {
+  background: var(--surface);
+  padding: clamp(24px,3vw,36px);
+  position: relative;
+  overflow: hidden;
+}
+.cs-result::before {
+  content:'';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+.cs-result-num {
+  font-family: var(--fm);
+  font-size: clamp(28px,3vw,38px);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -.02em;
+}
+.cs-result-label { font-family: var(--fd); font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+.cs-result-desc { font-size: 13px; color: var(--muted-2); line-height: 1.65; }
+
+/* Quote */
+.cs-quote {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 28px 32px;
+  margin-top: 28px;
+}
+.cs-quote p { font-size: 17px; color: var(--text); line-height: 1.75; font-style: italic; }
+
+/* Responsive */
+@media(max-width:900px){
+  .cs-tl-item { grid-template-columns: 1fr; gap: 16px; }
+  .cs-tl-label-wrap { position: static; }
+  .cs-feature-grid { grid-template-columns: 1fr 1fr; }
+  .cs-results-grid { grid-template-columns: 1fr; }
+}
+@media(max-width:600px){
+  .cs-feature-grid { grid-template-columns: 1fr; }
+  .cs-meta-row { gap: 20px; }
+}
+</style>
+</head>
+<body class="page-work">
+
+<nav>
+  <a href="/" class="nav-logo">Espino <span>Digital</span></a>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/systems" class="nav-link">Systems</a>
+    <a href="/work" class="nav-link active">Work</a>
+    <a href="/about" class="nav-link">About</a>
+    <a href="/contact" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="/contact" class="nav-cta">Start a Project</a>
+    <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-spacer" aria-hidden="true"></div>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/">Home</a>
+  <a href="/systems">Systems</a>
+  <a href="/work">Work</a>
+  <a href="/about">About</a>
+  <a href="/contact" class="mobile-cta">Start a Project</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="cs-page-hero">
+  <div class="cs-breadcrumb fade-up">
+    <a href="/work">Work</a>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <span>Case Study</span>
+  </div>
+
+  <div class="case-meta fade-up" style="margin-bottom:20px">
+    <span class="badge b-accent">Business Systems</span>
+    <span class="badge">Custom App</span>
+    <span class="badge">Operations</span>
+    <span class="badge b-ok" style="font-size:12px;padding:6px 12px">Live Production</span>
+  </div>
+
+  <h1 class="cs-page-title fade-up">Trucking Operations<br><span class="accent">Dashboard</span></h1>
+  <p class="cs-page-intro fade-up delay-1">A Charlotte-based trucking owner-operator was managing load offers, broker communications, and dispatch decisions across email, texts, and three separate spreadsheets. Nothing talked to each other. We built one internal tool that replaced all of it.</p>
+
+  <div class="cs-meta-row fade-up delay-2">
+    <div class="cs-meta-item">
+      <span class="cs-meta-label">Industry</span>
+      <span class="cs-meta-value">Trucking / Logistics</span>
+    </div>
+    <div class="cs-meta-item">
+      <span class="cs-meta-label">Type</span>
+      <span class="cs-meta-value">Custom Internal App</span>
+    </div>
+    <div class="cs-meta-item">
+      <span class="cs-meta-label">Stack</span>
+      <span class="cs-meta-value">Web App · Gmail API · Load Board Feed</span>
+    </div>
+    <div class="cs-meta-item">
+      <span class="cs-meta-label">Status</span>
+      <span class="cs-meta-value" style="color:var(--ok)">Live in production</span>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD MOCKUP -->
+<div style="padding:0 clamp(20px,5vw,80px);max-width:var(--max);margin:0 auto 80px">
+  <div class="proof-shell fade-up">
+    <div class="proof-titlebar">
+      <div class="proof-dots"><span></span><span></span><span></span></div>
+      <div class="proof-tb-text">Trucking Ops Dashboard · internal.espinodigital.com</div>
+    </div>
+    <div class="proof-body">
+      <div class="proof-sidebar">
+        <div class="proof-nav-item active"><div class="proof-nav-icon"></div>Dashboard</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Load Board</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Pipeline</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Brokers</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Inbox</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Revenue</div>
+      </div>
+      <div class="proof-content">
+        <div class="proof-metrics">
+          <div class="proof-metric"><strong>24</strong><span>Loads today</span></div>
+          <div class="proof-metric"><strong>11</strong><span>Active offers</span></div>
+          <div class="proof-metric"><strong>67%</strong><span>Book rate</span></div>
+          <div class="proof-metric"><strong>83%</strong><span>Top broker</span></div>
+        </div>
+        <div class="proof-kanban">
+          <div>
+            <div class="proof-col-head">Inbox (8)</div>
+            <div class="proof-card"><div class="proof-card-tag">Transfix</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+            <div class="proof-card"><div class="proof-card-tag">Echo Global</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+            <div class="proof-card"><div class="proof-card-tag">Coyote</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+          </div>
+          <div>
+            <div class="proof-col-head">Reviewing (4)</div>
+            <div class="proof-card"><div class="proof-card-tag">Transfix</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+            <div class="proof-card"><div class="proof-card-tag">Uber Freight</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+          </div>
+          <div>
+            <div class="proof-col-head">Negotiating (2)</div>
+            <div class="proof-card"><div class="proof-card-tag">Transfix</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+          </div>
+          <div>
+            <div class="proof-col-head">Booked (11)</div>
+            <div class="proof-card"><div class="proof-card-tag">Echo Global</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+            <div class="proof-card"><div class="proof-card-tag">Convoy</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE SECTIONS -->
+<div class="cs-timeline">
+
+  <!-- 01 — The Problem -->
+  <div class="cs-tl-item fade-up">
+    <div class="cs-tl-label-wrap">
+      <div class="cs-tl-num">01</div>
+      <div class="cs-tl-label">The Problem</div>
+    </div>
+    <div class="cs-tl-content">
+      <h3>Five places to make one decision</h3>
+      <p>Every load decision required pulling from at least three different sources simultaneously: Gmail for incoming offers, a spreadsheet for broker history, another spreadsheet for booked loads, and a third for revenue estimates. None of them talked to each other.</p>
+      <p>The result wasn't just inefficiency — it was decisions made with incomplete information. Good loads got passed on because the rate wasn't checked against broker history. Weaker offers got accepted because the pipeline view was outdated. Time spent context-switching was time not spent running the operation.</p>
+      <p>The business was running on process that made sense when it was small. But at the volume they'd grown to, the cracks were showing up in money left on the table.</p>
+    </div>
+  </div>
+
+  <!-- 02 — What We Built -->
+  <div class="cs-tl-item fade-up">
+    <div class="cs-tl-label-wrap">
+      <div class="cs-tl-num">02</div>
+      <div class="cs-tl-label">What We Built</div>
+    </div>
+    <div class="cs-tl-content">
+      <h3>One screen. Full picture.</h3>
+      <p>We built a purpose-built internal web app that pulls all the relevant data into a single interface, organized around the actual decision flow: what's available, who's offering it, is it worth taking, and where does it sit in the pipeline.</p>
+      <p>The tool connects directly to Gmail to parse and categorize incoming load offers. It pulls load board data and filters by lane, rate floor, and broker score. Brokers are ranked by their actual booking rate and cumulative revenue history. And the whole pipeline — from inbox to booked — lives in a Kanban view that updates in real time.</p>
+
+      <div class="cs-feature-grid">
+        <div class="cs-feature-card">
+          <div class="cs-fc-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="cs-fc-title">Gmail Ingestion</div>
+          <div class="cs-fc-desc">Load offers parsed from inbox automatically — no manual entry, no missing emails.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-fc-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+          </div>
+          <div class="cs-fc-title">Load Board Feed</div>
+          <div class="cs-fc-desc">External feed filtered by lane, rate floor, and broker quality score in real time.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-fc-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="cs-fc-title">Broker Rankings</div>
+          <div class="cs-fc-desc">Ranked by actual booking rate and cumulative revenue — not assumptions.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-fc-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="cs-fc-title">Kanban Pipeline</div>
+          <div class="cs-fc-desc">Offer → Reviewing → Negotiating → Booked. Full visibility across every load.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-fc-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="cs-fc-title">Metrics at a Glance</div>
+          <div class="cs-fc-desc">Today's loads, active offers, book rate, and top broker performance on the home screen.</div>
+        </div>
+        <div class="cs-feature-card">
+          <div class="cs-fc-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="cs-fc-title">Private & Internal</div>
+          <div class="cs-fc-desc">Login-gated. Accessible only to the operator. No data shared with brokers or third parties.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 — The Build Process -->
+  <div class="cs-tl-item fade-up">
+    <div class="cs-tl-label-wrap">
+      <div class="cs-tl-num">03</div>
+      <div class="cs-tl-label">How It Was Built</div>
+    </div>
+    <div class="cs-tl-content">
+      <h3>Custom from scratch, built around the actual workflow</h3>
+      <p>We started by mapping the existing process in detail — not the ideal process, the real one. What data sources were already being used. What decisions were made and in what order. Where the friction was costing time or money.</p>
+      <p>From there, we designed the interface around the decision flow rather than the data structure. The dashboard shows what the operator needs to act on right now. The load board is pre-filtered, not raw. The Kanban reflects how loads actually move, not a generic "to-do / in progress / done" framework.</p>
+      <p>The Gmail integration reads incoming emails, identifies load offers, parses the relevant details, and surfaces them in the inbox view automatically. No copy-pasting. No missed emails in a busy inbox. The broker ranking system is seeded with historical data and updates as new loads close.</p>
+
+      <div class="cs-quote">
+        <p>"We built it once and built it right — the kind of tool that looks simple from the outside because all the complexity is handled on the back end where the operator never has to think about it."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 — Results -->
+  <div class="cs-tl-item fade-up">
+    <div class="cs-tl-label-wrap">
+      <div class="cs-tl-num">04</div>
+      <div class="cs-tl-label">What It Solved</div>
+    </div>
+    <div class="cs-tl-content">
+      <h3>One screen instead of five</h3>
+      <p>Every load decision now starts from the same place. The operator has full visibility into what's available, who's offering it, and whether it's worth taking — based on that broker's actual track record, not a gut check.</p>
+
+      <div class="cs-results-grid">
+        <div class="cs-result">
+          <div class="cs-result-num">~17 min</div>
+          <div class="cs-result-label">Saved per decision</div>
+          <div class="cs-result-desc">Context-switching between 5 tools used to take 20 minutes. Now it's under 3.</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-num">1 screen</div>
+          <div class="cs-result-label">Instead of 5 separate tools</div>
+          <div class="cs-result-desc">Gmail, two spreadsheets, the load board, and a text thread — replaced by one dashboard.</div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-num">Zero</div>
+          <div class="cs-result-label">Missed load offers</div>
+          <div class="cs-result-desc">Gmail ingestion means no offer gets buried in a busy inbox and missed.</div>
+        </div>
+      </div>
+
+      <p style="margin-top:24px">The broker ranking system surfaced patterns the operator knew existed but couldn't measure precisely — which brokers consistently booked, which ones negotiated aggressively but rarely closed, and where the real revenue came from. That visibility alone changed how offers were prioritized.</p>
+      <p>The tool runs in production, accessed daily. It's not a prototype or a proof of concept. It's the actual system the operation runs on.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- WHAT THIS MEANS FOR YOUR BUSINESS -->
+<div class="section-band">
+  <div class="band-inner">
+    <div class="section-tag fade-up">The Bigger Picture</div>
+    <h2 class="section-title fade-up" style="margin-bottom:24px">This pattern applies to<br><span class="accent">more than trucking.</span></h2>
+    <p class="section-sub fade-up" style="max-width:600px;margin-bottom:48px">Any operation that runs on scattered data — email, spreadsheets, texts, multiple apps — can be consolidated the same way. The specific industry changes. The problem doesn't.</p>
+    <div class="outcomes-row fade-up">
+      <div class="outcome">
+        <div class="outcome-num">Apply it to</div>
+        <h3>Field Service</h3>
+        <p>HVAC, plumbing, electrical. Job board, crew dispatch, customer status, and revenue — one screen instead of four different apps and a whiteboard.</p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-num">Apply it to</div>
+        <h3>Auto Repair</h3>
+        <p>Open ROs, pending parts, technician workload, and customer follow-up. Not a generic shop management system — built around how your specific shop runs.</p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-num">Apply it to</div>
+        <h3>Any Ops-Heavy Business</h3>
+        <p>If decisions require pulling from multiple places, there's a version of this tool for you. The goal is always the same: one screen, full picture, faster decisions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band fade-up">
+  <div class="section-tag" style="justify-content:center">Next Step</div>
+  <h2 class="section-title">Running on too many<br><span class="accent">scattered tools?</span></h2>
+  <p class="section-sub">Tell me what your operation looks like and I'll tell you what a consolidated version could look like. No pitch, just a conversation about what's possible.</p>
+  <div class="hero-actions" style="justify-content:center">
+    <a href="/contact" class="btn-primary">Start a Conversation</a>
+    <a href="/work" class="btn-secondary">See More Work</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Espino <span>Digital</span></div>
+  <div class="footer-links">
+    <a href="/" class="footer-link">Home</a>
+    <a href="/systems" class="footer-link">Systems</a>
+    <a href="/work" class="footer-link">Work</a>
+    <a href="/about" class="footer-link">About</a>
+    <a href="/contact" class="footer-link">Contact</a>
+  </div>
+  <div class="footer-meta">© 2026 Espino Digital · Charlotte, NC</div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  var btn=document.querySelector('.nav-hamburger');
+  var mob=document.getElementById('mobileNav');
+  if(btn&&mob){btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);});}
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in-view');});},{threshold:0.07});
+  document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
+  ED_LANG.init();
+})();
+</script>
+</body>
+</html>

@@ -3,432 +3,564 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Custom Websites and Apps for Businesses, Creators, and Brands | Espino Digital</title>
-<meta name="description" content="Espino Digital is a custom web and app studio. We build from scratch for businesses, creators, personal brands, and founders who want it done right, without agency pricing. Based in Charlotte, NC." />
-<link rel="canonical" href="https://espinodigital.com" />
-<meta property="og:title" content="Custom Websites and Apps for Businesses, Creators, and Brands | Espino Digital" />
-<meta property="og:description" content="Custom websites and apps built from scratch. For businesses that need to stand out, creators building a personal brand, and founders who want it done right, without agency pricing." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://espinodigital.com" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:locale:alternate" content="es_MX" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Custom Websites and Apps for Businesses, Creators, and Brands | Espino Digital" />
-<meta name="twitter:description" content="Espino Digital builds custom websites and apps from scratch. No templates. No agency overhead. For businesses, creators, and brands who want something built for them." />
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<title>Espino Digital — Custom Websites, Apps, and Systems</title>
+<meta name="description" content="Espino Digital is a boutique studio that builds custom websites, internal tools, and automation systems for businesses that want better presence and better operations. Based in Charlotte, NC.">
+<link rel="canonical" href="https://espinodigital.com">
+<meta property="og:title" content="Espino Digital — Custom Websites, Apps, and Systems">
+<meta property="og:description" content="Custom websites, internal tools, and automation systems. Built from scratch for businesses that want both.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://espinodigital.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css">
-<script src="translations.js"></script>
+<link rel="stylesheet" href="/styles.css">
+<script src="/translations.js"></script>
 </head>
 <body class="page-home">
+
 <nav>
   <a href="/" class="nav-logo">Espino <span>Digital</span></a>
   <div class="nav-links">
     <a href="/" class="nav-link active">Home</a>
-    <div class="nav-dropdown-wrap">
-      <a href="/systems" class="nav-link nav-dropdown-trigger">Services <span class="nav-chevron">▾</span></a>
-      <div class="nav-dropdown-menu">
-        <a href="/systems" class="nav-dropdown-item">Overview</a>
-        <a href="/websites" class="nav-dropdown-item">Websites</a>
-        <a href="/apps" class="nav-dropdown-item">Custom Apps</a>
-      </div>
-    </div>
+    <a href="/systems" class="nav-link">Systems</a>
     <a href="/work" class="nav-link">Work</a>
     <a href="/about" class="nav-link">About</a>
     <a href="/contact" class="nav-link">Contact</a>
   </div>
-  <a href="/contact" class="nav-cta">Book a Call →</a>
-  <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
-  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav-right">
+    <a href="/contact" class="nav-cta">Start a Project</a>
+    <button class="lang-toggle" data-active="en" onclick="ED_LANG.toggle()"><span class="lt-en">EN</span><span class="lt-sep">|</span><span class="lt-es">ES</span></button>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 <div class="nav-spacer" aria-hidden="true"></div>
 <div class="mobile-nav" id="mobileNav">
   <a href="/">Home</a>
-  <a href="/systems">Services</a>
-  <a href="/websites" class="mobile-nav-sub">Websites</a>
-  <a href="/apps" class="mobile-nav-sub">Custom Apps</a>
+  <a href="/systems">Systems</a>
   <a href="/work">Work</a>
   <a href="/about">About</a>
-  <a href="/contact" class="mobile-cta">Book a Call →</a>
+  <a href="/contact" class="mobile-cta">Start a Project</a>
 </div>
+
+<!-- HERO -->
 <header class="page-hero">
   <canvas class="hero-canvas" aria-hidden="true"></canvas>
-  <div class="hero-grid-bg"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
-  <div class="hero-scan"></div>
-  <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Espino Digital · Premium Web &amp; App Dev</span></div>
-    <h1 class="hero-title" data-i18n="hero-title">Break out of<br><span class="accent">the template box.</span></h1>
-    <p class="hero-sub" data-i18n="hero-sub">Stop fighting with Wix and start owning your stack. We build custom digital experiences from the first line of code to the final deployment. No "themes," no bloat, just high performance builds for brands that need more.</p>
-    <div class="hero-actions">
-      <a href="/contact" class="btn-primary" data-i18n="hero-btn-primary">Start a Project</a>
-      <a href="/work" class="btn-secondary" data-i18n="hero-btn-secondary">See the Work</a>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-3d-stage" id="hero3d">
+    <div class="panel-3d panel-browser" data-base-rx="-22" data-base-ry="8" data-depth="1">
+      <div class="pb-topbar">
+        <div class="pb-dot"></div><div class="pb-dot"></div><div class="pb-dot"></div>
+        <div class="pb-url"></div>
+      </div>
+      <div class="pb-body">
+        <div class="pb-nav">
+          <div class="pb-nav-item" style="width:36px"></div>
+          <div class="pb-nav-item" style="width:52px"></div>
+          <div class="pb-nav-item" style="width:40px"></div>
+          <div class="pb-nav-item" style="width:44px"></div>
+        </div>
+        <div class="pb-h1"></div>
+        <div class="pb-h2"></div>
+        <div class="pb-subs">
+          <div class="pb-sub" style="width:90%"></div>
+          <div class="pb-sub" style="width:74%"></div>
+          <div class="pb-sub" style="width:58%"></div>
+        </div>
+        <div class="pb-cta"></div>
+      </div>
+    </div>
+
+    <div class="panel-3d panel-dash" data-base-rx="-14" data-base-ry="-5" data-depth="2">
+      <div class="pd-header"><div class="pd-pulse"></div>Operations Dashboard</div>
+      <div class="pd-body">
+        <div class="pd-metrics">
+          <div class="pd-metric"><strong>24</strong><small>Loads today</small></div>
+          <div class="pd-metric"><strong>67%</strong><small>Book rate</small></div>
+        </div>
+        <div class="pd-chart">
+          <div class="pd-bar" style="height:58%"></div><div class="pd-bar" style="height:82%"></div>
+          <div class="pd-bar" style="height:44%"></div><div class="pd-bar" style="height:91%"></div>
+          <div class="pd-bar" style="height:68%"></div><div class="pd-bar" style="height:54%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-3d panel-status" data-base-rx="18" data-base-ry="7" data-depth="3">
+      <div class="ps-header"><div class="pd-pulse"></div>System Status</div>
+      <div class="ps-body">
+        <div class="ps-item"><div class="ps-dot ok"></div>Website live</div>
+        <div class="ps-item"><div class="ps-dot ok"></div>Auto-replies armed</div>
+        <div class="ps-item"><div class="ps-dot act"></div>Review flow active</div>
+        <div class="ps-item"><div class="ps-dot ok"></div>Bilingual ready</div>
+        <div class="ps-item"><div class="ps-dot ok"></div>Leads tracked</div>
+      </div>
     </div>
   </div>
+
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot"></span> Boutique studio. Charlotte, NC.</div>
+    <h1 class="hero-title">Better presence.<br><span class="accent">Better operations.</span></h1>
+    <p class="hero-sub">We build custom websites, internal tools, and automation systems for businesses that want both. No templates. No generic software. Built from scratch around how you actually work.</p>
+    <div class="hero-actions">
+      <a href="/contact" class="btn-primary">Start a Project</a>
+      <a href="/work" class="btn-secondary">See the Work</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
 </header>
 
+<!-- WHAT WE BUILD -->
 <section class="section">
-  <div class="section-tag" data-i18n="opp-tag">The Studio</div>
-  <div class="grid-2">
+  <div class="section-tag fade-up">What We Build</div>
+  <div class="services-header-row fade-up">
     <div>
-      <h2 class="section-title" data-i18n="opp-title">We don't do templates.<br><span class="accent">Every project starts from a blank file.</span></h2>
-      <p class="section-sub" data-i18n="opp-sub">Page builders and themes are fast for agencies. They're also why most sites look like everyone else's. We start from scratch every time and build around what you actually need.</p>
-      <div class="metric-grid">
-        <div class="metric"><strong>100%</strong><span data-i18n="metric-1-span">Custom builds. No templates, no themes, no shortcuts.</span></div>
-        <div class="metric"><strong>EN + ES</strong><span data-i18n="metric-2-span">Bilingual builds for brands that want to reach more people.</span></div>
-        <div class="metric"><strong>Charlotte → Anywhere</strong><span data-i18n="metric-3-span">Based in Charlotte. Working with clients remote or local.</span></div>
-      </div>
+      <h2 class="section-title">One studio.<br><span class="accent">Eight things we do well.</span></h2>
     </div>
-    <div class="card mock">
-      <div class="kicker" data-i18n="terminal-kicker">Project brief</div>
-      <div class="terminal">
-        <div>$ new project initialized</div>
-        <div class="ok">→ type: personal brand / portfolio</div>
-        <div class="ok">→ design: custom from scratch ✓</div>
-        <div class="warn">→ template_used: none</div>
-        <div class="ok">→ bilingual: EN + ES ✓</div>
-        <div class="ok">→ timeline: 2-3 weeks ✓</div>
-        <div class="hi">→ status: ready to build</div>
-        <div class="term-sep"></div>
-        <div class="term-cmd">$ run build</div>
-        <div class="term-log">verifying assets<span class="term-ok">✓</span></div>
-        <div class="term-log">generating responsive layouts<span class="term-ok">✓</span></div>
-        <div class="term-log">compiling bilingual content<span class="term-ok">✓</span></div>
-        <div class="term-log">mobile optimization<span class="term-ok">✓</span></div>
-        <div class="ok">→ build complete. ready for review<span class="terminal-cursor"></span></div>
-      </div>
-      <div class="term-scene" aria-hidden="true">
-        <div class="term-runway"><div class="term-pulse"></div></div>
-        <div class="term-sign">[ ESPINO&nbsp;DIGITAL <span class="ts-led"></span>]</div>
+    <div class="services-filter-col">
+      <p class="section-sub">From the first thing a customer sees to the tools your team uses every day. If it lives online or runs your operation, we build it properly.</p>
+      <div class="svc-dropdown">
+        <span class="svc-dropdown-label">Filter</span>
+        <div style="position:relative">
+          <button class="svc-dd-trigger" id="svcDdTrigger" aria-haspopup="listbox" aria-expanded="false">
+            <span id="svcDdValue">All Services</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="svc-dd-menu" id="svcDdMenu" role="listbox">
+            <button class="svc-dd-option active" data-cat="all" role="option">All Services</button>
+            <button class="svc-dd-option" data-cat="presence" role="option">Digital Presence</button>
+            <button class="svc-dd-option" data-cat="operations" role="option">Operations</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<section class="section band" style="max-width:none;">
-  <div style="max-width:1280px;margin:0 auto;">
-    <div class="section-tag" data-i18n="bf-tag">Who We Work With</div>
-    <div class="grid-3">
-      <div class="card"><div class="kicker">01</div><h3 data-i18n="bf-c1-title">Businesses</h3><p data-i18n="bf-c1-text">You need a site that makes the right first impression and actually brings in leads. Not something you have to apologize for when a client pulls it up.</p></div>
-      <div class="card"><div class="kicker">02</div><h3 data-i18n="bf-c2-title">Creators and freelancers</h3><p data-i18n="bf-c2-text">Photographers, coaches, consultants — if your name is the brand, your site needs to back it up. Not look like the same Squarespace layout everyone else is using.</p></div>
-      <div class="card"><div class="kicker">03</div><h3 data-i18n="bf-c3-title">Founders and builders</h3><p data-i18n="bf-c3-text">If what you need doesn't exist as a plugin or a SaaS product, we build it. Custom tools, portals, booking systems, written from scratch.</p></div>
+  <div class="services-accordion fade-up" id="servicesAccordion">
+
+    <!-- 01 -->
+    <div class="sa-item" data-cat="presence">
+      <button class="sa-trigger" aria-expanded="false">
+        <span class="sa-num">01</span>
+        <span class="sa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </span>
+        <span class="sa-title">Premium Business Websites</span>
+        <span class="sa-cat-badge">Digital Presence</span>
+        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="sa-body">
+        <div class="sa-body-inner">
+          <p>Custom from scratch. No templates, no themes — built around your business, your brand, and what moves a visitor toward an inquiry. The goal is always the same: make the right impression and turn traffic into leads.</p>
+          <div class="sa-tags">
+            <span class="sa-tag">Custom design</span>
+            <span class="sa-tag">Mobile-first</span>
+            <span class="sa-tag">Fast load</span>
+            <span class="sa-tag">Lead-focused</span>
+            <span class="sa-tag">English + Spanish</span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- 02 -->
+    <div class="sa-item" data-cat="presence">
+      <button class="sa-trigger" aria-expanded="false">
+        <span class="sa-num">02</span>
+        <span class="sa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+        <span class="sa-title">Customer Portals</span>
+        <span class="sa-cat-badge">Digital Presence</span>
+        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="sa-body">
+        <div class="sa-body-inner">
+          <p>Give your clients a dedicated space to track their job status, view invoices, access documents, and communicate — without them having to call or email to find out what's going on. Reduces friction for them and interruptions for you.</p>
+          <div class="sa-tags">
+            <span class="sa-tag">Login-gated</span>
+            <span class="sa-tag">Job status</span>
+            <span class="sa-tag">Document access</span>
+            <span class="sa-tag">Invoice view</span>
+            <span class="sa-tag">Real-time updates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="sa-item" data-cat="operations">
+      <button class="sa-trigger" aria-expanded="false">
+        <span class="sa-num">03</span>
+        <span class="sa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </span>
+        <span class="sa-title">Booking and Scheduling</span>
+        <span class="sa-cat-badge">Operations</span>
+        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="sa-body">
+        <div class="sa-body-inner">
+          <p>Custom booking flows built around your actual service model — not a generic SaaS widget dropped on the page. Customers see real availability, pick what works, and get confirmed automatically. You get the right information from the start.</p>
+          <div class="sa-tags">
+            <span class="sa-tag">Custom flow</span>
+            <span class="sa-tag">Auto-confirm</span>
+            <span class="sa-tag">Reminders</span>
+            <span class="sa-tag">Service-specific logic</span>
+            <span class="sa-tag">Calendar sync</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="sa-item" data-cat="operations">
+      <button class="sa-trigger" aria-expanded="false">
+        <span class="sa-num">04</span>
+        <span class="sa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </span>
+        <span class="sa-title">Dispatch and Job Tracking</span>
+        <span class="sa-cat-badge">Operations</span>
+        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="sa-body">
+        <div class="sa-body-inner">
+          <p>Operational dashboards built around how your jobs actually move — not adapted from generic project management software. See what's in progress, what needs attention, and what's closed, all from one screen. Built specifically for field service and logistics operations.</p>
+          <div class="sa-tags">
+            <span class="sa-tag">Live job board</span>
+            <span class="sa-tag">Status pipeline</span>
+            <span class="sa-tag">Driver/crew view</span>
+            <span class="sa-tag">Load tracking</span>
+            <span class="sa-tag">Multi-source data</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="sa-item" data-cat="presence">
+      <button class="sa-trigger" aria-expanded="false">
+        <span class="sa-num">05</span>
+        <span class="sa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </span>
+        <span class="sa-title">Estimate and Quote Tools</span>
+        <span class="sa-cat-badge">Digital Presence</span>
+        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="sa-body">
+        <div class="sa-body-inner">
+          <p>Interactive configurators that walk a customer through their options and give them a realistic price range before they ever contact you. Fewer back-and-forths. More qualified leads. Customers who reach out already know what things cost.</p>
+          <div class="sa-tags">
+            <span class="sa-tag">Interactive pricing</span>
+            <span class="sa-tag">Option configurator</span>
+            <span class="sa-tag">Lead capture</span>
+            <span class="sa-tag">Embeddable</span>
+            <span class="sa-tag">Mobile-ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="sa-item" data-cat="operations">
+      <button class="sa-trigger" aria-expanded="false">
+        <span class="sa-num">06</span>
+        <span class="sa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+        </span>
+        <span class="sa-title">Internal Dashboards</span>
+        <span class="sa-cat-badge">Operations</span>
+        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="sa-body">
+        <div class="sa-body-inner">
+          <p>Pull data from email, spreadsheets, Google Sheets, APIs, and other tools into one clean internal view. Instead of context-switching between five places to make a decision, you see everything in one place, organized the way your operation actually works.</p>
+          <div class="sa-tags">
+            <span class="sa-tag">Multi-source data</span>
+            <span class="sa-tag">Gmail integration</span>
+            <span class="sa-tag">Sheets sync</span>
+            <span class="sa-tag">Custom metrics</span>
+            <span class="sa-tag">Role-based views</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="sa-item" data-cat="operations">
+      <button class="sa-trigger" aria-expanded="false">
+        <span class="sa-num">07</span>
+        <span class="sa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </span>
+        <span class="sa-title">Automation and Workflows</span>
+        <span class="sa-cat-badge">Operations</span>
+        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="sa-body">
+        <div class="sa-body-inner">
+          <p>Follow-up sequences, missed-call text-back, review request flows, lead routing, reactivation campaigns. Systems that run in the background while you focus on the actual work. Once built and triggered, they run without anyone managing them.</p>
+          <div class="sa-tags">
+            <span class="sa-tag">Missed-call text-back</span>
+            <span class="sa-tag">Follow-up sequences</span>
+            <span class="sa-tag">Review requests</span>
+            <span class="sa-tag">Lead routing</span>
+            <span class="sa-tag">Reactivation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="sa-item" data-cat="presence">
+      <button class="sa-trigger" aria-expanded="false">
+        <span class="sa-num">08</span>
+        <span class="sa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </span>
+        <span class="sa-title">Bilingual Digital Experiences</span>
+        <span class="sa-cat-badge">Digital Presence</span>
+        <svg class="sa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="sa-body">
+        <div class="sa-body-inner">
+          <p>Full English and Spanish builds — not a plugin, not Google Translate on top of an English-only site. Both languages are written and built properly from the start. For businesses serving Spanish-speaking communities, this is the difference between reaching those customers and not.</p>
+          <div class="sa-tags">
+            <span class="sa-tag">English + Spanish</span>
+            <span class="sa-tag">Properly written copy</span>
+            <span class="sa-tag">Toggle switcher</span>
+            <span class="sa-tag">Both languages indexed</span>
+            <span class="sa-tag">No plugins</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- THREE OUTCOMES -->
+<div class="section-band">
+  <div class="band-inner">
+    <div class="section-tag fade-up">Three Outcomes</div>
+    <h2 class="section-title fade-up" style="margin-bottom:40px">What every project<br><span class="accent">ultimately comes down to.</span></h2>
+    <div class="outcomes-row fade-up">
+      <div class="outcome">
+        <div class="outcome-num">01</div>
+        <h3>Presence</h3>
+        <p>The first thing a potential client sees. Your website, your brand, the impression you make before anyone picks up the phone. It either builds confidence or costs you the job.</p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-num">02</div>
+        <h3>Operations</h3>
+        <p>The tools and systems that run your workflow. Invisible to customers, essential to you. When they're built properly, the business runs cleaner. When they're missing, everything costs more time.</p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-num">03</div>
+        <h3>Conversion</h3>
+        <p>The gap between someone finding you and someone actually hiring you. We close it with better follow-up, faster responses, and sites that move people toward a decision.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APP PROOF SECTION -->
 <section class="section">
-  <div class="section-tag" data-i18n="wyg-tag">The Work</div>
-  <div class="what-grid">
-    <div class="card what-featured">
-      <div class="kicker" data-i18n="wyg-web-kicker">Business Site</div>
-      <h3 data-i18n="wyg-web-title">Your business site, done properly</h3>
-      <p data-i18n="wyg-web-sub">Fast, custom-designed, built for search from day one. When someone lands on it, they should know immediately what you do and why you're worth calling.</p>
+  <div class="section-tag fade-up">Live Example</div>
+  <div class="grid-2 fade-up" style="align-items:end;margin-bottom:40px">
+    <div>
+      <h2 class="section-title">This is what custom<br><span class="accent">operations software looks like.</span></h2>
+      <p class="section-sub">Most businesses run on email, group texts, and spreadsheets that were never meant to work together. This is a real internal tool built for a trucking operation. It pulls load offers, broker data, and pipeline status into one dashboard.</p>
+      <a href="/case-study" class="btn-secondary">Read the full case study</a>
+    </div>
+    <div class="card">
+      <div class="kicker">What this proves</div>
+      <p style="color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:16px">We build more than websites. This is purpose-built software organized around how a business actually moves, pulling data from multiple sources and giving the operator a cleaner view of what to act on.</p>
       <ul class="list">
-        <li data-i18n="wyg-web-li1">Custom design, no templates</li>
-        <li data-i18n="wyg-web-li2">Mobile-first build</li>
-        <li data-i18n="wyg-web-li3">SEO foundations included</li>
-        <li data-i18n="wyg-web-li4">Bilingual ready</li>
+        <li>Gmail ingestion: load offers pulled from inbox automatically</li>
+        <li>Load board feed filtered by lane, rate, and broker quality</li>
+        <li>Broker ranking by booking rate and revenue history</li>
+        <li>Kanban pipeline: offer to booked to closed</li>
+        <li>Operational metrics surfaced at a glance</li>
       </ul>
     </div>
-    <div class="card what-featured">
-      <div class="kicker" data-i18n="wyg-app-kicker">Personal Brand</div>
-      <h3 data-i18n="wyg-app-title">A portfolio that actually looks like you</h3>
-      <p data-i18n="wyg-app-sub">Not a Squarespace layout with your photos swapped in. A site built around how you work and what you want people to do when they find you.</p>
-      <ul class="list">
-        <li data-i18n="wyg-app-li1">Custom layouts for your content</li>
-        <li data-i18n="wyg-app-li2">Designed around your work</li>
-        <li data-i18n="wyg-app-li3">Fast and clean on any device</li>
-        <li data-i18n="wyg-app-li4">Launch-ready setup included</li>
-      </ul>
+  </div>
+
+  <div class="proof-shell fade-up">
+    <div class="proof-titlebar">
+      <div class="proof-dots"><span></span><span></span><span></span></div>
+      <div class="proof-tb-text">Trucking Ops Dashboard</div>
     </div>
-    <div class="what-panel">
-      <div class="what-num">03</div>
-      <div>
-        <h4 data-i18n="wyg-ai-title">Custom App Development</h4>
-        <p data-i18n="wyg-ai-text">When a website isn't enough. We build internal tools, customer portals, booking systems, whatever your operation actually needs.</p>
+    <div class="proof-body">
+      <div class="proof-sidebar">
+        <div class="proof-nav-item active"><div class="proof-nav-icon"></div>Dashboard</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Load Board</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Pipeline</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Brokers</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Inbox</div>
+        <div class="proof-nav-item"><div class="proof-nav-icon"></div>Revenue</div>
       </div>
-    </div>
-    <div class="what-panel">
-      <div class="what-num">04</div>
-      <div>
-        <h4 data-i18n="wyg-vis-title">Local Business Solutions</h4>
-        <p data-i18n="wyg-vis-text">For service businesses. Text-back automation, bilingual follow-up, review systems, and the local search basics that actually bring in calls.</p>
+      <div class="proof-content">
+        <div class="proof-metrics">
+          <div class="proof-metric"><strong>24</strong><span>Loads today</span></div>
+          <div class="proof-metric"><strong>11</strong><span>Active offers</span></div>
+          <div class="proof-metric"><strong>67%</strong><span>Book rate</span></div>
+          <div class="proof-metric"><strong>83%</strong><span>Top broker</span></div>
+        </div>
+        <div class="proof-kanban">
+          <div>
+            <div class="proof-col-head">Inbox (8)</div>
+            <div class="proof-card"><div class="proof-card-tag">Transfix</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+            <div class="proof-card"><div class="proof-card-tag">Echo Global</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+            <div class="proof-card"><div class="proof-card-tag">Coyote</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+          </div>
+          <div>
+            <div class="proof-col-head">Reviewing (4)</div>
+            <div class="proof-card"><div class="proof-card-tag">Transfix</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+            <div class="proof-card"><div class="proof-card-tag">Uber Freight</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+          </div>
+          <div>
+            <div class="proof-col-head">Negotiating (2)</div>
+            <div class="proof-card"><div class="proof-card-tag">Transfix</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+          </div>
+          <div>
+            <div class="proof-col-head">Booked (11)</div>
+            <div class="proof-card"><div class="proof-card-tag">Echo Global</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+            <div class="proof-card"><div class="proof-card-tag">Convoy</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+            <div class="proof-card"><div class="proof-card-tag">Transfix</div><div class="proof-card-line"></div><div class="proof-card-line"></div></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-band">
-  <div class="section-tag" style="justify-content:center" data-i18n="cta-tag">Let's Build</div>
-  <h2 class="section-title" data-i18n="cta-title">Got something in mind?<br><span class="accent">Let's talk about it.</span></h2>
-  <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="cta-sub">Tell me what you're building, what's not working, or what you wish you had. I'll tell you what I can do about it.</p>
-  <div class="hero-actions" style="justify-content:center">
-    <a href="/contact" class="btn-primary" data-i18n="cta-btn-primary">Start a Project</a>
-    <a href="/work" class="btn-secondary" data-i18n="cta-btn-secondary">See Example Work</a>
+<!-- CTA BAND -->
+<div class="cta-band fade-up">
+  <div class="section-tag" style="justify-content:center">Ready When You Are</div>
+  <h2 class="section-title">Got something in mind?<br><span class="accent">Tell me about it.</span></h2>
+  <p class="section-sub">A website, a tool, a system, or all three. Tell me what you're working on and I'll tell you what we can do about it.</p>
+  <div class="hero-actions">
+    <a href="/contact" class="btn-primary">Start a Project</a>
+    <a href="/work" class="btn-secondary">See Example Work</a>
   </div>
-</section>
-
+</div>
 
 <footer>
   <div class="footer-logo">Espino <span>Digital</span></div>
   <div class="footer-links">
     <a href="/" class="footer-link">Home</a>
-    <a href="/systems" class="footer-link">Services</a>
+    <a href="/systems" class="footer-link">Systems</a>
     <a href="/work" class="footer-link">Work</a>
     <a href="/about" class="footer-link">About</a>
     <a href="/contact" class="footer-link">Contact</a>
   </div>
   <div class="footer-meta">© 2026 Espino Digital · Charlotte, NC</div>
 </footer>
+
+<script src="/gradient.js"></script>
 <script>
 (function(){
-  ED_LANG.init();
-  // Nav scroll class
   var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){
-    nav.classList.toggle('scrolled',window.scrollY>80);
-  },{passive:true});
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  var btn=document.querySelector('.nav-hamburger');
+  var mob=document.getElementById('mobileNav');
+  if(btn&&mob){btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);});}
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in-view');});},{threshold:0.07});
+  document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
+  ED_LANG.init();
 
-  // Mobile nav toggle
-  var hamburger=document.querySelector('.nav-hamburger');
-  var mobileNav=document.getElementById('mobileNav');
-  hamburger.addEventListener('click',function(){
-    var open=mobileNav.classList.toggle('open');
-    hamburger.classList.toggle('open',open);
-    hamburger.setAttribute('aria-expanded',open);
-    document.body.style.overflow=open?'hidden':'';
-  });
-  mobileNav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      mobileNav.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded','false');
-      document.body.style.overflow='';
-    });
-  });
+  // Services accordion
+  (function(){
+    var accordion = document.getElementById('servicesAccordion');
+    if (!accordion) return;
 
-  // Scroll fade-up for cards, metrics, items, section titles
-  var animEls=document.querySelectorAll('.card,.metric,.problem-item,.flow-item,.stat-item,.section-title');
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting)return;
-      var el=entry.target;
-      var siblings=Array.from(el.parentElement.children).filter(function(c){return c.classList.contains('scroll-hidden')||c.classList.contains('scroll-visible')});
-      var idx=siblings.indexOf(el);
-      el.style.animationDelay=(idx*0.08)+'s';
-      el.classList.remove('scroll-hidden');
-      el.classList.add('scroll-visible');
-      io.unobserve(el);
-    });
-  },{threshold:0.1});
-  animEls.forEach(function(el){
-    var r=el.getBoundingClientRect();
-    if(r.top>window.innerHeight){el.classList.add('scroll-hidden');io.observe(el);}
-  });
-
-  // Section tag line reveal
-  var tagIO=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting)return;
-      entry.target.classList.add('tag-visible');
-      tagIO.unobserve(entry.target);
-    });
-  },{threshold:0.5});
-  document.querySelectorAll('.section-tag').forEach(function(el){tagIO.observe(el);});
-
-  // Metric counter
-  document.querySelectorAll('.metric strong').forEach(function(el){
-    var text=el.textContent.trim();
-    var m=text.match(/^(~?)(\d+)/);
-    if(!m)return;
-    var pre=m[1],target=parseInt(m[2]),suf=text.slice(m[0].length);
-    el.textContent=pre+'0'+suf;
-    var cIO=new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(!entry.isIntersecting)return;
-        var t0=null,dur=1400;
-        function step(ts){
-          if(!t0)t0=ts;
-          var p=Math.min((ts-t0)/dur,1);
-          var ease=1-Math.pow(1-p,3);
-          el.textContent=pre+Math.floor(ease*target)+suf;
-          if(p<1)requestAnimationFrame(step);
+    // Accordion open/close
+    accordion.querySelectorAll('.sa-trigger').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        var body = btn.nextElementSibling;
+        // Close all others
+        accordion.querySelectorAll('.sa-trigger').forEach(function(b){
+          b.setAttribute('aria-expanded','false');
+          var bb = b.nextElementSibling;
+          if(bb) bb.style.maxHeight = '0';
+        });
+        if(!expanded){
+          btn.setAttribute('aria-expanded','true');
+          body.style.maxHeight = body.scrollHeight + 'px';
         }
-        requestAnimationFrame(step);
-        cIO.unobserve(entry.target);
       });
-    },{threshold:0.5});
-    cIO.observe(el);
-  });
+    });
+
+    // Dropdown filter
+    var trigger = document.getElementById('svcDdTrigger');
+    var menu = document.getElementById('svcDdMenu');
+    var valueEl = document.getElementById('svcDdValue');
+    if(trigger && menu){
+      trigger.addEventListener('click', function(e){
+        e.stopPropagation();
+        var open = menu.classList.toggle('open');
+        trigger.classList.toggle('open', open);
+        trigger.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', function(){
+        menu.classList.remove('open');
+        trigger.classList.remove('open');
+        trigger.setAttribute('aria-expanded','false');
+      });
+      menu.querySelectorAll('.svc-dd-option').forEach(function(opt){
+        opt.addEventListener('click', function(e){
+          e.stopPropagation();
+          menu.querySelectorAll('.svc-dd-option').forEach(function(o){ o.classList.remove('active'); });
+          opt.classList.add('active');
+          valueEl.textContent = opt.textContent;
+          menu.classList.remove('open');
+          trigger.classList.remove('open');
+          trigger.setAttribute('aria-expanded','false');
+          // Filter items
+          var cat = opt.dataset.cat;
+          accordion.querySelectorAll('.sa-item').forEach(function(item){
+            if(cat === 'all' || item.dataset.cat === cat){
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+              // Close if hidden
+              var b = item.querySelector('.sa-trigger');
+              var bd = item.querySelector('.sa-body');
+              if(b) b.setAttribute('aria-expanded','false');
+              if(bd) bd.style.maxHeight = '0';
+            }
+          });
+        });
+      });
+    }
+  })();
+
+  // 3D panel parallax
+  var stage=document.getElementById('hero3d');
+  if(stage){
+    var panels=stage.querySelectorAll('.panel-3d');
+    var tx=0,ty=0,mx=0,my=0;
+    document.addEventListener('mousemove',function(e){mx=e.clientX-window.innerWidth/2;my=e.clientY-window.innerHeight/2;},{passive:true});
+    (function loop(){
+      tx+=(mx-tx)*0.07;ty+=(my-ty)*0.07;
+      panels.forEach(function(p){
+        var brx=parseFloat(p.dataset.baseRx)||0;
+        var bry=parseFloat(p.dataset.baseRy)||0;
+        var d=parseFloat(p.dataset.depth)||1;
+        var f=d*5;
+        var ox=(tx/window.innerWidth)*f;
+        var oy=(ty/window.innerHeight)*f*0.5;
+        p.style.transform='perspective(1400px) rotateY('+(brx+ox*2)+'deg) rotateX('+(bry+oy)+'deg)';
+      });
+      requestAnimationFrame(loop);
+    })();
+  }
 })();
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://espinodigital.com/#business",
-  "name": "Espino Digital",
-  "description": "Espino Digital builds missed-call text-back systems, bilingual AI automation, conversion websites, and local growth tools for service businesses in Charlotte, NC and surrounding areas.",
-  "url": "https://espinodigital.com",
-  "telephone": "+19804756920",
-  "email": "hello@espinodigital.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Charlotte",
-    "addressRegion": "NC",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 35.2271,
-    "longitude": -80.8431
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Charlotte",
-      "sameAs": "https://en.wikipedia.org/wiki/Charlotte,_North_Carolina"
-    },
-    {
-      "@type": "State",
-      "name": "North Carolina"
-    }
-  ],
-  "knowsLanguage": ["en", "es"],
-  "priceRange": "$$",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "09:00",
-    "closes": "18:00"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Business Automation and Digital Marketing",
-  "provider": {
-    "@type": "LocalBusiness",
-    "@id": "https://espinodigital.com/#business"
-  },
-  "name": "Missed-Call Text-Back and Local Business Automation",
-  "description": "Automated SMS text-back systems that respond to missed calls within 30 seconds, bilingual AI follow up sequences in English and Spanish, new website builds and refreshes, and AI tools for local service businesses.",
-  "areaServed": {
-    "@type": "City",
-    "name": "Charlotte",
-    "sameAs": "https://en.wikipedia.org/wiki/Charlotte,_North_Carolina"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Espino Digital Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Missed-Call Text-Back System",
-          "description": "Automated SMS response sent within 15–30 seconds of a missed inbound call. Supports English and Spanish. Integrates with existing phone numbers and CRM."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Bilingual AI Follow-Up Automation",
-          "description": "AI-powered follow up sequences in English and Spanish for appointment scheduling, lead nurturing, review requests, and customer reactivation."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "New Website and Website Refresh",
-          "description": "Mobile-first, conversion-focused websites for local service businesses. Bilingual ready, fast-loading, and built with lead capture and CRM integration."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "AI Tools for Local Business",
-          "description": "Custom AI tools built for local service businesses — online and offline — including scheduling assistants, workflow automation, job tracking, and customer communication systems."
-        }
-      }
-    ]
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a missed-call text-back system?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A missed-call text-back system automatically sends an SMS to any caller whose call goes unanswered — within 15 to 30 seconds — so the lead stays warm instead of moving on to a competitor. It is used by local service businesses to recover lost revenue from calls they could not answer while on the job."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How fast does the text-back system respond?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The automated text message is sent within 15 to 30 seconds of a missed call. Research shows that lead conversion rates drop by over 80 percent after 5 minutes of no contact, so the speed of the initial response is critical."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does the system work in Spanish?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The bilingual capability is built into the system, not added as a translation layer. When a customer responds in Spanish, the system continues the conversation in Spanish automatically — no manual switching required."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a new website to use the text-back system?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. The missed-call text-back system connects to your existing phone number and can operate independently of your website. However, if your current website does not convert visitors into calls or form submissions, a website refresh or rebuild is recommended to maximize the results of the full system."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What kinds of businesses is this built for?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Espino Digital builds these systems for any local service business that runs on inbound calls and cannot afford to miss a lead — trades, home services, contractors, repair shops, cleaning and maintenance companies, and any operation where a missed call means a missed job."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does setup take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most systems are live within 7 to 14 days of the initial strategy call. Setup is handled entirely by Espino Digital — no technical work is required from the business owner."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What AI tools can be built for a local service business?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Espino Digital builds both online and offline AI tools for local businesses — including customer-facing scheduling and follow up automation, review request systems, lead reactivation sequences, and internal workflow tools for team scheduling and job tracking."
-      }
-    }
-  ]
-}
-</script>
-<script src="gradient.js"></script>
 </body>
 </html>
