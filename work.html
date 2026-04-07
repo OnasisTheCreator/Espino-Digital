@@ -161,8 +161,8 @@
 <!-- HERO -->
 <div class="inner-hero">
   <div class="inner-hero-tag">Selected Work</div>
-  <h1 class="inner-hero-title fade-up">Built to solve<br><span class="accent">real problems.</span></h1>
-  <p class="inner-hero-sub fade-up delay-1">We keep the client list focused on purpose. Here's what the work actually looks like, how it was built, and what it solved.</p>
+  <h1 class="inner-hero-title fade-up">Real builds.<br><span class="accent">Real problems solved.</span></h1>
+  <p class="inner-hero-sub fade-up delay-1">Custom software, websites, and operational tools built for businesses that needed something off the shelf couldn't do. Here's what it looks like and what it solved.</p>
 </div>
 
 <!-- MAIN SECTION -->
@@ -563,7 +563,7 @@
 <div class="cta-band fade-up">
   <div class="section-tag" style="justify-content:center">Next</div>
   <h2 class="section-title">Have a project in mind?<br><span class="accent">Let's talk about it.</span></h2>
-  <p class="section-sub">These are just the examples I can show publicly. Most client work is internal and stays internal. Tell me what you're building.</p>
+  <p class="section-sub">These are the builds we can show publicly. Most client work is internal and stays that way. Tell us what you're working on.</p>
   <div class="hero-actions">
     <a href="/contact" class="btn-primary">Start a Project</a>
     <a href="/systems" class="btn-secondary">See What We Build</a>
@@ -579,7 +579,7 @@
     <a href="/about" class="footer-link">About</a>
     <a href="/contact" class="footer-link">Contact</a>
   </div>
-  <div class="footer-meta">© 2026 Espino Digital · Charlotte, NC</div>
+  <div class="footer-meta">© 2026 Espino Digital</div>
 </footer>
 
 <script src="/interactions.js"></script>
@@ -593,7 +593,7 @@
   if(btn&&mob){btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);});}
   var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in-view');});},{threshold:0.06});
   document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
-  ED_LANG.init();
+  try { ED_LANG.init(); } catch(e) {}
 
   // Pinned scroll — update left panel as case studies enter view
   (function(){
@@ -676,46 +676,6 @@
     });
   });
 
-  // Garage door visualizer
-  var door=document.getElementById('gdDoor');
-  if(door){
-    var currentColor='#e8e8e8';
-    var currentStyle='raised';
-    var styleVariants={
-      raised:  {panelStyle:'border-radius:2px',innerBorder:'3px 12px'},
-      flat:    {panelStyle:'border-radius:0',innerBorder:'4px 8px'},
-      carriage:{panelStyle:'border-radius:4px 4px 0 0',innerBorder:'6px 20px'},
-      modern:  {panelStyle:'border-radius:0',innerBorder:'0 0'}
-    };
-
-    function updateDoor(){
-      var panels=door.querySelectorAll('.gd-door-panel');
-      door.className = 'gd-door style-' + currentStyle;
-      panels.forEach(function(p){
-        p.style.background=currentColor;
-      });
-    }
-
-    document.querySelectorAll('.gd-swatch').forEach(function(sw){
-      sw.addEventListener('click',function(){
-        document.querySelectorAll('.gd-swatch').forEach(function(x){x.classList.remove('active');});
-        sw.classList.add('active');
-        currentColor=sw.dataset.color;
-        updateDoor();
-      });
-    });
-
-    document.querySelectorAll('.gd-style-btn').forEach(function(sb){
-      sb.addEventListener('click',function(){
-        document.querySelectorAll('.gd-style-btn').forEach(function(x){x.classList.remove('active');});
-        sb.classList.add('active');
-        currentStyle=sb.dataset.style;
-        updateDoor();
-      });
-    });
-
-    updateDoor();
-  }
 })();
 </script>
 </body>
