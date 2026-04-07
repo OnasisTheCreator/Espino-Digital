@@ -675,12 +675,14 @@ footer { border-top: 1px solid var(--border); padding: 44px clamp(20px,5vw,80px)
   mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
 }
 .cap-ticker-track {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 28px;
-  white-space: nowrap;
+  width: max-content;
   animation: cap-tick 55s linear infinite;
 }
+.cap-ticker-track span,
+.cap-ticker-track .ct-dot { flex-shrink: 0; }
 .cap-ticker-track span {
   font-family: var(--fd);
   font-size: 14px;
