@@ -19,8 +19,9 @@
 /* ── Grain overlay ───────────────────────────── */
 .grain{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
-/* ── Three.js canvas ─────────────────────────── */
-#cv{position:fixed;inset:0;z-index:0;pointer-events:none;}
+/* ── Scroll snap — sections lock into view ───── */
+html{scroll-snap-type:y mandatory;}
+.gs-section,.gs-manifesto{scroll-snap-align:start;scroll-snap-stop:normal;}
 
 /* ── Full-height sections ────────────────────── */
 .gs-section{position:relative;min-height:100vh;display:flex;align-items:center;z-index:10;}
@@ -74,6 +75,12 @@
 .gs-cta-btn::before{content:'';position:absolute;inset:0 -100%;width:100%;background:linear-gradient(90deg,transparent,rgba(176,38,255,.35),transparent);transition:inset .6s;}
 .gs-cta-btn:hover::before{inset:0 100%;}
 .gs-cta-btn:hover{border-color:#b026ff;box-shadow:0 0 28px rgba(176,38,255,.28);letter-spacing:.28em;}
+
+/* ── Section text entrance ───────────────────── */
+.gs-serif,.gs-manifesto-text,.gs-svc-body,.gs-list,.gs-svc-meta{opacity:0;transform:translateY(48px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+.gs-svc-body{transition-delay:.1s;}
+.gs-list{transition-delay:.18s;}
+.gs-serif.sect-in,.gs-manifesto-text.sect-in,.gs-svc-body.sect-in,.gs-list.sect-in,.gs-svc-meta.sect-in{opacity:1;transform:translateY(0);}
 
 /* ── Responsive ──────────────────────────────── */
 @media(max-width:900px){
@@ -341,6 +348,26 @@
   var obs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in-view'); }); }, {threshold:0.07});
   document.querySelectorAll('.fade-up').forEach(function(el){ obs.observe(el); });
 
+  // ── Section text entrance (reliable with scroll snap) ──
+  var sectObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('sect-in'); sectObs.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.gs-serif,.gs-manifesto-text,.gs-svc-body,.gs-list,.gs-svc-meta').forEach(function(el){ sectObs.observe(el); });
+
+  // ── Word cycling on hero glitch ───────────────
+  var glitchEl = document.querySelector('.gs-glitch');
+  if(glitchEl){
+    var words = ['Engines','Websites','Software','Systems','Apps','Tools'];
+    var wi = 0;
+    setInterval(function(){
+      wi = (wi + 1) % words.length;
+      glitchEl.setAttribute('data-text', words[wi]);
+      glitchEl.textContent = words[wi];
+    }, 2200);
+  }
+
   try { ED_LANG.init(); } catch(e) {}
 
   // ── Three.js ─────────────────────────────────
@@ -472,13 +499,6 @@
     tl.to(ringGroup.scale, {x:0.1, y:0.1, z:0.1, duration:0.5}, 0.9);
     tl.call(function(){ ringGroup.visible = false; }, [], 0.98);
 
-    // Text entrance animations
-    gsap.utils.toArray('.gs-h1,.gs-serif,.gs-manifesto-text').forEach(function(el){
-      gsap.from(el, {
-        scrollTrigger:{trigger:el, start:'top 85%', toggleActions:'play none none reverse'},
-        y:80, opacity:0, duration:1.1, ease:'power4.out'
-      });
-    });
   }
 
   // ── Render loop ──────────────────────────────
