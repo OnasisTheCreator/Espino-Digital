@@ -50,8 +50,8 @@ ul { list-style: none; }
 input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; background: none; border: none; outline: none; }
 
 /* ─── Typography ────────────────────────────────────── */
-h1, h2 { font-family: var(--fd); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; }
-h3 { font-family: var(--fd); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+h1, h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; line-height: 1.0; letter-spacing: -0.02em; }
+h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; }
 h4 { font-family: var(--fd); font-weight: 700; letter-spacing: -0.015em; }
 .accent { color: var(--accent); }
 .accent2 { color: var(--accent-2); }
@@ -229,11 +229,12 @@ nav.scrolled {
 
 /* ─── Sections ──────────────────────────────────────── */
 .section { padding: var(--gap) clamp(20px,5vw,80px); max-width: calc(var(--max) + 160px); margin: 0 auto; }
-.section-band { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); max-width: none; }
+.section-band { background: rgba(12,12,26,0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); max-width: none; }
 .section-band .band-inner { max-width: calc(var(--max) + 160px); margin: 0 auto; padding: var(--gap) clamp(20px,5vw,80px); }
 .section-tag { display: flex; align-items: center; gap: 12px; font-family: var(--fm); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 40px; }
 .section-tag::before { content: ''; display: block; width: 20px; height: 1px; background: var(--border-h); flex-shrink: 0; }
-.section-title { font-size: clamp(26px,3.8vw,48px); margin-bottom: 20px; max-width: 640px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(28px,4.2vw,54px); line-height: .97; letter-spacing: -.01em; margin-bottom: 20px; max-width: 640px; }
+.section-title .accent { font-style: italic; }
 .section-sub { font-size: 17px; color: var(--muted); line-height: 1.78; max-width: 540px; margin-bottom: 40px; }
 
 /* ─── Grids ─────────────────────────────────────────── */
@@ -413,7 +414,7 @@ nav.scrolled {
 .proof-card-line:last-child { width: 60%; margin-bottom: 0; }
 
 /* ─── CTA Band ──────────────────────────────────────── */
-.cta-band { background: var(--bg-2); border-top: 1px solid var(--border); padding: var(--gap) clamp(20px,5vw,80px); text-align: center; }
+.cta-band { background: rgba(12,12,26,0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding: var(--gap) clamp(20px,5vw,80px); text-align: center; }
 .cta-band .section-title { max-width: 100%; margin-left: auto; margin-right: auto; }
 .cta-band .section-sub { max-width: 480px; margin-left: auto; margin-right: auto; }
 .cta-band .hero-actions { justify-content: center; }
