@@ -27,7 +27,8 @@
 .gs-content{width:100%;max-width:1400px;margin:0 auto;padding:0 clamp(24px,5vw,80px);position:relative;}
 
 /* ── Hero ────────────────────────────────────── */
-.gs-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;min-height:100vh;padding-top:var(--nav-h);}
+.gs-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;min-height:100vh;}
+.gs-brand-bg{position:absolute;font-family:'Cormorant Garamond',serif;font-size:clamp(5rem,14vw,16rem);font-weight:300;font-style:italic;color:rgba(255,255,255,.035);white-space:nowrap;pointer-events:none;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);letter-spacing:-.03em;line-height:1;text-align:center;}
 .gs-hero-left{transform:translateY(8vh);}
 .gs-eyebrow{font-family:var(--fm);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(238,238,245,.35);margin-bottom:2rem;display:block;}
 .gs-h1{font-family:'Inter',var(--fb);font-size:clamp(2.4rem,5.5vw,4.8rem);font-weight:300;line-height:1;letter-spacing:-.03em;color:var(--text);}
@@ -104,7 +105,6 @@
     <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<div class="nav-spacer" aria-hidden="true"></div>
 <div class="mobile-nav" id="mobileNav">
   <a href="/">Home</a>
   <a href="/systems">Systems</a>
@@ -121,6 +121,7 @@
 
 <!-- ── HERO ──────────────────────────────────────── -->
 <section class="gs-section" id="hero">
+  <div class="gs-brand-bg" aria-hidden="true">Espino<br>Digital</div>
   <div class="gs-content">
     <div class="gs-hero-grid">
       <div class="gs-hero-left">
